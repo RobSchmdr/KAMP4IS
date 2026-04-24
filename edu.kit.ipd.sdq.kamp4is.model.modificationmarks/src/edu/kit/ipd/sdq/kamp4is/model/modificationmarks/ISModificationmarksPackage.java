@@ -4,6 +4,7 @@ package edu.kit.ipd.sdq.kamp4is.model.modificationmarks;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -1073,13 +1074,22 @@ public interface ISModificationmarksPackage extends EPackage {
 	int IS_MODIFY_SIGNATURE__USER_DECISION = IS_MODIFY_ENTITY__USER_DECISION;
 
 	/**
+	 * The feature id for the '<em><b>Timing Changed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_SIGNATURE__TIMING_CHANGED = IS_MODIFY_ENTITY_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>IS Modify Signature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_SIGNATURE_FEATURE_COUNT = IS_MODIFY_ENTITY_FEATURE_COUNT + 0;
+	int IS_MODIFY_SIGNATURE_FEATURE_COUNT = IS_MODIFY_ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>IS Modify Signature</em>' class.
@@ -1089,6 +1099,89 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @ordered
 	 */
 	int IS_MODIFY_SIGNATURE_OPERATION_COUNT = IS_MODIFY_ENTITY_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyOperationTimingImpl <em>IS Modify Operation Timing</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyOperationTimingImpl
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModificationmarksPackageImpl#getISModifyOperationTiming()
+	 * @generated
+	 */
+	int IS_MODIFY_OPERATION_TIMING = 16;
+
+	/**
+	 * The feature id for the '<em><b>Affected Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_OPERATION_TIMING__AFFECTED_ELEMENT = ModificationmarksPackage.MODIFICATION__AFFECTED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Causing Elements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_OPERATION_TIMING__CAUSING_ELEMENTS = ModificationmarksPackage.MODIFICATION__CAUSING_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_OPERATION_TIMING__ID = ModificationmarksPackage.MODIFICATION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Toolderived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_OPERATION_TIMING__TOOLDERIVED = ModificationmarksPackage.MODIFICATION__TOOLDERIVED;
+
+	/**
+	 * The feature id for the '<em><b>User Decision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_OPERATION_TIMING__USER_DECISION = ModificationmarksPackage.MODIFICATION__USER_DECISION;
+
+	/**
+	 * The feature id for the '<em><b>Ismodifysignature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_OPERATION_TIMING__ISMODIFYSIGNATURE = ModificationmarksPackage.MODIFICATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IS Modify Operation Timing</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_OPERATION_TIMING_FEATURE_COUNT = ModificationmarksPackage.MODIFICATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>IS Modify Operation Timing</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_OPERATION_TIMING_OPERATION_COUNT = ModificationmarksPackage.MODIFICATION_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1406,6 +1499,38 @@ public interface ISModificationmarksPackage extends EPackage {
 	EClass getISModifySignature();
 
 	/**
+	 * Returns the meta object for the attribute '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#isTimingChanged <em>Timing Changed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Timing Changed</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#isTimingChanged()
+	 * @see #getISModifySignature()
+	 * @generated
+	 */
+	EAttribute getISModifySignature_TimingChanged();
+
+	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming <em>IS Modify Operation Timing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IS Modify Operation Timing</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming
+	 * @generated
+	 */
+	EClass getISModifyOperationTiming();
+
+	/**
+	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming#getIsmodifysignature <em>Ismodifysignature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ismodifysignature</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming#getIsmodifysignature()
+	 * @see #getISModifyOperationTiming()
+	 * @generated
+	 */
+	EReference getISModifyOperationTiming_Ismodifysignature();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1699,6 +1824,32 @@ public interface ISModificationmarksPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IS_MODIFY_SIGNATURE = eINSTANCE.getISModifySignature();
+
+		/**
+		 * The meta object literal for the '<em><b>Timing Changed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IS_MODIFY_SIGNATURE__TIMING_CHANGED = eINSTANCE.getISModifySignature_TimingChanged();
+
+		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyOperationTimingImpl <em>IS Modify Operation Timing</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyOperationTimingImpl
+		 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModificationmarksPackageImpl#getISModifyOperationTiming()
+		 * @generated
+		 */
+		EClass IS_MODIFY_OPERATION_TIMING = eINSTANCE.getISModifyOperationTiming();
+
+		/**
+		 * The meta object literal for the '<em><b>Ismodifysignature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_MODIFY_OPERATION_TIMING__ISMODIFYSIGNATURE = eINSTANCE.getISModifyOperationTiming_Ismodifysignature();
 
 	}
 

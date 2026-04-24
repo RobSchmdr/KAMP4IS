@@ -104,6 +104,7 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyDataType> getDataTypeModifications() {
 		if (dataTypeModifications == null) {
 			dataTypeModifications = new EObjectContainmentEList<ISModifyDataType>(ISModifyDataType.class, this, ISModificationmarksPackage.IS_SEED_MODIFICATIONS__DATA_TYPE_MODIFICATIONS);
@@ -116,6 +117,7 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifySignature> getSignatureModifications() {
 		if (signatureModifications == null) {
 			signatureModifications = new EObjectContainmentEList<ISModifySignature>(ISModifySignature.class, this, ISModificationmarksPackage.IS_SEED_MODIFICATIONS__SIGNATURE_MODIFICATIONS);
@@ -128,6 +130,7 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyInterface> getInterfaceModifications() {
 		if (interfaceModifications == null) {
 			interfaceModifications = new EObjectContainmentEList<ISModifyInterface>(ISModifyInterface.class, this, ISModificationmarksPackage.IS_SEED_MODIFICATIONS__INTERFACE_MODIFICATIONS);
@@ -140,6 +143,7 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyComponent> getComponentModifications() {
 		if (componentModifications == null) {
 			componentModifications = new EObjectContainmentEList<ISModifyComponent>(ISModifyComponent.class, this, ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS);

@@ -80,6 +80,7 @@ public class ISChangePropagationDueToDataDependenciesImpl extends ChangePropagat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyInterface> getInterfaceModifications() {
 		if (interfaceModifications == null) {
 			interfaceModifications = new EObjectContainmentEList<ISModifyInterface>(ISModifyInterface.class, this, ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_DATA_DEPENDENCIES__INTERFACE_MODIFICATIONS);
@@ -92,6 +93,7 @@ public class ISChangePropagationDueToDataDependenciesImpl extends ChangePropagat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyDataType> getDatatypeModifications() {
 		if (datatypeModifications == null) {
 			datatypeModifications = new EObjectContainmentEList<ISModifyDataType>(ISModifyDataType.class, this, ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_DATA_DEPENDENCIES__DATATYPE_MODIFICATIONS);

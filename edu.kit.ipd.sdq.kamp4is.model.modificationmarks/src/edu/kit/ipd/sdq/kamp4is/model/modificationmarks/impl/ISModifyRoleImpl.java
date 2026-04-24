@@ -68,6 +68,7 @@ public class ISModifyRoleImpl<T extends Role> extends ISModifyEntityImpl<T> impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifySignature> getSignatureModifications() {
 		if (signatureModifications == null) {
 			signatureModifications = new EObjectContainmentEList<ISModifySignature>(ISModifySignature.class, this, ISModificationmarksPackage.IS_MODIFY_ROLE__SIGNATURE_MODIFICATIONS);

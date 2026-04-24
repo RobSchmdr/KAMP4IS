@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4is.model.modificationmarks.editor;singleton:=true
+Automatic-Module-Name: edu.kit.ipd.sdq.kamp4is.model.modificationmarks.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: edu.kit.ipd.sdq.kamp4is.model.modificationmarks.presentation.ISModificationmarksEditorPlugin$Implementation
@@ -21,6 +22,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.identifier.edit;visibility:=reexport,
  de.uka.ipd.sdq.units.edit;visibility:=reexport,
  de.uka.ipd.sdq.probfunction.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4is,
  edu.kit.ipd.sdq.kamp.model.modificationmarks.editor,
  edu.kit.ipd.sdq.kamp

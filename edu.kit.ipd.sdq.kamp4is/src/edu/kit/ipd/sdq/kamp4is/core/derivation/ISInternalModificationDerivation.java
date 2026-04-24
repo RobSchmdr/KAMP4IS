@@ -9,10 +9,12 @@ import org.palladiosimulator.pcm.repository.DataType;
 
 import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyDataType;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyEntity;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyInterface;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyProvidedRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyRequiredRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
@@ -58,6 +60,12 @@ public class ISInternalModificationDerivation {
 			return new Activity(ISActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
 					dataType, dataTypeName, causingElementNames, BasicActivity.MODIFY, 
 					"Modify DataType " + dataTypeName + ".");
+		} else if (modification instanceof ISModifyOperationTiming){
+			ISModifyOperationTiming operationTiming = (ISModifyOperationTiming) modification.getAffectedElement();
+			return new Activity(ISActivityType.INTERNALMODIFICATIONMARK, activityElementType, operationTiming,
+					operationTiming.getIsmodifysignature().getAffectedElement().getEntityName(),
+					causingElementNames,
+					BasicActivity.MODIFY, "Modify OperationTiming of " + operationTiming.getIsmodifysignature().getAffectedElement().getEntityName());
 		} else {
 			return null;
 		}
@@ -104,6 +112,14 @@ public class ISInternalModificationDerivation {
 					ISActivityElementType.INTERFACE);
 			activityList.add(interfaceActivity);
 			for (ISModifySignature modifySignature : modifyInterface.getSignatureModifications()) {
+				if (modifySignature.isTimingChanged()) {
+					ISModifyOperationTiming modifyOperationTiming = ISModificationmarksFactory.eINSTANCE.createISModifyOperationTiming();
+					modifyOperationTiming.setToolderived(true);
+					modifyOperationTiming.setAffectedElement(modifyOperationTiming);
+					modifyOperationTiming.setIsmodifysignature(modifySignature);
+					addModificationSubActivity(modifyOperationTiming, ISActivityElementType.OPERATION_TIMING, 
+							interfaceActivity);
+				}
 				addModificationSubActivity(modifySignature, ISActivityElementType.SIGNATURE, 
 						interfaceActivity);
 			}

@@ -72,6 +72,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 			case ISModificationmarksPackage.IS_MODIFY_REQUIRED_ROLE: return createISModifyRequiredRole();
 			case ISModificationmarksPackage.IS_MODIFY_INTERFACE: return createISModifyInterface();
 			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE: return createISModifySignature();
+			case ISModificationmarksPackage.IS_MODIFY_OPERATION_TIMING: return createISModifyOperationTiming();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -82,6 +83,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISModificationRepository createISModificationRepository() {
 		ISModificationRepositoryImpl isModificationRepository = new ISModificationRepositoryImpl();
 		return isModificationRepository;
@@ -92,6 +94,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISSeedModifications createISSeedModifications() {
 		ISSeedModificationsImpl isSeedModifications = new ISSeedModificationsImpl();
 		return isSeedModifications;
@@ -102,6 +105,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISChangePropagationDueToDataDependencies createISChangePropagationDueToDataDependencies() {
 		ISChangePropagationDueToDataDependenciesImpl isChangePropagationDueToDataDependencies = new ISChangePropagationDueToDataDependenciesImpl();
 		return isChangePropagationDueToDataDependencies;
@@ -112,6 +116,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISChangePropagationDueToInterfaceDependencies createISChangePropagationDueToInterfaceDependencies() {
 		ISChangePropagationDueToInterfaceDependenciesImpl isChangePropagationDueToInterfaceDependencies = new ISChangePropagationDueToInterfaceDependenciesImpl();
 		return isChangePropagationDueToInterfaceDependencies;
@@ -122,6 +127,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISIntercomponentPropagation createISIntercomponentPropagation() {
 		ISIntercomponentPropagationImpl isIntercomponentPropagation = new ISIntercomponentPropagationImpl();
 		return isIntercomponentPropagation;
@@ -132,6 +138,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISIntracomponentPropagation createISIntracomponentPropagation() {
 		ISIntracomponentPropagationImpl isIntracomponentPropagation = new ISIntracomponentPropagationImpl();
 		return isIntracomponentPropagation;
@@ -142,6 +149,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISModifyDataType createISModifyDataType() {
 		ISModifyDataTypeImpl isModifyDataType = new ISModifyDataTypeImpl();
 		return isModifyDataType;
@@ -152,6 +160,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISModifyComponent createISModifyComponent() {
 		ISModifyComponentImpl isModifyComponent = new ISModifyComponentImpl();
 		return isModifyComponent;
@@ -162,6 +171,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISModifyConnector createISModifyConnector() {
 		ISModifyConnectorImpl isModifyConnector = new ISModifyConnectorImpl();
 		return isModifyConnector;
@@ -172,6 +182,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public <T extends Role> ISModifyRole<T> createISModifyRole() {
 		ISModifyRoleImpl<T> isModifyRole = new ISModifyRoleImpl<T>();
 		return isModifyRole;
@@ -182,6 +193,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISModifyProvidedRole createISModifyProvidedRole() {
 		ISModifyProvidedRoleImpl isModifyProvidedRole = new ISModifyProvidedRoleImpl();
 		return isModifyProvidedRole;
@@ -192,6 +204,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISModifyRequiredRole createISModifyRequiredRole() {
 		ISModifyRequiredRoleImpl isModifyRequiredRole = new ISModifyRequiredRoleImpl();
 		return isModifyRequiredRole;
@@ -202,6 +215,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISModifyInterface createISModifyInterface() {
 		ISModifyInterfaceImpl isModifyInterface = new ISModifyInterfaceImpl();
 		return isModifyInterface;
@@ -212,6 +226,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISModifySignature createISModifySignature() {
 		ISModifySignatureImpl isModifySignature = new ISModifySignatureImpl();
 		return isModifySignature;
@@ -222,6 +237,18 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public ISModifyOperationTiming createISModifyOperationTiming() {
+		ISModifyOperationTimingImpl isModifyOperationTiming = new ISModifyOperationTimingImpl();
+		return isModifyOperationTiming;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ISModificationmarksPackage getISModificationmarksPackage() {
 		return (ISModificationmarksPackage)getEPackage();
 	}

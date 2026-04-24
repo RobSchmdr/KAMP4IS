@@ -16,6 +16,7 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.palladiosimulator.pcm.core.provider.PalladioComponentModelEditPlugin;
 
 /**
@@ -56,6 +57,7 @@ public final class ISModificationmarksEditPlugin extends EMFPlugin {
 		     IdentifierEditPlugin.INSTANCE,
 		     UnitsEditPlugin.INSTANCE,
 		     ProbabilityFunctionEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

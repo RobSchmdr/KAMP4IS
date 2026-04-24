@@ -80,6 +80,7 @@ public class ISChangePropagationDueToInterfaceDependenciesImpl extends ChangePro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyComponent> getComponentModifications() {
 		if (componentModifications == null) {
 			componentModifications = new EObjectContainmentEList<ISModifyComponent>(ISModifyComponent.class, this, ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_INTERFACE_DEPENDENCIES__COMPONENT_MODIFICATIONS);
@@ -92,6 +93,7 @@ public class ISChangePropagationDueToInterfaceDependenciesImpl extends ChangePro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifySignature> getSignatureModifications() {
 		if (signatureModifications == null) {
 			signatureModifications = new EObjectContainmentEList<ISModifySignature>(ISModifySignature.class, this, ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_INTERFACE_DEPENDENCIES__SIGNATURE_MODIFICATIONS);

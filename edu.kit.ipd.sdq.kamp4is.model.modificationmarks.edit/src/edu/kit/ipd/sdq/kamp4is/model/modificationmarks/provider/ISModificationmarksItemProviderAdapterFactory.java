@@ -394,11 +394,35 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ISModifyOperationTimingItemProvider isModifyOperationTimingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createISModifyOperationTimingAdapter() {
+		if (isModifyOperationTimingItemProvider == null) {
+			isModifyOperationTimingItemProvider = new ISModifyOperationTimingItemProvider(this);
+		}
+
+		return isModifyOperationTimingItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -409,6 +433,7 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -457,6 +482,7 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -467,6 +493,7 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -477,6 +504,7 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -491,6 +519,7 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (isModificationRepositoryItemProvider != null) isModificationRepositoryItemProvider.dispose();
 		if (isSeedModificationsItemProvider != null) isSeedModificationsItemProvider.dispose();
@@ -506,6 +535,7 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 		if (isModifyRequiredRoleItemProvider != null) isModifyRequiredRoleItemProvider.dispose();
 		if (isModifyInterfaceItemProvider != null) isModifyInterfaceItemProvider.dispose();
 		if (isModifySignatureItemProvider != null) isModifySignatureItemProvider.dispose();
+		if (isModifyOperationTimingItemProvider != null) isModifyOperationTimingItemProvider.dispose();
 	}
 
 }

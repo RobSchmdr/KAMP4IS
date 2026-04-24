@@ -68,6 +68,7 @@ public class ISModifyInterfaceImpl extends ISModifyEntityImpl<Interface> impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifySignature> getSignatureModifications() {
 		if (signatureModifications == null) {
 			signatureModifications = new EObjectContainmentEList<ISModifySignature>(ISModifySignature.class, this, ISModificationmarksPackage.IS_MODIFY_INTERFACE__SIGNATURE_MODIFICATIONS);

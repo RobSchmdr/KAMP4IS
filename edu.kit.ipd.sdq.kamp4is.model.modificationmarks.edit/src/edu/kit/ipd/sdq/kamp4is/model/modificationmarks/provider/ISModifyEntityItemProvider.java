@@ -3,6 +3,7 @@
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks.provider;
 
 
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.AbstractModificationItemProvider;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyEntity;
 import java.util.Collection;
 import java.util.List;
@@ -19,7 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ISModifyEntityItemProvider extends edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.AbstractModificationItemProvider {
+public class ISModifyEntityItemProvider extends AbstractModificationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

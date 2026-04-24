@@ -68,6 +68,7 @@ public class ISIntracomponentPropagationImpl extends ChangePropagationStepImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyComponent> getComponentModifications() {
 		if (componentModifications == null) {
 			componentModifications = new EObjectContainmentEList<ISModifyComponent>(ISModifyComponent.class, this, ISModificationmarksPackage.IS_INTRACOMPONENT_PROPAGATION__COMPONENT_MODIFICATIONS);

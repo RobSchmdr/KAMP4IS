@@ -150,6 +150,15 @@ public interface ISModificationmarksFactory extends EFactory {
 	ISModifySignature createISModifySignature();
 
 	/**
+	 * Returns a new object of class '<em>IS Modify Operation Timing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IS Modify Operation Timing</em>'.
+	 * @generated
+	 */
+	ISModifyOperationTiming createISModifyOperationTiming();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

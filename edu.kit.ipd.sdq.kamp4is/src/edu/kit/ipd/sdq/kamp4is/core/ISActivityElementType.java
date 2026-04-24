@@ -40,7 +40,11 @@ public enum ISActivityElementType implements AbstractActivityElementType {
 	BUILDCONFIGURATION(ISBuildConfiguration.class),
 	TESTCASE(ISTestCase.class), 
 	RELEASECONFIGURATION(ISReleaseConfiguration.class),
-	DEPLOYMENTCONFIGURATION(ISDeploymentSpecification.class);
+	DEPLOYMENTCONFIGURATION(ISDeploymentSpecification.class),
+	
+	
+	//automotive related
+	OPERATION_TIMING(OperationTiming.class);
 	
 	private final Class<?> clazz;
 	private final String name;

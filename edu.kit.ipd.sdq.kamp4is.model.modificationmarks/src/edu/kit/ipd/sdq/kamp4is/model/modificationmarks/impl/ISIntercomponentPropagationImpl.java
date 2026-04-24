@@ -68,6 +68,7 @@ public class ISIntercomponentPropagationImpl extends ChangePropagationStepImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyConnector> getConnectorModifications() {
 		if (connectorModifications == null) {
 			connectorModifications = new EObjectContainmentEList<ISModifyConnector>(ISModifyConnector.class, this, ISModificationmarksPackage.IS_INTERCOMPONENT_PROPAGATION__CONNECTOR_MODIFICATIONS);

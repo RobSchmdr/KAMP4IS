@@ -163,6 +163,7 @@ public class ISModificationmarksActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
+		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("ismodificationmarks-settings"));
 		toolBarManager.add(new Separator("ismodificationmarks-additions"));
 	}
@@ -199,6 +200,7 @@ public class ISModificationmarksActionBarContributor
 		//
 		submenuManager.addMenuListener
 			(new IMenuListener() {
+				 @Override
 				 public void menuAboutToShow(IMenuManager menuManager) {
 					 menuManager.updateAll(true);
 				 }
@@ -246,6 +248,7 @@ public class ISModificationmarksActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Remove any menu items for old selection.
 		//

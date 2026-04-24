@@ -80,6 +80,7 @@ public class ISModifyComponentImpl extends ISModifyEntityImpl<RepositoryComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyProvidedRole> getProvidedRoleModifications() {
 		if (providedRoleModifications == null) {
 			providedRoleModifications = new EObjectContainmentEList<ISModifyProvidedRole>(ISModifyProvidedRole.class, this, ISModificationmarksPackage.IS_MODIFY_COMPONENT__PROVIDED_ROLE_MODIFICATIONS);
@@ -92,6 +93,7 @@ public class ISModifyComponentImpl extends ISModifyEntityImpl<RepositoryComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISModifyRequiredRole> getRequiredRoleModifications() {
 		if (requiredRoleModifications == null) {
 			requiredRoleModifications = new EObjectContainmentEList<ISModifyRequiredRole>(ISModifyRequiredRole.class, this, ISModificationmarksPackage.IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS);
