@@ -1,0 +1,13 @@
+# Default: let Git decide based on file type
+* text=auto
+
+# Eclipse / PDE metadata
+*.classpath     text eol=lf
+*.project       text eol=lf
+MANIFEST.MF     text eol=lf
+plugin.xml      text eol=lf
+
+# Source / models
+*.java          text eol=lf
+*.xml           text eol=lf
+*.ecore         text eol=lf
