@@ -7,8 +7,6 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
-
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.Modification;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -206,8 +204,15 @@ public class ISModificationmarksSwitch<T1> extends Switch<T1> {
 			case ISModificationmarksPackage.IS_MODIFY_OPERATION_TIMING: {
 				ISModifyOperationTiming isModifyOperationTiming = (ISModifyOperationTiming)theEObject;
 				T1 result = caseISModifyOperationTiming(isModifyOperationTiming);
-				if (result == null) result = caseModification(isModifyOperationTiming);
 				if (result == null) result = caseAbstractModification(isModifyOperationTiming);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES: {
+				ISChangePropagationDueToTimingDependencies isChangePropagationDueToTimingDependencies = (ISChangePropagationDueToTimingDependencies)theEObject;
+				T1 result = caseISChangePropagationDueToTimingDependencies(isChangePropagationDueToTimingDependencies);
+				if (result == null) result = caseChangePropagationStep(isChangePropagationDueToTimingDependencies);
+				if (result == null) result = caseAbstractChangePropagationStep(isChangePropagationDueToTimingDependencies);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -471,6 +476,21 @@ public class ISModificationmarksSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IS Change Propagation Due To Timing Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IS Change Propagation Due To Timing Dependencies</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseISChangePropagationDueToTimingDependencies(ISChangePropagationDueToTimingDependencies object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Abstract Modification Repository</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -542,21 +562,6 @@ public class ISModificationmarksSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public <S, T> T1 caseAbstractModification(AbstractModification<S, T> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Modification</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Modification</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T1 caseModification(Modification object) {
 		return null;
 	}
 

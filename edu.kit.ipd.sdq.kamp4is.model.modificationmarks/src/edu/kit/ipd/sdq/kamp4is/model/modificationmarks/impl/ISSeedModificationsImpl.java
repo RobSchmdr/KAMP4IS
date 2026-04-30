@@ -8,6 +8,7 @@ import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackag
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyDataType;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyInterface;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications;
 
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getSignatureModifications <em>Signature Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getInterfaceModifications <em>Interface Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getComponentModifications <em>Component Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,6 +81,16 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 	 * @ordered
 	 */
 	protected EList<ISModifyComponent> componentModifications;
+
+	/**
+	 * The cached value of the '{@link #getIsmodifyoperationtiming() <em>Ismodifyoperationtiming</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIsmodifyoperationtiming()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ISModifyOperationTiming> ismodifyoperationtiming;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,6 +169,19 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 	 * @generated
 	 */
 	@Override
+	public EList<ISModifyOperationTiming> getIsmodifyoperationtiming() {
+		if (ismodifyoperationtiming == null) {
+			ismodifyoperationtiming = new EObjectContainmentEList<ISModifyOperationTiming>(ISModifyOperationTiming.class, this, ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING);
+		}
+		return ismodifyoperationtiming;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__DATA_TYPE_MODIFICATIONS:
@@ -167,6 +192,8 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 				return ((InternalEList<?>)getInterfaceModifications()).basicRemove(otherEnd, msgs);
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
 				return ((InternalEList<?>)getComponentModifications()).basicRemove(otherEnd, msgs);
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
+				return ((InternalEList<?>)getIsmodifyoperationtiming()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -187,6 +214,8 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 				return getInterfaceModifications();
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
 				return getComponentModifications();
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
+				return getIsmodifyoperationtiming();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,6 +245,10 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 				getComponentModifications().clear();
 				getComponentModifications().addAll((Collection<? extends ISModifyComponent>)newValue);
 				return;
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
+				getIsmodifyoperationtiming().clear();
+				getIsmodifyoperationtiming().addAll((Collection<? extends ISModifyOperationTiming>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -240,6 +273,9 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
 				getComponentModifications().clear();
 				return;
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
+				getIsmodifyoperationtiming().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -260,6 +296,8 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 				return interfaceModifications != null && !interfaceModifications.isEmpty();
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
 				return componentModifications != null && !componentModifications.isEmpty();
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
+				return ismodifyoperationtiming != null && !ismodifyoperationtiming.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -159,6 +159,15 @@ public interface ISModificationmarksFactory extends EFactory {
 	ISModifyOperationTiming createISModifyOperationTiming();
 
 	/**
+	 * Returns a new object of class '<em>IS Change Propagation Due To Timing Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IS Change Propagation Due To Timing Dependencies</em>'.
+	 * @generated
+	 */
+	ISChangePropagationDueToTimingDependencies createISChangePropagationDueToTimingDependencies();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

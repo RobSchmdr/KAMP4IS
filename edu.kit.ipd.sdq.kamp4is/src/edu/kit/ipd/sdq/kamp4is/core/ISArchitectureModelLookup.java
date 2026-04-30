@@ -33,6 +33,7 @@ import org.palladiosimulator.pcm.repository.SourceRole;
 
 import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyProvidedRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyRequiredRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
@@ -186,7 +187,18 @@ public class ISArchitectureModelLookup {
 			MapUtil.putOrAddToMap(affectedInterfaces, interfac, signature);
 		}
 	}
-
+	
+	protected static void lookupInterfacesAndSignaturesWithOperationTimingChanged(ISArchitectureVersion version,
+			Collection <ISModifyOperationTiming> modifyOperationTiming,
+			Map<Interface, Set<Signature>> affectedInterfaces,
+			Map<Signature,ISModifyOperationTiming> affectedSignatures) {
+		
+		for (ISModifyOperationTiming modOperationTiming : modifyOperationTiming) {
+			affectedSignatures.put((Signature) modOperationTiming.getAffectedElement(), modOperationTiming);
+		}
+		affectedInterfaces.putAll(lookUpInterfacesAndSignaturesWithSignatures(version, affectedSignatures.keySet()));
+	}
+	
 	/**
 	 * Finds
 	 * <ul>

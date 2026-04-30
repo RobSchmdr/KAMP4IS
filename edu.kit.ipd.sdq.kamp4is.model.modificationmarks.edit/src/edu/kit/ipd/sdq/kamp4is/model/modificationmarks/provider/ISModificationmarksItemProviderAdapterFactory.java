@@ -417,6 +417,29 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ISChangePropagationDueToTimingDependenciesItemProvider isChangePropagationDueToTimingDependenciesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createISChangePropagationDueToTimingDependenciesAdapter() {
+		if (isChangePropagationDueToTimingDependenciesItemProvider == null) {
+			isChangePropagationDueToTimingDependenciesItemProvider = new ISChangePropagationDueToTimingDependenciesItemProvider(this);
+		}
+
+		return isChangePropagationDueToTimingDependenciesItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -536,6 +559,7 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 		if (isModifyInterfaceItemProvider != null) isModifyInterfaceItemProvider.dispose();
 		if (isModifySignatureItemProvider != null) isModifySignatureItemProvider.dispose();
 		if (isModifyOperationTimingItemProvider != null) isModifyOperationTimingItemProvider.dispose();
+		if (isChangePropagationDueToTimingDependenciesItemProvider != null) isChangePropagationDueToTimingDependenciesItemProvider.dispose();
 	}
 
 }

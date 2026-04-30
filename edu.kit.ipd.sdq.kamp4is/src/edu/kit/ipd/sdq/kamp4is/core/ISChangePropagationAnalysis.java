@@ -1,6 +1,7 @@
 package edu.kit.ipd.sdq.kamp4is.core;
 
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToDataDependencies;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
 
 /**
@@ -17,16 +18,24 @@ import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactor
  * @author stammel
  *
  */
-public class ISChangePropagationAnalysis  extends AbstractISChangePropagationAnalysis<ISArchitectureVersion, ISChangePropagationDueToDataDependencies> {
+public class ISChangePropagationAnalysis  extends AbstractISChangePropagationAnalysis<ISArchitectureVersion, ISChangePropagationDueToDataDependencies, ISChangePropagationDueToTimingDependencies> {
 	
 	@Override
 	public void runChangePropagationAnalysis(ISArchitectureVersion version) {
 		// I. DataType -> Signature -> Interface 
+		
+		this.setChangePropagationDueToTimingDependencies(ISModificationmarksFactory.eINSTANCE.createISChangePropagationDueToTimingDependencies());
+		calculateAndMarkOperationTimingToInterfacePropagation(version);
+		
 		this.setChangePropagationDueToDataDependencies(ISModificationmarksFactory.eINSTANCE.createISChangePropagationDueToDataDependencies());
 		calculateAndMarkToInterfacePropagation(version);
 
 		if (!this.getChangePropagationDueToDataDependencies().eContents().isEmpty()) {	
 			version.getModificationMarkRepository().getChangePropagationSteps().add(this.getChangePropagationDueToDataDependencies());	
+		}
+		
+		if (!this.getChangePropagationDueToTimingDependencies().eContents().isEmpty()) {	
+			version.getModificationMarkRepository().getChangePropagationSteps().add(this.getChangePropagationDueToTimingDependencies());	
 		}
 		
 		//All other steps

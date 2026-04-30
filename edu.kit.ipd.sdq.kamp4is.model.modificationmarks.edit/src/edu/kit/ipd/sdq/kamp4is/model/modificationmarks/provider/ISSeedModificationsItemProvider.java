@@ -70,6 +70,7 @@ public class ISSeedModificationsItemProvider extends AbstractSeedModificationsIt
 			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_SEED_MODIFICATIONS__SIGNATURE_MODIFICATIONS);
 			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_SEED_MODIFICATIONS__INTERFACE_MODIFICATIONS);
 			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS);
+			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING);
 		}
 		return childrenFeatures;
 	}
@@ -126,6 +127,7 @@ public class ISSeedModificationsItemProvider extends AbstractSeedModificationsIt
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__SIGNATURE_MODIFICATIONS:
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__INTERFACE_MODIFICATIONS:
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -162,6 +164,11 @@ public class ISSeedModificationsItemProvider extends AbstractSeedModificationsIt
 			(createChildParameter
 				(ISModificationmarksPackage.Literals.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS,
 				 ISModificationmarksFactory.eINSTANCE.createISModifyComponent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ISModificationmarksPackage.Literals.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING,
+				 ISModificationmarksFactory.eINSTANCE.createISModifyOperationTiming()));
 	}
 
 	/**

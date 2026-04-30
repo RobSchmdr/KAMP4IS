@@ -1,6 +1,7 @@
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks.provider;
 
 import org.palladiosimulator.pcm.core.entity.NamedElement;
+import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.repository.DataType;
 import org.palladiosimulator.pcm.repository.EventType;
 import org.palladiosimulator.pcm.repository.OperationProvidedRole;
@@ -13,6 +14,7 @@ import org.palladiosimulator.pcm.repository.SourceRole;
 
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyDataType;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyEntity;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyProvidedRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyRequiredRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
@@ -67,6 +69,14 @@ public class ISLabelCustomizing {
 			return "(Please select a DataType!)";
 		} else {
 			return "\"" + getDataTypeName(modification.getAffectedElement()) + "\"";
+		}
+	}
+	
+	public static String customize(ISModifyOperationTiming modification) {
+		if (modification.getAffectedElement() == null) {
+			return "(Please select an OperationSignature!)";
+		} else {
+			return "\"" + ((Entity)modification.getAffectedElement()).getEntityName() + "\"";
 		}
 	}
 

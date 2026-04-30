@@ -3,11 +3,8 @@
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks.provider;
 
 
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.ModificationItemProvider;
-
-import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage;
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.AbstractModificationItemProvider;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -15,8 +12,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -25,7 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ISModifyOperationTimingItemProvider extends ModificationItemProvider {
+public class ISModifyOperationTimingItemProvider extends AbstractModificationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -47,31 +42,8 @@ public class ISModifyOperationTimingItemProvider extends ModificationItemProvide
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIsmodifysignaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Ismodifysignature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsmodifysignaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ISModifyOperationTiming_ismodifysignature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ISModifyOperationTiming_ismodifysignature_feature", "_UI_ISModifyOperationTiming_type"),
-				 ISModificationmarksPackage.Literals.IS_MODIFY_OPERATION_TIMING__ISMODIFYSIGNATURE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

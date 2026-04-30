@@ -3,12 +3,15 @@
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl;
 
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
-
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.palladiosimulator.pcm.repository.Signature;
 
 /**
@@ -19,30 +22,21 @@ import org.palladiosimulator.pcm.repository.Signature;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifySignatureImpl#isTimingChanged <em>Timing Changed</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifySignatureImpl#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ISModifySignatureImpl extends ISModifyEntityImpl<Signature> implements ISModifySignature {
 	/**
-	 * The default value of the '{@link #isTimingChanged() <em>Timing Changed</em>}' attribute.
+	 * The cached value of the '{@link #getIsmodifyoperationtiming() <em>Ismodifyoperationtiming</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isTimingChanged()
+	 * @see #getIsmodifyoperationtiming()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean TIMING_CHANGED_EDEFAULT = true;
-	/**
-	 * The cached value of the '{@link #isTimingChanged() <em>Timing Changed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isTimingChanged()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean timingChanged = TIMING_CHANGED_EDEFAULT;
+	protected EList<ISModifyOperationTiming> ismodifyoperationtiming;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +63,11 @@ public class ISModifySignatureImpl extends ISModifyEntityImpl<Signature> impleme
 	 * @generated
 	 */
 	@Override
-	public boolean isTimingChanged() {
-		return timingChanged;
+	public EList<ISModifyOperationTiming> getIsmodifyoperationtiming() {
+		if (ismodifyoperationtiming == null) {
+			ismodifyoperationtiming = new EObjectContainmentEList<ISModifyOperationTiming>(ISModifyOperationTiming.class, this, ISModificationmarksPackage.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING);
+		}
+		return ismodifyoperationtiming;
 	}
 
 	/**
@@ -79,11 +76,12 @@ public class ISModifySignatureImpl extends ISModifyEntityImpl<Signature> impleme
 	 * @generated
 	 */
 	@Override
-	public void setTimingChanged(boolean newTimingChanged) {
-		boolean oldTimingChanged = timingChanged;
-		timingChanged = newTimingChanged;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ISModificationmarksPackage.IS_MODIFY_SIGNATURE__TIMING_CHANGED, oldTimingChanged, timingChanged));
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING:
+				return ((InternalEList<?>)getIsmodifyoperationtiming()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -94,8 +92,8 @@ public class ISModifySignatureImpl extends ISModifyEntityImpl<Signature> impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__TIMING_CHANGED:
-				return isTimingChanged();
+			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING:
+				return getIsmodifyoperationtiming();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -105,11 +103,13 @@ public class ISModifySignatureImpl extends ISModifyEntityImpl<Signature> impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__TIMING_CHANGED:
-				setTimingChanged((Boolean)newValue);
+			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING:
+				getIsmodifyoperationtiming().clear();
+				getIsmodifyoperationtiming().addAll((Collection<? extends ISModifyOperationTiming>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +123,8 @@ public class ISModifySignatureImpl extends ISModifyEntityImpl<Signature> impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__TIMING_CHANGED:
-				setTimingChanged(TIMING_CHANGED_EDEFAULT);
+			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING:
+				getIsmodifyoperationtiming().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,26 +138,10 @@ public class ISModifySignatureImpl extends ISModifyEntityImpl<Signature> impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__TIMING_CHANGED:
-				return timingChanged != TIMING_CHANGED_EDEFAULT;
+			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING:
+				return ismodifyoperationtiming != null && !ismodifyoperationtiming.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (timingChanged: ");
-		result.append(timingChanged);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ISModifySignatureImpl

@@ -73,6 +73,7 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 			case ISModificationmarksPackage.IS_MODIFY_INTERFACE: return createISModifyInterface();
 			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE: return createISModifySignature();
 			case ISModificationmarksPackage.IS_MODIFY_OPERATION_TIMING: return createISModifyOperationTiming();
+			case ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES: return createISChangePropagationDueToTimingDependencies();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -241,6 +242,17 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	public ISModifyOperationTiming createISModifyOperationTiming() {
 		ISModifyOperationTimingImpl isModifyOperationTiming = new ISModifyOperationTimingImpl();
 		return isModifyOperationTiming;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ISChangePropagationDueToTimingDependencies createISChangePropagationDueToTimingDependencies() {
+		ISChangePropagationDueToTimingDependenciesImpl isChangePropagationDueToTimingDependencies = new ISChangePropagationDueToTimingDependenciesImpl();
+		return isChangePropagationDueToTimingDependencies;
 	}
 
 	/**

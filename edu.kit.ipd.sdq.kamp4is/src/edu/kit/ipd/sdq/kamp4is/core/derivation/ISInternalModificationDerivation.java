@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import org.palladiosimulator.pcm.core.entity.Entity;
+import org.palladiosimulator.pcm.core.entity.NamedElement;
 import org.palladiosimulator.pcm.repository.DataType;
 
 import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
@@ -40,6 +41,10 @@ public class ISInternalModificationDerivation {
 				DataType causingDataType = (DataType) causingElement;
 				causingElementNames.add(causingDataType.eClass().getName() + " \""
 						+ ISLabelCustomizing.getDataTypeName(causingDataType) +"\"");
+			} else if (causingElement instanceof ISModifyOperationTiming) {
+				ISModifyOperationTiming opTiming = (ISModifyOperationTiming) causingElement;
+				causingElementNames.add(opTiming.eClass().getName() + " \""
+						+ ((Entity) opTiming.getAffectedElement()).getEntityName()+ "\"");
 			}
 		}
 		return causingElementNames;
@@ -61,11 +66,11 @@ public class ISInternalModificationDerivation {
 					dataType, dataTypeName, causingElementNames, BasicActivity.MODIFY, 
 					"Modify DataType " + dataTypeName + ".");
 		} else if (modification instanceof ISModifyOperationTiming){
-			ISModifyOperationTiming operationTiming = (ISModifyOperationTiming) modification.getAffectedElement();
-			return new Activity(ISActivityType.INTERNALMODIFICATIONMARK, activityElementType, operationTiming,
-					operationTiming.getIsmodifysignature().getAffectedElement().getEntityName(),
+			Entity timingModifiedSignature = (Entity) modification.getAffectedElement();
+			return new Activity(ISActivityType.INTERNALMODIFICATIONMARK, activityElementType, timingModifiedSignature,
+					timingModifiedSignature.getEntityName(),
 					causingElementNames,
-					BasicActivity.MODIFY, "Modify OperationTiming of " + operationTiming.getIsmodifysignature().getAffectedElement().getEntityName());
+					BasicActivity.MODIFY, "Modify OperationTiming of " + timingModifiedSignature.getEntityName());
 		} else {
 			return null;
 		}
@@ -88,7 +93,7 @@ public class ISInternalModificationDerivation {
 		List<Activity> activityList = new ArrayList<Activity>();
 		
 		this.deriveComponentModifications(targetVersion, activityList);
-		this.deriveInterfaceModifications(targetVersion, activityList);
+		this.deriveInterfaceModifications(targetVersion, activityList); //Also derives timing modifications
 		
 		return activityList;
 	}
@@ -112,36 +117,37 @@ public class ISInternalModificationDerivation {
 					ISActivityElementType.INTERFACE);
 			activityList.add(interfaceActivity);
 			for (ISModifySignature modifySignature : modifyInterface.getSignatureModifications()) {
-				if (modifySignature.isTimingChanged()) {
-					ISModifyOperationTiming modifyOperationTiming = ISModificationmarksFactory.eINSTANCE.createISModifyOperationTiming();
-					modifyOperationTiming.setToolderived(true);
-					modifyOperationTiming.setAffectedElement(modifyOperationTiming);
-					modifyOperationTiming.setIsmodifysignature(modifySignature);
-					addModificationSubActivity(modifyOperationTiming, ISActivityElementType.OPERATION_TIMING, 
-							interfaceActivity);
-				}
-				addModificationSubActivity(modifySignature, ISActivityElementType.SIGNATURE, 
+				Activity modifySignatureActivity = addModificationSubActivity(modifySignature, ISActivityElementType.SIGNATURE, 
 						interfaceActivity);
+				for (ISModifyOperationTiming opTiming: modifySignature.getIsmodifyoperationtiming()) {
+					addModificationSubActivity(opTiming, ISActivityElementType.OPERATION_TIMING, modifySignatureActivity);
+				}
 			}
 		}
 	}
-
+	
 	private void deriveSubActivities(ISModifyComponent modifyComponent, 
 			Activity componentActivity) {
 		for (ISModifyProvidedRole modifyProvidedRole : modifyComponent.getProvidedRoleModifications()) {			
 		    Activity providedRoleActivity = addModificationSubActivity(modifyProvidedRole, 
 						ISActivityElementType.PROVIDEDROLE, componentActivity);
 		    for (ISModifySignature modifySignature : modifyProvidedRole.getSignatureModifications()) {	
-				addModificationSubActivity(modifySignature, ISActivityElementType.PROVIDEDOPERATION, 
+		    	Activity modifySignatureActivity = addModificationSubActivity(modifySignature, ISActivityElementType.PROVIDEDOPERATION, 
 							providedRoleActivity);
+		    	for (ISModifyOperationTiming opTiming: modifySignature.getIsmodifyoperationtiming()) {
+					addModificationSubActivity(opTiming, ISActivityElementType.OPERATION_TIMING, modifySignatureActivity);
+				}
 			}
 		}
 		for (ISModifyRequiredRole modifyRequiredRole : modifyComponent.getRequiredRoleModifications()) {			
 		    Activity requiredRoleActivity = addModificationSubActivity(modifyRequiredRole, 
 						ISActivityElementType.REQUIREDROLE, componentActivity);
 		    for (ISModifySignature modifySignature : modifyRequiredRole.getSignatureModifications()) {
-				addModificationSubActivity(modifySignature, ISActivityElementType.REQUIREDOPERATION, 
+		    	Activity modifySignatureActivity = addModificationSubActivity(modifySignature, ISActivityElementType.REQUIREDOPERATION, 
 							requiredRoleActivity);
+		    	for (ISModifyOperationTiming opTiming: modifySignature.getIsmodifyoperationtiming()) {
+					addModificationSubActivity(opTiming, ISActivityElementType.OPERATION_TIMING, modifySignatureActivity);
+				}
 			}
 		}
 	}

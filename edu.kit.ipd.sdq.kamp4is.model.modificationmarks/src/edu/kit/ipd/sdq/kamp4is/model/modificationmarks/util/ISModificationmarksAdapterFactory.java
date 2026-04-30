@@ -7,8 +7,6 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
-
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.Modification;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -147,6 +145,10 @@ public class ISModificationmarksAdapterFactory extends AdapterFactoryImpl {
 				return createISModifyOperationTimingAdapter();
 			}
 			@Override
+			public Adapter caseISChangePropagationDueToTimingDependencies(ISChangePropagationDueToTimingDependencies object) {
+				return createISChangePropagationDueToTimingDependenciesAdapter();
+			}
+			@Override
 			public <S extends AbstractSeedModifications, T extends AbstractChangePropagationStep> Adapter caseAbstractModificationRepository(AbstractModificationRepository<S, T> object) {
 				return createAbstractModificationRepositoryAdapter();
 			}
@@ -165,10 +167,6 @@ public class ISModificationmarksAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public <S, T> Adapter caseAbstractModification(AbstractModification<S, T> object) {
 				return createAbstractModificationAdapter();
-			}
-			@Override
-			public Adapter caseModification(Modification object) {
-				return createModificationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -429,6 +427,20 @@ public class ISModificationmarksAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies <em>IS Change Propagation Due To Timing Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies
+	 * @generated
+	 */
+	public Adapter createISChangePropagationDueToTimingDependenciesAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository <em>Abstract Modification Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -495,20 +507,6 @@ public class ISModificationmarksAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractModificationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp.model.modificationmarks.Modification <em>Modification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.kamp.model.modificationmarks.Modification
-	 * @generated
-	 */
-	public Adapter createModificationAdapter() {
 		return null;
 	}
 

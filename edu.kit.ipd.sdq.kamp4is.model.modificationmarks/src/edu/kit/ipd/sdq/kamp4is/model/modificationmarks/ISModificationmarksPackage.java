@@ -3,8 +3,6 @@
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage;
-
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -197,13 +195,22 @@ public interface ISModificationmarksPackage extends EPackage {
 	int IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>IS Seed Modifications</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IS_SEED_MODIFICATIONS_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 4;
+	int IS_SEED_MODIFICATIONS_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>IS Seed Modifications</em>' class.
@@ -1074,13 +1081,13 @@ public interface ISModificationmarksPackage extends EPackage {
 	int IS_MODIFY_SIGNATURE__USER_DECISION = IS_MODIFY_ENTITY__USER_DECISION;
 
 	/**
-	 * The feature id for the '<em><b>Timing Changed</b></em>' attribute.
+	 * The feature id for the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_SIGNATURE__TIMING_CHANGED = IS_MODIFY_ENTITY_FEATURE_COUNT + 0;
+	int IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING = IS_MODIFY_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>IS Modify Signature</em>' class.
@@ -1118,7 +1125,7 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_OPERATION_TIMING__AFFECTED_ELEMENT = ModificationmarksPackage.MODIFICATION__AFFECTED_ELEMENT;
+	int IS_MODIFY_OPERATION_TIMING__AFFECTED_ELEMENT = ModificationmarksPackage.ABSTRACT_MODIFICATION__AFFECTED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Causing Elements</b></em>' reference list.
@@ -1127,7 +1134,7 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_OPERATION_TIMING__CAUSING_ELEMENTS = ModificationmarksPackage.MODIFICATION__CAUSING_ELEMENTS;
+	int IS_MODIFY_OPERATION_TIMING__CAUSING_ELEMENTS = ModificationmarksPackage.ABSTRACT_MODIFICATION__CAUSING_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1136,7 +1143,7 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_OPERATION_TIMING__ID = ModificationmarksPackage.MODIFICATION__ID;
+	int IS_MODIFY_OPERATION_TIMING__ID = ModificationmarksPackage.ABSTRACT_MODIFICATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Toolderived</b></em>' attribute.
@@ -1145,7 +1152,7 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_OPERATION_TIMING__TOOLDERIVED = ModificationmarksPackage.MODIFICATION__TOOLDERIVED;
+	int IS_MODIFY_OPERATION_TIMING__TOOLDERIVED = ModificationmarksPackage.ABSTRACT_MODIFICATION__TOOLDERIVED;
 
 	/**
 	 * The feature id for the '<em><b>User Decision</b></em>' attribute.
@@ -1154,16 +1161,7 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_OPERATION_TIMING__USER_DECISION = ModificationmarksPackage.MODIFICATION__USER_DECISION;
-
-	/**
-	 * The feature id for the '<em><b>Ismodifysignature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_MODIFY_OPERATION_TIMING__ISMODIFYSIGNATURE = ModificationmarksPackage.MODIFICATION_FEATURE_COUNT + 0;
+	int IS_MODIFY_OPERATION_TIMING__USER_DECISION = ModificationmarksPackage.ABSTRACT_MODIFICATION__USER_DECISION;
 
 	/**
 	 * The number of structural features of the '<em>IS Modify Operation Timing</em>' class.
@@ -1172,7 +1170,7 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_OPERATION_TIMING_FEATURE_COUNT = ModificationmarksPackage.MODIFICATION_FEATURE_COUNT + 1;
+	int IS_MODIFY_OPERATION_TIMING_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_MODIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>IS Modify Operation Timing</em>' class.
@@ -1181,8 +1179,45 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_OPERATION_TIMING_OPERATION_COUNT = ModificationmarksPackage.MODIFICATION_OPERATION_COUNT + 0;
+	int IS_MODIFY_OPERATION_TIMING_OPERATION_COUNT = ModificationmarksPackage.ABSTRACT_MODIFICATION_OPERATION_COUNT + 0;
 
+
+	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToTimingDependenciesImpl <em>IS Change Propagation Due To Timing Dependencies</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToTimingDependenciesImpl
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModificationmarksPackageImpl#getISChangePropagationDueToTimingDependencies()
+	 * @generated
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES = 17;
+
+	/**
+	 * The feature id for the '<em><b>Interface Modifications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES__INTERFACE_MODIFICATIONS = ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IS Change Propagation Due To Timing Dependencies</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES_FEATURE_COUNT = ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>IS Change Propagation Due To Timing Dependencies</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES_OPERATION_COUNT = ModificationmarksPackage.CHANGE_PROPAGATION_STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.AbstractISModificationRepository <em>Abstract IS Modification Repository</em>}'.
@@ -1257,6 +1292,17 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getISSeedModifications_ComponentModifications();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ismodifyoperationtiming</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyoperationtiming()
+	 * @see #getISSeedModifications()
+	 * @generated
+	 */
+	EReference getISSeedModifications_Ismodifyoperationtiming();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToDataDependencies <em>IS Change Propagation Due To Data Dependencies</em>}'.
@@ -1499,15 +1545,15 @@ public interface ISModificationmarksPackage extends EPackage {
 	EClass getISModifySignature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#isTimingChanged <em>Timing Changed</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Timing Changed</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#isTimingChanged()
+	 * @return the meta object for the containment reference list '<em>Ismodifyoperationtiming</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getIsmodifyoperationtiming()
 	 * @see #getISModifySignature()
 	 * @generated
 	 */
-	EAttribute getISModifySignature_TimingChanged();
+	EReference getISModifySignature_Ismodifyoperationtiming();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming <em>IS Modify Operation Timing</em>}'.
@@ -1520,15 +1566,25 @@ public interface ISModificationmarksPackage extends EPackage {
 	EClass getISModifyOperationTiming();
 
 	/**
-	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming#getIsmodifysignature <em>Ismodifysignature</em>}'.
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies <em>IS Change Propagation Due To Timing Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ismodifysignature</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming#getIsmodifysignature()
-	 * @see #getISModifyOperationTiming()
+	 * @return the meta object for class '<em>IS Change Propagation Due To Timing Dependencies</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies
 	 * @generated
 	 */
-	EReference getISModifyOperationTiming_Ismodifysignature();
+	EClass getISChangePropagationDueToTimingDependencies();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies#getInterfaceModifications <em>Interface Modifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Interface Modifications</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies#getInterfaceModifications()
+	 * @see #getISChangePropagationDueToTimingDependencies()
+	 * @generated
+	 */
+	EReference getISChangePropagationDueToTimingDependencies_InterfaceModifications();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1614,6 +1670,14 @@ public interface ISModificationmarksPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS = eINSTANCE.getISSeedModifications_ComponentModifications();
+
+		/**
+		 * The meta object literal for the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING = eINSTANCE.getISSeedModifications_Ismodifyoperationtiming();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToDataDependenciesImpl <em>IS Change Propagation Due To Data Dependencies</em>}' class.
@@ -1826,12 +1890,12 @@ public interface ISModificationmarksPackage extends EPackage {
 		EClass IS_MODIFY_SIGNATURE = eINSTANCE.getISModifySignature();
 
 		/**
-		 * The meta object literal for the '<em><b>Timing Changed</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IS_MODIFY_SIGNATURE__TIMING_CHANGED = eINSTANCE.getISModifySignature_TimingChanged();
+		EReference IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING = eINSTANCE.getISModifySignature_Ismodifyoperationtiming();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyOperationTimingImpl <em>IS Modify Operation Timing</em>}' class.
@@ -1844,12 +1908,22 @@ public interface ISModificationmarksPackage extends EPackage {
 		EClass IS_MODIFY_OPERATION_TIMING = eINSTANCE.getISModifyOperationTiming();
 
 		/**
-		 * The meta object literal for the '<em><b>Ismodifysignature</b></em>' reference feature.
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToTimingDependenciesImpl <em>IS Change Propagation Due To Timing Dependencies</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToTimingDependenciesImpl
+		 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModificationmarksPackageImpl#getISChangePropagationDueToTimingDependencies()
+		 * @generated
+		 */
+		EClass IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES = eINSTANCE.getISChangePropagationDueToTimingDependencies();
+
+		/**
+		 * The meta object literal for the '<em><b>Interface Modifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IS_MODIFY_OPERATION_TIMING__ISMODIFYSIGNATURE = eINSTANCE.getISModifyOperationTiming_Ismodifysignature();
+		EReference IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES__INTERFACE_MODIFICATIONS = eINSTANCE.getISChangePropagationDueToTimingDependencies_InterfaceModifications();
 
 	}
 

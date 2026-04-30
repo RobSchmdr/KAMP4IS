@@ -3,33 +3,39 @@
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks.provider;
 
 
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.ChangePropagationStepItemProvider;
+
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
 
 /**
- * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature} object.
+ * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ISModifySignatureItemProvider
-	extends ISModifyEntityItemProvider {
+public class ISChangePropagationDueToTimingDependenciesItemProvider extends ChangePropagationStepItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ISModifySignatureItemProvider(AdapterFactory adapterFactory) {
+	public ISChangePropagationDueToTimingDependenciesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,7 +66,7 @@ public class ISModifySignatureItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING);
+			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES__INTERFACE_MODIFICATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -79,31 +85,27 @@ public class ISModifySignatureItemProvider
 	}
 
 	/**
-	 * This returns ISModifySignature.gif.
+	 * This returns ISChangePropagationDueToTimingDependencies.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ISModifySignature"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ISChangePropagationDueToTimingDependencies"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		// --Start manually modified code
-		String label = ISLabelCustomizing.customize((ISModifySignature)object);
-		// --End manually modified code
-		return label == null || label.length() == 0 ?
-			getString("_UI_ISModifySignature_type") :
-			getString("_UI_ISModifySignature_type") + " " + label;
+		return getString("_UI_ISChangePropagationDueToTimingDependencies_type");
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -116,8 +118,8 @@ public class ISModifySignatureItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ISModifySignature.class)) {
-			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING:
+		switch (notification.getFeatureID(ISChangePropagationDueToTimingDependencies.class)) {
+			case ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES__INTERFACE_MODIFICATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -137,8 +139,19 @@ public class ISModifySignatureItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ISModificationmarksPackage.Literals.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING,
-				 ISModificationmarksFactory.eINSTANCE.createISModifyOperationTiming()));
+				(ISModificationmarksPackage.Literals.IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES__INTERFACE_MODIFICATIONS,
+				 ISModificationmarksFactory.eINSTANCE.createISModifyInterface()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ISModificationmarksEditPlugin.INSTANCE;
 	}
 
 }

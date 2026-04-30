@@ -3,12 +3,17 @@ package edu.kit.ipd.sdq.kamp4is.core;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.xtext.EcoreUtil2;
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector;
 import org.palladiosimulator.pcm.repository.DataType;
 import org.palladiosimulator.pcm.repository.Interface;
@@ -27,12 +32,14 @@ import edu.kit.ipd.sdq.kamp.propagation.AbstractChangePropagationAnalysis;
 import edu.kit.ipd.sdq.kamp.util.MapUtil;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToDataDependencies;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToInterfaceDependencies;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISIntercomponentPropagation;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISIntracomponentPropagation;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConnector;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyInterface;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyProvidedRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyRequiredRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
@@ -46,9 +53,10 @@ import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
  * @param T The type of the ISChangePropagationDueToDataDependencies object.
  */
 public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectureVersion, 
-	T extends ISChangePropagationDueToDataDependencies> implements AbstractChangePropagationAnalysis<S> {
+	T extends ISChangePropagationDueToDataDependencies, U extends ISChangePropagationDueToTimingDependencies> implements AbstractChangePropagationAnalysis<S> {
 	
 	private T changePropagationDueToDataDependencies;
+	private U changePropagationDueToTimingDependencies;
 	private Map<ProvidedRole, Set<Signature>> visitedProvidedRoles = 
 			new HashMap<ProvidedRole, Set<Signature>>();
 	
@@ -69,13 +77,44 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 		ISArchitectureModelLookup.lookUpInterfacesAndSignaturesWithParametersOfTypes(version, 
 				initialMarkedDataTypes, interfacesToBeMarked, signaturesToBeMarked);
 		
-		this.createAndAddInterfaceModifications(interfacesToBeMarked, signaturesToBeMarked,
+		this.createAndAddInterfaceModificationsFromDataType(interfacesToBeMarked, signaturesToBeMarked,
 				this.getChangePropagationDueToDataDependencies().getInterfaceModifications());
 	}
 	
-	private void createAndAddInterfaceModifications(Map<Interface, Set<Signature>> 
-			interfacesToBeMarked, Map<Signature, Set<DataType>> signaturesToBeMarked, 
+	protected void calculateAndMarkOperationTimingToInterfacePropagation(S version) {
+		Collection<ISModifyOperationTiming> seedOperationTimingModifications = new HashSet<ISModifyOperationTiming>();
+		Iterator<?> seedModifications = version.getModificationMarkRepository().getSeedModifications().eAllContents();
+		while (seedModifications.hasNext()) {
+			Object o = seedModifications.next();
+				if (o instanceof ISModifyOperationTiming) {
+					ISModifyOperationTiming seedOperationTimingModification = (ISModifyOperationTiming) o;
+					ISModifyOperationTiming operationTimingModification = ISModificationmarksFactory.eINSTANCE.createISModifyOperationTiming();
+					operationTimingModification.setToolderived(true);
+					operationTimingModification.setAffectedElement(seedOperationTimingModification.getAffectedElement());
+					seedOperationTimingModifications.add(operationTimingModification);
+			}
+		}
+		
+		Map<Interface, Set<Signature>> affectedInterfaces = new HashMap<Interface, Set<Signature>>();
+		Map<Signature, ISModifyOperationTiming> affectedSignatures = new HashMap<Signature, ISModifyOperationTiming>();
+		
+		
+		ISArchitectureModelLookup.lookupInterfacesAndSignaturesWithOperationTimingChanged(version,
+				seedOperationTimingModifications,
+				affectedInterfaces,
+				affectedSignatures);		
+		
+		this.createAndAddInterfaceModificationsFromOperationTiming(affectedInterfaces,
+				affectedSignatures,
+				this.getChangePropagationDueToTimingDependencies().getInterfaceModifications());	
+	}
+	
+	
+	private void createAndAddInterfaceModificationsFromDataType(
+			Map<Interface, Set<Signature>> interfacesToBeMarked,
+			Map<Signature, Set<DataType>> signaturesToBeMarked, 
 			Collection<ISModifyInterface> targetCollection) {
+		
 		for (Map.Entry<Interface, Set<Signature>> interfaceToBeMarkedEntry : interfacesToBeMarked.entrySet()) {
 			ISModifyInterface modifyInterface = ISModificationmarksFactory.eINSTANCE.createISModifyInterface();
 			modifyInterface.setToolderived(true);
@@ -96,6 +135,34 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 			targetCollection.add(modifyInterface);
 		}
 	}
+	
+	private void createAndAddInterfaceModificationsFromOperationTiming(
+			Map<Interface, Set<Signature>> interfacesToBeMarked,
+			Map<Signature,ISModifyOperationTiming> signaturesToBeMarked, 
+			Collection<ISModifyInterface> targetCollectionInterface) {
+		
+		for (Map.Entry<Interface, Set<Signature>> interfaceToBeMarkedEntry : interfacesToBeMarked.entrySet()) {
+			ISModifyInterface modifyInterface = ISModificationmarksFactory.eINSTANCE.createISModifyInterface();
+			modifyInterface.setToolderived(true);
+			modifyInterface.setAffectedElement(interfaceToBeMarkedEntry.getKey());
+			modifyInterface.getCausingElements().addAll(interfaceToBeMarkedEntry.getValue());
+			
+			for (Signature signature: interfaceToBeMarkedEntry.getValue()) {
+				// Mark only those signatures which are not initially marked
+				if (signaturesToBeMarked.containsKey(signature)) {
+					ISModifySignature modifySignature = ISModificationmarksFactory.eINSTANCE.createISModifySignature();
+					modifySignature.setToolderived(true);
+					modifySignature.setAffectedElement(signature);
+					modifySignature.getCausingElements().add(signaturesToBeMarked.get(signature));
+					modifySignature.getIsmodifyoperationtiming().add(signaturesToBeMarked.get(signature));
+					modifyInterface.getSignatureModifications().add(modifySignature);
+				}
+			}
+			
+			targetCollectionInterface.add(modifyInterface);
+		}
+	}
+	
 	
 	/**
 	 * Calculates Interface -> Component/ProvidedRole/RequiredRole/Signature, 
@@ -251,6 +318,12 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 		Map<RepositoryComponent, ISModifyComponent> componentsMarkedInThisStep = 
 				new HashMap<RepositoryComponent, ISModifyComponent>();
 		
+		List<ISModifyOperationTiming> opTimingModifications =
+			    EcoreUtil2.eAllOfType(
+			        version.getModificationMarkRepository(),
+			        ISModifyOperationTiming.class
+			    );
+		
 		for (Entry<RequiredRole, List<RoleToRoleDependency>> dependenciesToBeMarkedEntry : 
 				dependenciesToBeMarked.entrySet()) {	
 			RequiredRole requiredRole = dependenciesToBeMarkedEntry.getKey();
@@ -262,7 +335,7 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 				modifyComponent.getRequiredRoleModifications().add(modifyRequiredRole);	
 				this.calculateRoleToRoleDependencies(dependenciesToBeMarkedEntry.getValue(), 
 						modifyComponent, providedRolesToBeAnalysedInNextStep, ISArchitectureModelLookup.
-						lookUpMarkedRequiredSignaturesForRequiredRoleModification(modifyRequiredRole));
+						lookUpMarkedRequiredSignaturesForRequiredRoleModification(modifyRequiredRole), opTimingModifications);
 			}
 		}
 		
@@ -306,6 +379,12 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 		Map<RepositoryComponent, ISModifyComponent> componentsMarkedInThisStep = 
 				new HashMap<RepositoryComponent, ISModifyComponent>();
 		
+		List<ISModifyOperationTiming> opTimingModifications =
+			    EcoreUtil2.eAllOfType(
+			        version.getModificationMarkRepository(),
+			        ISModifyOperationTiming.class
+			    );
+		
 		for (Entry<RequiredRole, List<RoleToRoleDependency>> dependenciesToBeMarkedEntry : 
 				dependenciesToBeMarked.entrySet()) {	
 			RequiredRole requiredRole = dependenciesToBeMarkedEntry.getKey();
@@ -317,7 +396,8 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 				modifyComponent.getRequiredRoleModifications().add(modifyRequiredRole);
 				this.calculateRoleToRoleDependencies(dependenciesToBeMarkedEntry.getValue(), 
 						modifyComponent, providedRolesToBeAnalysedInNextStep, ISArchitectureModelLookup.
-						lookUpMarkedRequiredSignaturesForRequiredRoleModification(modifyRequiredRole));
+						lookUpMarkedRequiredSignaturesForRequiredRoleModification(modifyRequiredRole),
+						opTimingModifications);
 			}
 		}
 		
@@ -423,8 +503,10 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 	 * the ProvidedRole will be analyzed in the next step (inter-component propagation).
 	 */
 	protected void calculateRoleToRoleDependencies(Iterable<RoleToRoleDependency> dependencies, 
-			ISModifyComponent modifyComponent, Map<ProvidedRole, Set<Signature>> 
-			providedRolesToBeAnalysedInNextStep, Collection<Signature> markedSignatures) {
+			ISModifyComponent modifyComponent,
+			Map<ProvidedRole, Set<Signature>> providedRolesToBeAnalysedInNextStep,
+			Collection<Signature> markedSignatures,
+			List<ISModifyOperationTiming> opTimingModifications) {
 		for (RoleToRoleDependency r2rDependency: dependencies) {
 			if (r2rDependency.getProvidedRole() instanceof OperationProvidedRole) {
 				ISModifyProvidedRole modifyProvidedRole = ISArchitectureModelLookup.
@@ -439,7 +521,7 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 				modifyProvidedRole.getCausingElements().add(r2rDependency.getRequiredRole());
 				
 				boolean newSignatureMarked = this.calculateOperationToOperationDependencies(r2rDependency, 
-						markedSignatures, modifyProvidedRole);
+						markedSignatures, modifyProvidedRole, opTimingModifications);
 				if (newRoleMarked && (newSignatureMarked || !this.getVisitedProvidedRoles().containsKey(
 						r2rDependency.getProvidedRole()))) {
 					modifyComponent.getProvidedRoleModifications().add(modifyProvidedRole);
@@ -470,7 +552,7 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 				modifyProvidedRole.getCausingElements().add(r2rDependency.getRequiredRole());
 				
 				boolean newSignatureMarked = this.calculateOperationToOperationDependencies(r2rDependency, 
-						markedSignatures, modifyProvidedRole);
+						markedSignatures, modifyProvidedRole, opTimingModifications);
 				if (newRoleMarked && (newSignatureMarked || !this.getVisitedProvidedRoles().containsKey(
 						r2rDependency.getProvidedRole()))) {
 					modifyComponent.getProvidedRoleModifications().add(modifyProvidedRole);
@@ -502,14 +584,28 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 	 * @return Have new signature modifications been added.
 	 */
 	protected boolean calculateOperationToOperationDependencies(RoleToRoleDependency r2rDependency,
-			Collection<Signature> markedSignatures, ISModifyProvidedRole modifyProvidedRole) {
+			Collection<Signature> markedSignatures, ISModifyProvidedRole modifyProvidedRole,
+			List<ISModifyOperationTiming> opTimingModifications) {
 		boolean newSignatureMarked = false;
+		
+
+
+		Map<Signature, ISModifyOperationTiming> timingBySignature =
+		    opTimingModifications.stream()
+		    	.filter(ISModifyOperationTiming::isToolderived)
+		        .filter(t -> t.getAffectedElement() instanceof Signature)
+		        .collect(Collectors.toMap(
+		            t -> (Signature) t.getAffectedElement(),
+		            t -> t
+		        ));
+
+
 		
 		for (OperationToOperationDependency o2oDependency: r2rDependency.getOperationToOperationDependency()) {
 			List<Signature> markedRequiredSignatures = new LinkedList<Signature>(
 					o2oDependency.getRequiredSignatures());
 			markedRequiredSignatures.retainAll(markedSignatures);
-			
+
 			if (!markedRequiredSignatures.isEmpty()) {
 				for (Signature providedSignatureToBeMarked: o2oDependency.getProvidedSignatures()) {
 					ISModifySignature modifyProvidedSignature = ISArchitectureModelLookup.
@@ -533,6 +629,13 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 					for (Signature requiredSignature: markedRequiredSignatures) {
 						if (!modifyProvidedSignature.getCausingElements().contains(requiredSignature)) {
 							modifyProvidedSignature.getCausingElements().add(requiredSignature);
+							if(timingBySignature.keySet().contains(requiredSignature)) {
+								ISModifyOperationTiming operationTimingModification = ISModificationmarksFactory.eINSTANCE.createISModifyOperationTiming();
+								operationTimingModification.setToolderived(true);
+								operationTimingModification.setAffectedElement(modifyProvidedSignature.getAffectedElement());
+								operationTimingModification.getCausingElements().add(timingBySignature.get(requiredSignature));
+								modifyProvidedSignature.getIsmodifyoperationtiming().add(operationTimingModification);
+							}
 						}
 					}
 				}
@@ -594,6 +697,14 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 		modifyAssemblyConnector.getCausingElements().add(assemblyConnector.
 				getProvidedRole_AssemblyConnector());
 		intercomponentPropagation.getConnectorModifications().add(modifyAssemblyConnector);
+	}
+	
+	protected U getChangePropagationDueToTimingDependencies(){
+		return changePropagationDueToTimingDependencies;
+	}
+	
+	protected void setChangePropagationDueToTimingDependencies(U changePropagation){
+		changePropagationDueToTimingDependencies = changePropagation;
 	}
 	
 	protected T getChangePropagationDueToDataDependencies() {

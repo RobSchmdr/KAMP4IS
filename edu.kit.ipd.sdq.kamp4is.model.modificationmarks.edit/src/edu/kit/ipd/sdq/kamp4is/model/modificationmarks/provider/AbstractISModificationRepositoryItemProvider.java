@@ -111,6 +111,11 @@ public class AbstractISModificationRepositoryItemProvider extends AbstractModifi
 			(createChildParameter
 				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__CHANGE_PROPAGATION_STEPS,
 				 ISModificationmarksFactory.eINSTANCE.createISIntracomponentPropagation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__CHANGE_PROPAGATION_STEPS,
+				 ISModificationmarksFactory.eINSTANCE.createISChangePropagationDueToTimingDependencies()));
 	}
 
 	/**

@@ -25,6 +25,8 @@
         upperBound="-1" eType="#//ISModifyInterface" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentModifications"
         upperBound="-1" eType="#//ISModifyComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyoperationtiming"
+        upperBound="-1" eType="#//ISModifyOperationTiming" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ISChangePropagationDueToDataDependencies"
       eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
@@ -105,13 +107,21 @@
     </eGenericSuperTypes>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ISModifySignature">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timingChanged" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyoperationtiming"
+        upperBound="-1" eType="#//ISModifyOperationTiming" containment="true"/>
     <eGenericSuperTypes eClassifier="#//ISModifyEntity">
       <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/Signature"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ISModifyOperationTiming" eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//Modification">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifysignature" eType="#//ISModifySignature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ISModifyOperationTiming">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification">
+      <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/Signature"/>
+      <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ISChangePropagationDueToTimingDependencies"
+      eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceModifications"
+        upperBound="-1" eType="#//ISModifyInterface" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
