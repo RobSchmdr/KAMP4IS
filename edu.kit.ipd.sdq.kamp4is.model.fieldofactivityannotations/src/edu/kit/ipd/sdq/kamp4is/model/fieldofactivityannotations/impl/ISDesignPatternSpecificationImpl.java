@@ -73,6 +73,7 @@ public class ISDesignPatternSpecificationImpl extends EObjectImpl implements ISD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_DESIGN_PATTERN_SPECIFICATION__PARENT) return null;
 		return (ISFieldOfActivityAnnotationsRepository)eInternalContainer();
@@ -93,6 +94,7 @@ public class ISDesignPatternSpecificationImpl extends EObjectImpl implements ISD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISFieldOfActivityAnnotationsRepository newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_DESIGN_PATTERN_SPECIFICATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -114,6 +116,7 @@ public class ISDesignPatternSpecificationImpl extends EObjectImpl implements ISD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISDesignPatternRole> getDesignPatternRoles() {
 		if (designPatternRoles == null) {
 			designPatternRoles = new EObjectContainmentEList<ISDesignPatternRole>(ISDesignPatternRole.class, this, ISFieldOfActivityAnnotationsPackage.IS_DESIGN_PATTERN_SPECIFICATION__DESIGN_PATTERN_ROLES);

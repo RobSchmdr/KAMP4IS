@@ -180,6 +180,7 @@ public class ISFieldOfActivityAnnotationsModelWizard extends Wizard implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
@@ -400,6 +401,7 @@ public class ISFieldOfActivityAnnotationsModelWizard extends Wizard implements I
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
+		@Override
 		public void createControl(Composite parent) {
 			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
@@ -474,6 +476,7 @@ public class ISFieldOfActivityAnnotationsModelWizard extends Wizard implements I
 		 */
 		protected ModifyListener validator =
 			new ModifyListener() {
+				@Override
 				public void modifyText(ModifyEvent e) {
 					setPageComplete(validatePage());
 				}

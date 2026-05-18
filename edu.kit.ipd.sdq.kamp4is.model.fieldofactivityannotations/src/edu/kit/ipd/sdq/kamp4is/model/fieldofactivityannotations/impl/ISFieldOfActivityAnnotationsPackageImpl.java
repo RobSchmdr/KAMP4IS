@@ -4,11 +4,15 @@ package edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.units.UnitsPackage;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISAcceptanceTestCase;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISAcceptanceTestCaseAggregation;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfiguration;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfigurator;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildSpecification;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeployer;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDesignPatternRole;
@@ -54,6 +58,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.palladiosimulator.pcm.PcmPackage;
@@ -354,6 +359,13 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass isConfigurationFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum isTechnologicalCorrespondenceTypesEEnum = null;
 
 	/**
@@ -384,7 +396,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ISFieldOfActivityAnnotationsPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -398,12 +410,18 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		if (isInited) return (ISFieldOfActivityAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(ISFieldOfActivityAnnotationsPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ISFieldOfActivityAnnotationsPackageImpl theISFieldOfActivityAnnotationsPackage = (ISFieldOfActivityAnnotationsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ISFieldOfActivityAnnotationsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ISFieldOfActivityAnnotationsPackageImpl());
+		Object registeredISFieldOfActivityAnnotationsPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ISFieldOfActivityAnnotationsPackageImpl theISFieldOfActivityAnnotationsPackage = registeredISFieldOfActivityAnnotationsPackage instanceof ISFieldOfActivityAnnotationsPackageImpl ? (ISFieldOfActivityAnnotationsPackageImpl)registeredISFieldOfActivityAnnotationsPackage : new ISFieldOfActivityAnnotationsPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		PcmPackage.eINSTANCE.eClass();
+		StoexPackage.eINSTANCE.eClass();
+		IdentifierPackage.eINSTANCE.eClass();
+		UnitsPackage.eINSTANCE.eClass();
+		ProbfunctionPackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theISFieldOfActivityAnnotationsPackage.createPackageContents();
@@ -414,7 +432,6 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		// Mark meta-data to indicate it can't be changed
 		theISFieldOfActivityAnnotationsPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ISFieldOfActivityAnnotationsPackage.eNS_URI, theISFieldOfActivityAnnotationsPackage);
 		return theISFieldOfActivityAnnotationsPackage;
@@ -425,6 +442,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISFieldOfActivityAnnotationsRepository() {
 		return isFieldOfActivityAnnotationsRepositoryEClass;
 	}
@@ -434,6 +452,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISFieldOfActivityAnnotationsRepository_DevelopmentArtefactSpecification() {
 		return (EReference)isFieldOfActivityAnnotationsRepositoryEClass.getEStructuralFeatures().get(0);
 	}
@@ -443,6 +462,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISFieldOfActivityAnnotationsRepository_BuildSpecification() {
 		return (EReference)isFieldOfActivityAnnotationsRepositoryEClass.getEStructuralFeatures().get(1);
 	}
@@ -452,6 +472,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISFieldOfActivityAnnotationsRepository_TestSpecification() {
 		return (EReference)isFieldOfActivityAnnotationsRepositoryEClass.getEStructuralFeatures().get(2);
 	}
@@ -461,6 +482,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISFieldOfActivityAnnotationsRepository_ReleaseSpecification() {
 		return (EReference)isFieldOfActivityAnnotationsRepositoryEClass.getEStructuralFeatures().get(3);
 	}
@@ -470,6 +492,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISFieldOfActivityAnnotationsRepository_DeploymentSpecification() {
 		return (EReference)isFieldOfActivityAnnotationsRepositoryEClass.getEStructuralFeatures().get(4);
 	}
@@ -479,6 +502,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISFieldOfActivityAnnotationsRepository_StaffSpecification() {
 		return (EReference)isFieldOfActivityAnnotationsRepositoryEClass.getEStructuralFeatures().get(5);
 	}
@@ -488,6 +512,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISFieldOfActivityAnnotationsRepository_TechnologySpecification() {
 		return (EReference)isFieldOfActivityAnnotationsRepositoryEClass.getEStructuralFeatures().get(6);
 	}
@@ -497,6 +522,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISFieldOfActivityAnnotationsRepository_DesignPatternSpecification() {
 		return (EReference)isFieldOfActivityAnnotationsRepositoryEClass.getEStructuralFeatures().get(7);
 	}
@@ -506,6 +532,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISDevelopmentArtefactSpecification() {
 		return isDevelopmentArtefactSpecificationEClass;
 	}
@@ -515,6 +542,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDevelopmentArtefactSpecification_Parent() {
 		return (EReference)isDevelopmentArtefactSpecificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -524,6 +552,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDevelopmentArtefactSpecification_SourceFiles() {
 		return (EReference)isDevelopmentArtefactSpecificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -533,6 +562,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDevelopmentArtefactSpecification_SourceFileAggregations() {
 		return (EReference)isDevelopmentArtefactSpecificationEClass.getEStructuralFeatures().get(2);
 	}
@@ -542,6 +572,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDevelopmentArtefactSpecification_MetadataFiles() {
 		return (EReference)isDevelopmentArtefactSpecificationEClass.getEStructuralFeatures().get(3);
 	}
@@ -551,6 +582,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDevelopmentArtefactSpecification_MetadataFileAggregations() {
 		return (EReference)isDevelopmentArtefactSpecificationEClass.getEStructuralFeatures().get(4);
 	}
@@ -560,6 +592,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISSourceFile() {
 		return isSourceFileEClass;
 	}
@@ -569,6 +602,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISSourceFile_Parent() {
 		return (EReference)isSourceFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -578,6 +612,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISSourceFile_Component() {
 		return (EReference)isSourceFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -587,6 +622,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISSourceFileAggregation() {
 		return isSourceFileAggregationEClass;
 	}
@@ -596,6 +632,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISSourceFileAggregation_Parent() {
 		return (EReference)isSourceFileAggregationEClass.getEStructuralFeatures().get(0);
 	}
@@ -605,6 +642,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISSourceFileAggregation_Component() {
 		return (EReference)isSourceFileAggregationEClass.getEStructuralFeatures().get(1);
 	}
@@ -614,6 +652,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISMetadataFile() {
 		return isMetadataFileEClass;
 	}
@@ -623,6 +662,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISMetadataFile_Parent() {
 		return (EReference)isMetadataFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -632,6 +672,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISMetadataFile_Component() {
 		return (EReference)isMetadataFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -641,6 +682,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISMetadataFileAggregation() {
 		return isMetadataFileAggregationEClass;
 	}
@@ -650,6 +692,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISMetadataFileAggregation_Parent() {
 		return (EReference)isMetadataFileAggregationEClass.getEStructuralFeatures().get(0);
 	}
@@ -659,6 +702,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISMetadataFileAggregation_Component() {
 		return (EReference)isMetadataFileAggregationEClass.getEStructuralFeatures().get(1);
 	}
@@ -668,6 +712,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISBuildSpecification() {
 		return isBuildSpecificationEClass;
 	}
@@ -677,6 +722,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISBuildSpecification_Parent() {
 		return (EReference)isBuildSpecificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -686,6 +732,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISBuildSpecification_BuildConfigurations() {
 		return (EReference)isBuildSpecificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -695,6 +742,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISBuildSpecification_ThirdPartyComponentOrLibraries() {
 		return (EReference)isBuildSpecificationEClass.getEStructuralFeatures().get(2);
 	}
@@ -704,6 +752,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISBuildConfiguration() {
 		return isBuildConfigurationEClass;
 	}
@@ -713,6 +762,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISBuildConfiguration_Parent() {
 		return (EReference)isBuildConfigurationEClass.getEStructuralFeatures().get(0);
 	}
@@ -722,6 +772,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISBuildConfiguration_Component() {
 		return (EReference)isBuildConfigurationEClass.getEStructuralFeatures().get(1);
 	}
@@ -731,6 +782,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISThirdPartyComponentOrLibrary() {
 		return isThirdPartyComponentOrLibraryEClass;
 	}
@@ -740,6 +792,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISThirdPartyComponentOrLibrary_Parent() {
 		return (EReference)isThirdPartyComponentOrLibraryEClass.getEStructuralFeatures().get(0);
 	}
@@ -749,6 +802,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISThirdPartyComponentOrLibrary_Component() {
 		return (EReference)isThirdPartyComponentOrLibraryEClass.getEStructuralFeatures().get(1);
 	}
@@ -758,6 +812,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISTestSpecification() {
 		return isTestSpecificationEClass;
 	}
@@ -767,6 +822,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTestSpecification_Parent() {
 		return (EReference)isTestSpecificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -776,6 +832,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTestSpecification_UnitTestCases() {
 		return (EReference)isTestSpecificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -785,6 +842,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTestSpecification_AcceptanceTestCases() {
 		return (EReference)isTestSpecificationEClass.getEStructuralFeatures().get(2);
 	}
@@ -794,6 +852,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTestSpecification_IntegrationTestCases() {
 		return (EReference)isTestSpecificationEClass.getEStructuralFeatures().get(3);
 	}
@@ -803,6 +862,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTestSpecification_UnitTestCaseAggregations() {
 		return (EReference)isTestSpecificationEClass.getEStructuralFeatures().get(4);
 	}
@@ -812,6 +872,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTestSpecification_AcceptanceTestCaseAggregations() {
 		return (EReference)isTestSpecificationEClass.getEStructuralFeatures().get(5);
 	}
@@ -821,6 +882,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTestSpecification_IntegrationTestCaseAggregations() {
 		return (EReference)isTestSpecificationEClass.getEStructuralFeatures().get(6);
 	}
@@ -830,6 +892,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISReleaseSpecification() {
 		return isReleaseSpecificationEClass;
 	}
@@ -839,6 +902,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISReleaseSpecification_ReleaseConfigurations() {
 		return (EReference)isReleaseSpecificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -848,6 +912,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISReleaseSpecification_Parent() {
 		return (EReference)isReleaseSpecificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -857,6 +922,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISReleaseConfiguration() {
 		return isReleaseConfigurationEClass;
 	}
@@ -866,6 +932,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISReleaseConfiguration_Parent() {
 		return (EReference)isReleaseConfigurationEClass.getEStructuralFeatures().get(0);
 	}
@@ -875,6 +942,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISReleaseConfiguration_Components() {
 		return (EReference)isReleaseConfigurationEClass.getEStructuralFeatures().get(1);
 	}
@@ -884,6 +952,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISReleaseConfiguration_Pathname() {
 		return (EAttribute)isReleaseConfigurationEClass.getEStructuralFeatures().get(2);
 	}
@@ -893,6 +962,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISReleaseConfiguration_Description() {
 		return (EAttribute)isReleaseConfigurationEClass.getEStructuralFeatures().get(3);
 	}
@@ -902,6 +972,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISDeploymentSpecification() {
 		return isDeploymentSpecificationEClass;
 	}
@@ -911,6 +982,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDeploymentSpecification_RuntimeInstances() {
 		return (EReference)isDeploymentSpecificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -920,6 +992,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDeploymentSpecification_RuntimeInstanceAggregations() {
 		return (EReference)isDeploymentSpecificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -929,6 +1002,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDeploymentSpecification_Parent() {
 		return (EReference)isDeploymentSpecificationEClass.getEStructuralFeatures().get(2);
 	}
@@ -938,6 +1012,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISRuntimeInstance() {
 		return isRuntimeInstanceEClass;
 	}
@@ -947,6 +1022,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRuntimeInstance_Parent() {
 		return (EReference)isRuntimeInstanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -956,6 +1032,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISRuntimeInstance_Name() {
 		return (EAttribute)isRuntimeInstanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -965,6 +1042,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISRuntimeInstance_Description() {
 		return (EAttribute)isRuntimeInstanceEClass.getEStructuralFeatures().get(2);
 	}
@@ -974,6 +1052,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRuntimeInstance_Components() {
 		return (EReference)isRuntimeInstanceEClass.getEStructuralFeatures().get(3);
 	}
@@ -983,6 +1062,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISRuntimeInstanceAggregation() {
 		return isRuntimeInstanceAggregationEClass;
 	}
@@ -992,6 +1072,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRuntimeInstanceAggregation_Parent() {
 		return (EReference)isRuntimeInstanceAggregationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1001,6 +1082,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISRuntimeInstanceAggregation_NumberOfInstances() {
 		return (EAttribute)isRuntimeInstanceAggregationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1010,6 +1092,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISRuntimeInstanceAggregation_Description() {
 		return (EAttribute)isRuntimeInstanceAggregationEClass.getEStructuralFeatures().get(2);
 	}
@@ -1019,6 +1102,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRuntimeInstanceAggregation_Components() {
 		return (EReference)isRuntimeInstanceAggregationEClass.getEStructuralFeatures().get(3);
 	}
@@ -1028,6 +1112,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISUnitTestCase() {
 		return isUnitTestCaseEClass;
 	}
@@ -1037,6 +1122,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISUnitTestCase_Parent() {
 		return (EReference)isUnitTestCaseEClass.getEStructuralFeatures().get(0);
 	}
@@ -1046,6 +1132,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISUnitTestCase_Providedrole() {
 		return (EReference)isUnitTestCaseEClass.getEStructuralFeatures().get(1);
 	}
@@ -1055,6 +1142,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISAcceptanceTestCase() {
 		return isAcceptanceTestCaseEClass;
 	}
@@ -1064,6 +1152,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISAcceptanceTestCase_Parent() {
 		return (EReference)isAcceptanceTestCaseEClass.getEStructuralFeatures().get(0);
 	}
@@ -1073,6 +1162,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISAcceptanceTestCase_Providedrole() {
 		return (EReference)isAcceptanceTestCaseEClass.getEStructuralFeatures().get(1);
 	}
@@ -1082,6 +1172,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISIntegrationTestCase() {
 		return isIntegrationTestCaseEClass;
 	}
@@ -1091,6 +1182,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISIntegrationTestCase_Parent() {
 		return (EReference)isIntegrationTestCaseEClass.getEStructuralFeatures().get(0);
 	}
@@ -1100,6 +1192,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISIntegrationTestCase_Providedrole() {
 		return (EReference)isIntegrationTestCaseEClass.getEStructuralFeatures().get(1);
 	}
@@ -1109,6 +1202,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISIntegrationTestCase_AssemblyConnector() {
 		return (EReference)isIntegrationTestCaseEClass.getEStructuralFeatures().get(2);
 	}
@@ -1118,6 +1212,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISUnitTestCaseAggregation() {
 		return isUnitTestCaseAggregationEClass;
 	}
@@ -1127,6 +1222,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISUnitTestCaseAggregation_Parent() {
 		return (EReference)isUnitTestCaseAggregationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1136,6 +1232,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISUnitTestCaseAggregation_Providedrole() {
 		return (EReference)isUnitTestCaseAggregationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1145,6 +1242,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISAcceptanceTestCaseAggregation() {
 		return isAcceptanceTestCaseAggregationEClass;
 	}
@@ -1154,6 +1252,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISAcceptanceTestCaseAggregation_Parent() {
 		return (EReference)isAcceptanceTestCaseAggregationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1163,6 +1262,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISAcceptanceTestCaseAggregation_Providedrole() {
 		return (EReference)isAcceptanceTestCaseAggregationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1172,6 +1272,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISIntegrationTestCaseAggregation() {
 		return isIntegrationTestCaseAggregationEClass;
 	}
@@ -1181,6 +1282,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISIntegrationTestCaseAggregation_Parent() {
 		return (EReference)isIntegrationTestCaseAggregationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1190,6 +1292,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISIntegrationTestCaseAggregation_Providedrole() {
 		return (EReference)isIntegrationTestCaseAggregationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1199,6 +1302,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISIntegrationTestCaseAggregation_AssemblyConnector() {
 		return (EReference)isIntegrationTestCaseAggregationEClass.getEStructuralFeatures().get(2);
 	}
@@ -1208,6 +1312,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISStaffSpecification() {
 		return isStaffSpecificationEClass;
 	}
@@ -1217,6 +1322,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISStaffSpecification_Parent() {
 		return (EReference)isStaffSpecificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1226,6 +1332,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISStaffSpecification_PersonList() {
 		return (EReference)isStaffSpecificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1235,6 +1342,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISStaffSpecification_RoleList() {
 		return (EReference)isStaffSpecificationEClass.getEStructuralFeatures().get(2);
 	}
@@ -1244,6 +1352,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISPersonList() {
 		return isPersonListEClass;
 	}
@@ -1253,6 +1362,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISPersonList_Parent() {
 		return (EReference)isPersonListEClass.getEStructuralFeatures().get(0);
 	}
@@ -1262,6 +1372,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISPersonList_Persons() {
 		return (EReference)isPersonListEClass.getEStructuralFeatures().get(1);
 	}
@@ -1271,6 +1382,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISPerson() {
 		return isPersonEClass;
 	}
@@ -1280,6 +1392,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISPerson_Parent() {
 		return (EReference)isPersonEClass.getEStructuralFeatures().get(0);
 	}
@@ -1289,6 +1402,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISPerson_Roles() {
 		return (EReference)isPersonEClass.getEStructuralFeatures().get(1);
 	}
@@ -1298,6 +1412,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISPerson_Name() {
 		return (EAttribute)isPersonEClass.getEStructuralFeatures().get(2);
 	}
@@ -1307,6 +1422,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISRole() {
 		return isRoleEClass;
 	}
@@ -1316,6 +1432,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRole_Parent() {
 		return (EReference)isRoleEClass.getEStructuralFeatures().get(0);
 	}
@@ -1325,6 +1442,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRole_Person() {
 		return (EReference)isRoleEClass.getEStructuralFeatures().get(1);
 	}
@@ -1334,6 +1452,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISRole_Description() {
 		return (EAttribute)isRoleEClass.getEStructuralFeatures().get(2);
 	}
@@ -1343,6 +1462,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRole_Components() {
 		return (EReference)isRoleEClass.getEStructuralFeatures().get(3);
 	}
@@ -1352,6 +1472,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISRoleList() {
 		return isRoleListEClass;
 	}
@@ -1361,6 +1482,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRoleList_Parent() {
 		return (EReference)isRoleListEClass.getEStructuralFeatures().get(0);
 	}
@@ -1370,6 +1492,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISRoleList_Roles() {
 		return (EReference)isRoleListEClass.getEStructuralFeatures().get(1);
 	}
@@ -1379,6 +1502,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISDeveloper() {
 		return isDeveloperEClass;
 	}
@@ -1388,6 +1512,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISBuildConfigurator() {
 		return isBuildConfiguratorEClass;
 	}
@@ -1397,6 +1522,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISTestDeveloper() {
 		return isTestDeveloperEClass;
 	}
@@ -1406,6 +1532,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISTester() {
 		return isTesterEClass;
 	}
@@ -1415,6 +1542,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISReleaseConfigurator() {
 		return isReleaseConfiguratorEClass;
 	}
@@ -1424,6 +1552,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISDeployer() {
 		return isDeployerEClass;
 	}
@@ -1433,6 +1562,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISFile() {
 		return isFileEClass;
 	}
@@ -1442,6 +1572,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISFile_Filename() {
 		return (EAttribute)isFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -1451,6 +1582,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISFile_Technology() {
 		return (EAttribute)isFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -1460,6 +1592,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISFileAggregation() {
 		return isFileAggregationEClass;
 	}
@@ -1469,6 +1602,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISFileAggregation_NumberOfFiles() {
 		return (EAttribute)isFileAggregationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1478,6 +1612,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISFileAggregation_Technology() {
 		return (EAttribute)isFileAggregationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1487,6 +1622,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISTestCase() {
 		return isTestCaseEClass;
 	}
@@ -1496,6 +1632,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISTestCase_NameOfTest() {
 		return (EAttribute)isTestCaseEClass.getEStructuralFeatures().get(0);
 	}
@@ -1505,6 +1642,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISTestCaseAggregation() {
 		return isTestCaseAggregationEClass;
 	}
@@ -1514,6 +1652,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISTestCaseAggregation_NumberOfTestcases() {
 		return (EAttribute)isTestCaseAggregationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1523,6 +1662,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISTestCaseAggregation_NameOfTestSuite() {
 		return (EAttribute)isTestCaseAggregationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1532,6 +1672,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISDesignPatternSpecification() {
 		return isDesignPatternSpecificationEClass;
 	}
@@ -1541,6 +1682,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDesignPatternSpecification_Parent() {
 		return (EReference)isDesignPatternSpecificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1550,6 +1692,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDesignPatternSpecification_DesignPatternRoles() {
 		return (EReference)isDesignPatternSpecificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1559,6 +1702,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISDesignPatternRole() {
 		return isDesignPatternRoleEClass;
 	}
@@ -1568,6 +1712,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDesignPatternRole_ProvidedRole() {
 		return (EReference)isDesignPatternRoleEClass.getEStructuralFeatures().get(0);
 	}
@@ -1577,6 +1722,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISDesignPatternRole_Component() {
 		return (EReference)isDesignPatternRoleEClass.getEStructuralFeatures().get(1);
 	}
@@ -1586,6 +1732,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISTechnologySpecification() {
 		return isTechnologySpecificationEClass;
 	}
@@ -1595,6 +1742,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTechnologySpecification_Parent() {
 		return (EReference)isTechnologySpecificationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1604,6 +1752,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTechnologySpecification_TechnologicalCorrespondences() {
 		return (EReference)isTechnologySpecificationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1613,6 +1762,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISTechnologicalCorrespondence() {
 		return isTechnologicalCorrespondenceEClass;
 	}
@@ -1622,6 +1772,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getISTechnologicalCorrespondence_TechnologicalCorrespondenceType() {
 		return (EAttribute)isTechnologicalCorrespondenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -1631,6 +1782,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getISTechnologicalCorrespondence_Component() {
 		return (EReference)isTechnologicalCorrespondenceEClass.getEStructuralFeatures().get(1);
 	}
@@ -1640,6 +1792,27 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getISConfigurationFile() {
+		return isConfigurationFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getISConfigurationFile_DependentConfigurations() {
+		return (EReference)isConfigurationFileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getISTechnologicalCorrespondenceTypes() {
 		return isTechnologicalCorrespondenceTypesEEnum;
 	}
@@ -1649,6 +1822,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsFactory getISFieldOfActivityAnnotationsFactory() {
 		return (ISFieldOfActivityAnnotationsFactory)getEFactoryInstance();
 	}
@@ -1847,6 +2021,9 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		createEAttribute(isTechnologicalCorrespondenceEClass, IS_TECHNOLOGICAL_CORRESPONDENCE__TECHNOLOGICAL_CORRESPONDENCE_TYPE);
 		createEReference(isTechnologicalCorrespondenceEClass, IS_TECHNOLOGICAL_CORRESPONDENCE__COMPONENT);
 
+		isConfigurationFileEClass = createEClass(IS_CONFIGURATION_FILE);
+		createEReference(isConfigurationFileEClass, IS_CONFIGURATION_FILE__DEPENDENT_CONFIGURATIONS);
+
 		// Create enums
 		isTechnologicalCorrespondenceTypesEEnum = createEEnum(IS_TECHNOLOGICAL_CORRESPONDENCE_TYPES);
 	}
@@ -1904,6 +2081,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		isDeployerEClass.getESuperTypes().add(this.getISRole());
 		isDesignPatternRoleEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 		isTechnologicalCorrespondenceEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		isConfigurationFileEClass.getESuperTypes().add(this.getISSourceFile());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(isFieldOfActivityAnnotationsRepositoryEClass, ISFieldOfActivityAnnotationsRepository.class, "ISFieldOfActivityAnnotationsRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2080,6 +2258,9 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		initEClass(isTechnologicalCorrespondenceEClass, ISTechnologicalCorrespondence.class, "ISTechnologicalCorrespondence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getISTechnologicalCorrespondence_TechnologicalCorrespondenceType(), this.getISTechnologicalCorrespondenceTypes(), "technologicalCorrespondenceType", null, 0, 1, ISTechnologicalCorrespondence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getISTechnologicalCorrespondence_Component(), theRepositoryPackage.getRepositoryComponent(), null, "component", null, 0, 1, ISTechnologicalCorrespondence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(isConfigurationFileEClass, ISConfigurationFile.class, "ISConfigurationFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getISConfigurationFile_DependentConfigurations(), this.getISConfigurationFile(), null, "dependentConfigurations", null, 0, -1, ISConfigurationFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(isTechnologicalCorrespondenceTypesEEnum, ISTechnologicalCorrespondenceTypes.class, "ISTechnologicalCorrespondenceTypes");

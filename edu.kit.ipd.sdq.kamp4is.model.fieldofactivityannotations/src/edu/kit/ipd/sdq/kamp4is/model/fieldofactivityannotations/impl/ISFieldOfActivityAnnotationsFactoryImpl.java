@@ -92,6 +92,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 			case ISFieldOfActivityAnnotationsPackage.IS_DESIGN_PATTERN_ROLE: return createISDesignPatternRole();
 			case ISFieldOfActivityAnnotationsPackage.IS_TECHNOLOGY_SPECIFICATION: return createISTechnologySpecification();
 			case ISFieldOfActivityAnnotationsPackage.IS_TECHNOLOGICAL_CORRESPONDENCE: return createISTechnologicalCorrespondence();
+			case ISFieldOfActivityAnnotationsPackage.IS_CONFIGURATION_FILE: return createISConfigurationFile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -132,6 +133,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository createISFieldOfActivityAnnotationsRepository() {
 		ISFieldOfActivityAnnotationsRepositoryImpl isFieldOfActivityAnnotationsRepository = new ISFieldOfActivityAnnotationsRepositoryImpl();
 		return isFieldOfActivityAnnotationsRepository;
@@ -142,6 +144,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDevelopmentArtefactSpecification createISDevelopmentArtefactSpecification() {
 		ISDevelopmentArtefactSpecificationImpl isDevelopmentArtefactSpecification = new ISDevelopmentArtefactSpecificationImpl();
 		return isDevelopmentArtefactSpecification;
@@ -152,6 +155,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISSourceFile createISSourceFile() {
 		ISSourceFileImpl isSourceFile = new ISSourceFileImpl();
 		return isSourceFile;
@@ -162,6 +166,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISSourceFileAggregation createISSourceFileAggregation() {
 		ISSourceFileAggregationImpl isSourceFileAggregation = new ISSourceFileAggregationImpl();
 		return isSourceFileAggregation;
@@ -172,6 +177,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISMetadataFile createISMetadataFile() {
 		ISMetadataFileImpl isMetadataFile = new ISMetadataFileImpl();
 		return isMetadataFile;
@@ -182,6 +188,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISMetadataFileAggregation createISMetadataFileAggregation() {
 		ISMetadataFileAggregationImpl isMetadataFileAggregation = new ISMetadataFileAggregationImpl();
 		return isMetadataFileAggregation;
@@ -192,6 +199,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISBuildSpecification createISBuildSpecification() {
 		ISBuildSpecificationImpl isBuildSpecification = new ISBuildSpecificationImpl();
 		return isBuildSpecification;
@@ -202,6 +210,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISBuildConfiguration createISBuildConfiguration() {
 		ISBuildConfigurationImpl isBuildConfiguration = new ISBuildConfigurationImpl();
 		return isBuildConfiguration;
@@ -212,6 +221,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISThirdPartyComponentOrLibrary createISThirdPartyComponentOrLibrary() {
 		ISThirdPartyComponentOrLibraryImpl isThirdPartyComponentOrLibrary = new ISThirdPartyComponentOrLibraryImpl();
 		return isThirdPartyComponentOrLibrary;
@@ -222,6 +232,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTestSpecification createISTestSpecification() {
 		ISTestSpecificationImpl isTestSpecification = new ISTestSpecificationImpl();
 		return isTestSpecification;
@@ -232,6 +243,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISReleaseSpecification createISReleaseSpecification() {
 		ISReleaseSpecificationImpl isReleaseSpecification = new ISReleaseSpecificationImpl();
 		return isReleaseSpecification;
@@ -242,6 +254,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISReleaseConfiguration createISReleaseConfiguration() {
 		ISReleaseConfigurationImpl isReleaseConfiguration = new ISReleaseConfigurationImpl();
 		return isReleaseConfiguration;
@@ -252,6 +265,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDeploymentSpecification createISDeploymentSpecification() {
 		ISDeploymentSpecificationImpl isDeploymentSpecification = new ISDeploymentSpecificationImpl();
 		return isDeploymentSpecification;
@@ -262,6 +276,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISRuntimeInstance createISRuntimeInstance() {
 		ISRuntimeInstanceImpl isRuntimeInstance = new ISRuntimeInstanceImpl();
 		return isRuntimeInstance;
@@ -272,6 +287,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISRuntimeInstanceAggregation createISRuntimeInstanceAggregation() {
 		ISRuntimeInstanceAggregationImpl isRuntimeInstanceAggregation = new ISRuntimeInstanceAggregationImpl();
 		return isRuntimeInstanceAggregation;
@@ -282,6 +298,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISUnitTestCase createISUnitTestCase() {
 		ISUnitTestCaseImpl isUnitTestCase = new ISUnitTestCaseImpl();
 		return isUnitTestCase;
@@ -292,6 +309,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISAcceptanceTestCase createISAcceptanceTestCase() {
 		ISAcceptanceTestCaseImpl isAcceptanceTestCase = new ISAcceptanceTestCaseImpl();
 		return isAcceptanceTestCase;
@@ -302,6 +320,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISIntegrationTestCase createISIntegrationTestCase() {
 		ISIntegrationTestCaseImpl isIntegrationTestCase = new ISIntegrationTestCaseImpl();
 		return isIntegrationTestCase;
@@ -312,6 +331,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISUnitTestCaseAggregation createISUnitTestCaseAggregation() {
 		ISUnitTestCaseAggregationImpl isUnitTestCaseAggregation = new ISUnitTestCaseAggregationImpl();
 		return isUnitTestCaseAggregation;
@@ -322,6 +342,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISAcceptanceTestCaseAggregation createISAcceptanceTestCaseAggregation() {
 		ISAcceptanceTestCaseAggregationImpl isAcceptanceTestCaseAggregation = new ISAcceptanceTestCaseAggregationImpl();
 		return isAcceptanceTestCaseAggregation;
@@ -332,6 +353,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISIntegrationTestCaseAggregation createISIntegrationTestCaseAggregation() {
 		ISIntegrationTestCaseAggregationImpl isIntegrationTestCaseAggregation = new ISIntegrationTestCaseAggregationImpl();
 		return isIntegrationTestCaseAggregation;
@@ -342,6 +364,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISStaffSpecification createISStaffSpecification() {
 		ISStaffSpecificationImpl isStaffSpecification = new ISStaffSpecificationImpl();
 		return isStaffSpecification;
@@ -352,6 +375,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISPersonList createISPersonList() {
 		ISPersonListImpl isPersonList = new ISPersonListImpl();
 		return isPersonList;
@@ -362,6 +386,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISPerson createISPerson() {
 		ISPersonImpl isPerson = new ISPersonImpl();
 		return isPerson;
@@ -372,6 +397,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISRoleList createISRoleList() {
 		ISRoleListImpl isRoleList = new ISRoleListImpl();
 		return isRoleList;
@@ -382,6 +408,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDeveloper createISDeveloper() {
 		ISDeveloperImpl isDeveloper = new ISDeveloperImpl();
 		return isDeveloper;
@@ -392,6 +419,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISBuildConfigurator createISBuildConfigurator() {
 		ISBuildConfiguratorImpl isBuildConfigurator = new ISBuildConfiguratorImpl();
 		return isBuildConfigurator;
@@ -402,6 +430,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTestDeveloper createISTestDeveloper() {
 		ISTestDeveloperImpl isTestDeveloper = new ISTestDeveloperImpl();
 		return isTestDeveloper;
@@ -412,6 +441,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTester createISTester() {
 		ISTesterImpl isTester = new ISTesterImpl();
 		return isTester;
@@ -422,6 +452,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISReleaseConfigurator createISReleaseConfigurator() {
 		ISReleaseConfiguratorImpl isReleaseConfigurator = new ISReleaseConfiguratorImpl();
 		return isReleaseConfigurator;
@@ -432,6 +463,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDeployer createISDeployer() {
 		ISDeployerImpl isDeployer = new ISDeployerImpl();
 		return isDeployer;
@@ -442,6 +474,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDesignPatternSpecification createISDesignPatternSpecification() {
 		ISDesignPatternSpecificationImpl isDesignPatternSpecification = new ISDesignPatternSpecificationImpl();
 		return isDesignPatternSpecification;
@@ -452,6 +485,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDesignPatternRole createISDesignPatternRole() {
 		ISDesignPatternRoleImpl isDesignPatternRole = new ISDesignPatternRoleImpl();
 		return isDesignPatternRole;
@@ -462,6 +496,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTechnologySpecification createISTechnologySpecification() {
 		ISTechnologySpecificationImpl isTechnologySpecification = new ISTechnologySpecificationImpl();
 		return isTechnologySpecification;
@@ -472,9 +507,21 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTechnologicalCorrespondence createISTechnologicalCorrespondence() {
 		ISTechnologicalCorrespondenceImpl isTechnologicalCorrespondence = new ISTechnologicalCorrespondenceImpl();
 		return isTechnologicalCorrespondence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ISConfigurationFile createISConfigurationFile() {
+		ISConfigurationFileImpl isConfigurationFile = new ISConfigurationFileImpl();
+		return isConfigurationFile;
 	}
 
 	/**
@@ -502,6 +549,7 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsPackage getISFieldOfActivityAnnotationsPackage() {
 		return (ISFieldOfActivityAnnotationsPackage)getEPackage();
 	}

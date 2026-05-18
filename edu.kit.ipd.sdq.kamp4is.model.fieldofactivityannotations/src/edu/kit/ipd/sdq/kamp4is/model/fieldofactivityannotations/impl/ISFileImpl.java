@@ -91,6 +91,7 @@ public abstract class ISFileImpl extends EObjectImpl implements ISFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFilename() {
 		return filename;
 	}
@@ -100,6 +101,7 @@ public abstract class ISFileImpl extends EObjectImpl implements ISFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFilename(String newFilename) {
 		String oldFilename = filename;
 		filename = newFilename;
@@ -112,6 +114,7 @@ public abstract class ISFileImpl extends EObjectImpl implements ISFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTechnology() {
 		return technology;
 	}
@@ -121,6 +124,7 @@ public abstract class ISFileImpl extends EObjectImpl implements ISFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTechnology(String newTechnology) {
 		String oldTechnology = technology;
 		technology = newTechnology;
@@ -205,7 +209,7 @@ public abstract class ISFileImpl extends EObjectImpl implements ISFile {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (filename: ");
 		result.append(filename);
 		result.append(", technology: ");

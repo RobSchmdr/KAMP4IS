@@ -18,17 +18,22 @@ import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactor
  * @author stammel
  *
  */
-public class ISChangePropagationAnalysis  extends AbstractISChangePropagationAnalysis<ISArchitectureVersion, ISChangePropagationDueToDataDependencies, ISChangePropagationDueToTimingDependencies> {
+public class ISChangePropagationAnalysis extends AbstractISChangePropagationAnalysis<ISArchitectureVersion, ISChangePropagationDueToDataDependencies, ISChangePropagationDueToTimingDependencies> {
 	
 	@Override
 	public void runChangePropagationAnalysis(ISArchitectureVersion version) {
+				
 		// I. DataType -> Signature -> Interface 
+		this.setChangePropagationDueToDataDependencies(ISModificationmarksFactory.eINSTANCE.createISChangePropagationDueToDataDependencies());
+		calculateAndMarkToInterfacePropagation(version);
 		
+		// II. Timing -> Signature -> Interface 
 		this.setChangePropagationDueToTimingDependencies(ISModificationmarksFactory.eINSTANCE.createISChangePropagationDueToTimingDependencies());
 		calculateAndMarkOperationTimingToInterfacePropagation(version);
 		
-		this.setChangePropagationDueToDataDependencies(ISModificationmarksFactory.eINSTANCE.createISChangePropagationDueToDataDependencies());
-		calculateAndMarkToInterfacePropagation(version);
+		// III. ConfigurationFile -> Component
+		this.setChangePropagationDueToConfigurationDependencies(ISModificationmarksFactory.eINSTANCE.createISChangePropagationDueToConfigurationDependencies());
+		calculateAndMarkConfigurationToComponentPropagation(version);
 
 		if (!this.getChangePropagationDueToDataDependencies().eContents().isEmpty()) {	
 			version.getModificationMarkRepository().getChangePropagationSteps().add(this.getChangePropagationDueToDataDependencies());	
@@ -38,8 +43,25 @@ public class ISChangePropagationAnalysis  extends AbstractISChangePropagationAna
 			version.getModificationMarkRepository().getChangePropagationSteps().add(this.getChangePropagationDueToTimingDependencies());	
 		}
 		
+		if (!this.getChangePropagationDueToConfigurationDependencies().eContents().isEmpty()) {
+			version.getModificationMarkRepository().getChangePropagationSteps().add(this.getChangePropagationDueToConfigurationDependencies());
+		}
+		
 		//All other steps
 		this.calculateInterfaceAndComponentPropagation(version);	
+		
+
+//		ChangePropagationEngine<ISArchitectureVersion> engine =
+//                new ChangePropagationEngine<>();
+//
+//        engine.addPropagationStrategy(new ISOperationTimingPropagation());
+//        engine.addPropagationStrategy(new ISDataTypePropagation());
+//        engine.addPropagationStrategy(new ISConfigurationPropagation());
+//        engine.addPropagationStrategy(new ISInterfacePropagation());
+//        engine.addPropagationStrategy(new ISComponentPropagation());
+//
+//        engine.run(version);
+
 	}
 
 }

@@ -85,6 +85,7 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISRuntimeInstance> getRuntimeInstances() {
 		if (runtimeInstances == null) {
 			runtimeInstances = new EObjectContainmentWithInverseEList<ISRuntimeInstance>(ISRuntimeInstance.class, this, ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCES, ISFieldOfActivityAnnotationsPackage.IS_RUNTIME_INSTANCE__PARENT);
@@ -97,6 +98,7 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISRuntimeInstanceAggregation> getRuntimeInstanceAggregations() {
 		if (runtimeInstanceAggregations == null) {
 			runtimeInstanceAggregations = new EObjectContainmentWithInverseEList<ISRuntimeInstanceAggregation>(ISRuntimeInstanceAggregation.class, this, ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCE_AGGREGATIONS, ISFieldOfActivityAnnotationsPackage.IS_RUNTIME_INSTANCE_AGGREGATION__PARENT);
@@ -109,6 +111,7 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__PARENT) return null;
 		return (ISFieldOfActivityAnnotationsRepository)eInternalContainer();
@@ -129,6 +132,7 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISFieldOfActivityAnnotationsRepository newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))

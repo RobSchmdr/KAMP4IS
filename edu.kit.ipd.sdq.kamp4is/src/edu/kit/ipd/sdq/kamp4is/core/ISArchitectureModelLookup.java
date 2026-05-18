@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import de.uka.ipd.sdq.componentInternalDependencies.RoleToRoleDependency;
+
+import org.eclipse.xtext.EcoreUtil2;
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.composition.Connector;
@@ -31,7 +35,10 @@ import org.palladiosimulator.pcm.repository.Signature;
 import org.palladiosimulator.pcm.repository.SinkRole;
 import org.palladiosimulator.pcm.repository.SourceRole;
 
+import edu.kit.ipd.sdq.kamp.architecture.AbstractArchitectureVersion;
 import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyProvidedRole;
@@ -188,7 +195,7 @@ public class ISArchitectureModelLookup {
 		}
 	}
 	
-	protected static void lookupInterfacesAndSignaturesWithOperationTimingChanged(ISArchitectureVersion version,
+	public static void lookupInterfacesAndSignaturesWithOperationTimingChanged(ISArchitectureVersion version,
 			Collection <ISModifyOperationTiming> modifyOperationTiming,
 			Map<Interface, Set<Signature>> affectedInterfaces,
 			Map<Signature,ISModifyOperationTiming> affectedSignatures) {
@@ -197,6 +204,15 @@ public class ISArchitectureModelLookup {
 			affectedSignatures.put((Signature) modOperationTiming.getAffectedElement(), modOperationTiming);
 		}
 		affectedInterfaces.putAll(lookUpInterfacesAndSignaturesWithSignatures(version, affectedSignatures.keySet()));
+	}
+	
+	public static <S extends ISArchitectureVersion> void lookUpComponentsWithConfiguration(S version,
+			Collection<ISConfigurationFile> seedConfigurations,
+			Map<ISConfigurationFile, RepositoryComponent> componentToBeMarked) {
+		for (ISConfigurationFile configurationFile: seedConfigurations) {
+			componentToBeMarked.put(configurationFile, configurationFile.getComponent());
+		}
+		
 	}
 	
 	/**
@@ -354,5 +370,41 @@ public class ISArchitectureModelLookup {
 		}
 		return null;
 	}
+	
+	public static Map<Signature, ISModifyOperationTiming> lookUpSignaturesWithTimingChanged(ISArchitectureVersion version) {
+		return EcoreUtil2.eAllOfType(
+		    version.getModificationMarkRepository(),
+		    ISModifyOperationTiming.class
+		).stream()
+			.filter(ISModifyOperationTiming::isToolderived)
+		    .filter(t -> t.getAffectedElement() instanceof Signature)
+		    .collect(Collectors.toMap(
+		        t -> (Signature) t.getAffectedElement(),
+		        t -> t
+		    ));
+	}
 
-}
+	@SuppressWarnings("unchecked")
+	public static <T, M extends AbstractModification<?,?>> Set <T> lookUpMarkedObjectsOfAType(AbstractArchitectureVersion<?> version,
+			Class<T> objectClass,
+			Class<M> modificationClass) {
+		
+		Iterator<?> objectsToSearch = version.getModificationMarkRepository().eAllContents();
+			Set<T> results = new HashSet<T>();
+			
+			while (objectsToSearch.hasNext()) {
+				Object object = objectsToSearch.next();
+				if (modificationClass.isInstance(object)) {
+					AbstractModification<?, ?> modification = (AbstractModification<?, ?>) object;
+					if (modification.getAffectedElement() != null
+						&& objectClass.isAssignableFrom(modification.getAffectedElement().getClass())) {
+						
+						results.add((T) modification.getAffectedElement());
+					}
+				}	
+			}
+			
+			return results;
+		}
+		
+	}

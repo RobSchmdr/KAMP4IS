@@ -73,6 +73,7 @@ public class ISReleaseSpecificationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISReleaseConfiguration> getReleaseConfigurations() {
 		if (releaseConfigurations == null) {
 			releaseConfigurations = new EObjectContainmentWithInverseEList<ISReleaseConfiguration>(ISReleaseConfiguration.class, this, ISFieldOfActivityAnnotationsPackage.IS_RELEASE_SPECIFICATION__RELEASE_CONFIGURATIONS, ISFieldOfActivityAnnotationsPackage.IS_RELEASE_CONFIGURATION__PARENT);
@@ -85,6 +86,7 @@ public class ISReleaseSpecificationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_RELEASE_SPECIFICATION__PARENT) return null;
 		return (ISFieldOfActivityAnnotationsRepository)eInternalContainer();
@@ -105,6 +107,7 @@ public class ISReleaseSpecificationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISFieldOfActivityAnnotationsRepository newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_RELEASE_SPECIFICATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))

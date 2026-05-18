@@ -149,6 +149,14 @@ public class ISModificationmarksAdapterFactory extends AdapterFactoryImpl {
 				return createISChangePropagationDueToTimingDependenciesAdapter();
 			}
 			@Override
+			public Adapter caseISModifyConfiguration(ISModifyConfiguration object) {
+				return createISModifyConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseISChangePropagationDueToConfigurationDependencies(ISChangePropagationDueToConfigurationDependencies object) {
+				return createISChangePropagationDueToConfigurationDependenciesAdapter();
+			}
+			@Override
 			public <S extends AbstractSeedModifications, T extends AbstractChangePropagationStep> Adapter caseAbstractModificationRepository(AbstractModificationRepository<S, T> object) {
 				return createAbstractModificationRepositoryAdapter();
 			}
@@ -437,6 +445,34 @@ public class ISModificationmarksAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createISChangePropagationDueToTimingDependenciesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration <em>IS Modify Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration
+	 * @generated
+	 */
+	public Adapter createISModifyConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies <em>IS Change Propagation Due To Configuration Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies
+	 * @generated
+	 */
+	public Adapter createISChangePropagationDueToConfigurationDependenciesAdapter() {
 		return null;
 	}
 

@@ -168,6 +168,24 @@ public interface ISModificationmarksFactory extends EFactory {
 	ISChangePropagationDueToTimingDependencies createISChangePropagationDueToTimingDependencies();
 
 	/**
+	 * Returns a new object of class '<em>IS Modify Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IS Modify Configuration</em>'.
+	 * @generated
+	 */
+	ISModifyConfiguration createISModifyConfiguration();
+
+	/**
+	 * Returns a new object of class '<em>IS Change Propagation Due To Configuration Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IS Change Propagation Due To Configuration Dependencies</em>'.
+	 * @generated
+	 */
+	ISChangePropagationDueToConfigurationDependencies createISChangePropagationDueToConfigurationDependencies();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

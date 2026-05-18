@@ -440,6 +440,52 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ISModifyConfigurationItemProvider isModifyConfigurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createISModifyConfigurationAdapter() {
+		if (isModifyConfigurationItemProvider == null) {
+			isModifyConfigurationItemProvider = new ISModifyConfigurationItemProvider(this);
+		}
+
+		return isModifyConfigurationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ISChangePropagationDueToConfigurationDependenciesItemProvider isChangePropagationDueToConfigurationDependenciesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createISChangePropagationDueToConfigurationDependenciesAdapter() {
+		if (isChangePropagationDueToConfigurationDependenciesItemProvider == null) {
+			isChangePropagationDueToConfigurationDependenciesItemProvider = new ISChangePropagationDueToConfigurationDependenciesItemProvider(this);
+		}
+
+		return isChangePropagationDueToConfigurationDependenciesItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -560,6 +606,8 @@ public class ISModificationmarksItemProviderAdapterFactory extends ISModificatio
 		if (isModifySignatureItemProvider != null) isModifySignatureItemProvider.dispose();
 		if (isModifyOperationTimingItemProvider != null) isModifyOperationTimingItemProvider.dispose();
 		if (isChangePropagationDueToTimingDependenciesItemProvider != null) isChangePropagationDueToTimingDependenciesItemProvider.dispose();
+		if (isModifyConfigurationItemProvider != null) isModifyConfigurationItemProvider.dispose();
+		if (isChangePropagationDueToConfigurationDependenciesItemProvider != null) isChangePropagationDueToConfigurationDependenciesItemProvider.dispose();
 	}
 
 }

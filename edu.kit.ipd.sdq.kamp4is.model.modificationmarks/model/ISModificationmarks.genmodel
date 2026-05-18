@@ -19,6 +19,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/interfaceModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/componentModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/ismodifyoperationtiming"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/ismodifyconfiguration"/>
     </genClasses>
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISChangePropagationDueToDataDependencies">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISChangePropagationDueToDataDependencies/interfaceModifications"/>
@@ -41,6 +42,7 @@
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISModifyComponent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISModifyComponent/providedRoleModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISModifyComponent/requiredRoleModifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISModifyComponent/ismodifyconfiguration"/>
     </genClasses>
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISModifyConnector"/>
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISModifyRole">
@@ -58,6 +60,11 @@
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISModifyOperationTiming"/>
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISChangePropagationDueToTimingDependencies">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISChangePropagationDueToTimingDependencies/interfaceModifications"/>
+    </genClasses>
+    <genClasses ecoreClass="ISModificationmarks.ecore#//ISModifyConfiguration"/>
+    <genClasses ecoreClass="ISModificationmarks.ecore#//ISChangePropagationDueToConfigurationDependencies">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISChangePropagationDueToConfigurationDependencies/ismodifyconfiguration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISChangePropagationDueToConfigurationDependencies/ismodifycomponent"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

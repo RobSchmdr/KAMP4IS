@@ -27,6 +27,8 @@
         upperBound="-1" eType="#//ISModifyComponent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyoperationtiming"
         upperBound="-1" eType="#//ISModifyOperationTiming" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyconfiguration"
+        upperBound="-1" eType="#//ISModifyConfiguration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ISChangePropagationDueToDataDependencies"
       eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
@@ -70,6 +72,8 @@
         upperBound="-1" eType="#//ISModifyProvidedRole" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoleModifications"
         upperBound="-1" eType="#//ISModifyRequiredRole" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyconfiguration"
+        upperBound="-1" eType="#//ISModifyConfiguration" containment="true"/>
     <eGenericSuperTypes eClassifier="#//ISModifyEntity">
       <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/RepositoryComponent"/>
     </eGenericSuperTypes>
@@ -123,5 +127,13 @@
       eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceModifications"
         upperBound="-1" eType="#//ISModifyInterface" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ISModifyConfiguration" eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ISChangePropagationDueToConfigurationDependencies"
+      eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyconfiguration"
+        upperBound="-1" eType="#//ISModifyConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifycomponent" upperBound="-1"
+        eType="#//ISModifyComponent" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

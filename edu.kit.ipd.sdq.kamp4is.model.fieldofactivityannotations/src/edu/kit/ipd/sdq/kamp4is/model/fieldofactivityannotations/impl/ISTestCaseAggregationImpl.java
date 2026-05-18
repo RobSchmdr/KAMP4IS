@@ -91,6 +91,7 @@ public abstract class ISTestCaseAggregationImpl extends EObjectImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getNumberOfTestcases() {
 		return numberOfTestcases;
 	}
@@ -100,6 +101,7 @@ public abstract class ISTestCaseAggregationImpl extends EObjectImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNumberOfTestcases(int newNumberOfTestcases) {
 		int oldNumberOfTestcases = numberOfTestcases;
 		numberOfTestcases = newNumberOfTestcases;
@@ -112,6 +114,7 @@ public abstract class ISTestCaseAggregationImpl extends EObjectImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNameOfTestSuite() {
 		return nameOfTestSuite;
 	}
@@ -121,6 +124,7 @@ public abstract class ISTestCaseAggregationImpl extends EObjectImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNameOfTestSuite(String newNameOfTestSuite) {
 		String oldNameOfTestSuite = nameOfTestSuite;
 		nameOfTestSuite = newNameOfTestSuite;
@@ -205,7 +209,7 @@ public abstract class ISTestCaseAggregationImpl extends EObjectImpl implements I
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (numberOfTestcases: ");
 		result.append(numberOfTestcases);
 		result.append(", nameOfTestSuite: ");

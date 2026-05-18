@@ -79,6 +79,7 @@ public class ISStaffSpecificationImpl extends EObjectImpl implements ISStaffSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_STAFF_SPECIFICATION__PARENT) return null;
 		return (ISFieldOfActivityAnnotationsRepository)eInternalContainer();
@@ -99,6 +100,7 @@ public class ISStaffSpecificationImpl extends EObjectImpl implements ISStaffSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISFieldOfActivityAnnotationsRepository newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_STAFF_SPECIFICATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -120,6 +122,7 @@ public class ISStaffSpecificationImpl extends EObjectImpl implements ISStaffSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISPersonList getPersonList() {
 		return personList;
 	}
@@ -144,6 +147,7 @@ public class ISStaffSpecificationImpl extends EObjectImpl implements ISStaffSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPersonList(ISPersonList newPersonList) {
 		if (newPersonList != personList) {
 			NotificationChain msgs = null;
@@ -163,6 +167,7 @@ public class ISStaffSpecificationImpl extends EObjectImpl implements ISStaffSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISRoleList getRoleList() {
 		return roleList;
 	}
@@ -187,6 +192,7 @@ public class ISStaffSpecificationImpl extends EObjectImpl implements ISStaffSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRoleList(ISRoleList newRoleList) {
 		if (newRoleList != roleList) {
 			NotificationChain msgs = null;

@@ -115,6 +115,7 @@ public class ISRuntimeInstanceImpl extends EObjectImpl implements ISRuntimeInsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDeploymentSpecification getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_RUNTIME_INSTANCE__PARENT) return null;
 		return (ISDeploymentSpecification)eInternalContainer();
@@ -135,6 +136,7 @@ public class ISRuntimeInstanceImpl extends EObjectImpl implements ISRuntimeInsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISDeploymentSpecification newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_RUNTIME_INSTANCE__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -156,6 +158,7 @@ public class ISRuntimeInstanceImpl extends EObjectImpl implements ISRuntimeInsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -165,6 +168,7 @@ public class ISRuntimeInstanceImpl extends EObjectImpl implements ISRuntimeInsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -177,6 +181,7 @@ public class ISRuntimeInstanceImpl extends EObjectImpl implements ISRuntimeInsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -186,6 +191,7 @@ public class ISRuntimeInstanceImpl extends EObjectImpl implements ISRuntimeInsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -198,6 +204,7 @@ public class ISRuntimeInstanceImpl extends EObjectImpl implements ISRuntimeInsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RepositoryComponent> getComponents() {
 		if (components == null) {
 			components = new EObjectResolvingEList<RepositoryComponent>(RepositoryComponent.class, this, ISFieldOfActivityAnnotationsPackage.IS_RUNTIME_INSTANCE__COMPONENTS);
@@ -348,7 +355,7 @@ public class ISRuntimeInstanceImpl extends EObjectImpl implements ISRuntimeInsta
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

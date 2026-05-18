@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -68,6 +67,7 @@ public class ISMetadataFileAggregationImpl extends ISFileAggregationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDevelopmentArtefactSpecification getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_METADATA_FILE_AGGREGATION__PARENT) return null;
 		return (ISDevelopmentArtefactSpecification)eInternalContainer();
@@ -88,6 +88,7 @@ public class ISMetadataFileAggregationImpl extends ISFileAggregationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISDevelopmentArtefactSpecification newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_METADATA_FILE_AGGREGATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -109,8 +110,9 @@ public class ISMetadataFileAggregationImpl extends ISFileAggregationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RepositoryComponent getComponent() {
-		if (component != null && ((EObject)component).eIsProxy()) {
+		if (component != null && component.eIsProxy()) {
 			InternalEObject oldComponent = (InternalEObject)component;
 			component = (RepositoryComponent)eResolveProxy(oldComponent);
 			if (component != oldComponent) {
@@ -135,6 +137,7 @@ public class ISMetadataFileAggregationImpl extends ISFileAggregationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponent(RepositoryComponent newComponent) {
 		RepositoryComponent oldComponent = component;
 		component = newComponent;

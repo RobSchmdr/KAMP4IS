@@ -133,6 +133,7 @@ public class ISTestSpecificationImpl extends EObjectImpl implements ISTestSpecif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_TEST_SPECIFICATION__PARENT) return null;
 		return (ISFieldOfActivityAnnotationsRepository)eInternalContainer();
@@ -153,6 +154,7 @@ public class ISTestSpecificationImpl extends EObjectImpl implements ISTestSpecif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISFieldOfActivityAnnotationsRepository newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_TEST_SPECIFICATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -174,6 +176,7 @@ public class ISTestSpecificationImpl extends EObjectImpl implements ISTestSpecif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISUnitTestCase> getUnitTestCases() {
 		if (unitTestCases == null) {
 			unitTestCases = new EObjectContainmentWithInverseEList<ISUnitTestCase>(ISUnitTestCase.class, this, ISFieldOfActivityAnnotationsPackage.IS_TEST_SPECIFICATION__UNIT_TEST_CASES, ISFieldOfActivityAnnotationsPackage.IS_UNIT_TEST_CASE__PARENT);
@@ -186,6 +189,7 @@ public class ISTestSpecificationImpl extends EObjectImpl implements ISTestSpecif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISAcceptanceTestCase> getAcceptanceTestCases() {
 		if (acceptanceTestCases == null) {
 			acceptanceTestCases = new EObjectContainmentWithInverseEList<ISAcceptanceTestCase>(ISAcceptanceTestCase.class, this, ISFieldOfActivityAnnotationsPackage.IS_TEST_SPECIFICATION__ACCEPTANCE_TEST_CASES, ISFieldOfActivityAnnotationsPackage.IS_ACCEPTANCE_TEST_CASE__PARENT);
@@ -198,6 +202,7 @@ public class ISTestSpecificationImpl extends EObjectImpl implements ISTestSpecif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISIntegrationTestCase> getIntegrationTestCases() {
 		if (integrationTestCases == null) {
 			integrationTestCases = new EObjectContainmentWithInverseEList<ISIntegrationTestCase>(ISIntegrationTestCase.class, this, ISFieldOfActivityAnnotationsPackage.IS_TEST_SPECIFICATION__INTEGRATION_TEST_CASES, ISFieldOfActivityAnnotationsPackage.IS_INTEGRATION_TEST_CASE__PARENT);
@@ -210,6 +215,7 @@ public class ISTestSpecificationImpl extends EObjectImpl implements ISTestSpecif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISUnitTestCaseAggregation> getUnitTestCaseAggregations() {
 		if (unitTestCaseAggregations == null) {
 			unitTestCaseAggregations = new EObjectContainmentWithInverseEList<ISUnitTestCaseAggregation>(ISUnitTestCaseAggregation.class, this, ISFieldOfActivityAnnotationsPackage.IS_TEST_SPECIFICATION__UNIT_TEST_CASE_AGGREGATIONS, ISFieldOfActivityAnnotationsPackage.IS_UNIT_TEST_CASE_AGGREGATION__PARENT);
@@ -222,6 +228,7 @@ public class ISTestSpecificationImpl extends EObjectImpl implements ISTestSpecif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISAcceptanceTestCaseAggregation> getAcceptanceTestCaseAggregations() {
 		if (acceptanceTestCaseAggregations == null) {
 			acceptanceTestCaseAggregations = new EObjectContainmentWithInverseEList<ISAcceptanceTestCaseAggregation>(ISAcceptanceTestCaseAggregation.class, this, ISFieldOfActivityAnnotationsPackage.IS_TEST_SPECIFICATION__ACCEPTANCE_TEST_CASE_AGGREGATIONS, ISFieldOfActivityAnnotationsPackage.IS_ACCEPTANCE_TEST_CASE_AGGREGATION__PARENT);
@@ -234,6 +241,7 @@ public class ISTestSpecificationImpl extends EObjectImpl implements ISTestSpecif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISIntegrationTestCaseAggregation> getIntegrationTestCaseAggregations() {
 		if (integrationTestCaseAggregations == null) {
 			integrationTestCaseAggregations = new EObjectContainmentWithInverseEList<ISIntegrationTestCaseAggregation>(ISIntegrationTestCaseAggregation.class, this, ISFieldOfActivityAnnotationsPackage.IS_TEST_SPECIFICATION__INTEGRATION_TEST_CASE_AGGREGATIONS, ISFieldOfActivityAnnotationsPackage.IS_INTEGRATION_TEST_CASE_AGGREGATION__PARENT);

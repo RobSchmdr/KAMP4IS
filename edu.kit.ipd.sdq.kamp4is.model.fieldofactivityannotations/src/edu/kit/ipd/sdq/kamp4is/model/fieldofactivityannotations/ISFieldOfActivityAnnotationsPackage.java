@@ -2097,6 +2097,70 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 	int IS_TECHNOLOGICAL_CORRESPONDENCE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISConfigurationFileImpl <em>IS Configuration File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISConfigurationFileImpl
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISFieldOfActivityAnnotationsPackageImpl#getISConfigurationFile()
+	 * @generated
+	 */
+	int IS_CONFIGURATION_FILE = 40;
+
+	/**
+	 * The feature id for the '<em><b>Filename</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CONFIGURATION_FILE__FILENAME = IS_SOURCE_FILE__FILENAME;
+
+	/**
+	 * The feature id for the '<em><b>Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CONFIGURATION_FILE__TECHNOLOGY = IS_SOURCE_FILE__TECHNOLOGY;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CONFIGURATION_FILE__PARENT = IS_SOURCE_FILE__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CONFIGURATION_FILE__COMPONENT = IS_SOURCE_FILE__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Dependent Configurations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CONFIGURATION_FILE__DEPENDENT_CONFIGURATIONS = IS_SOURCE_FILE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IS Configuration File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CONFIGURATION_FILE_FEATURE_COUNT = IS_SOURCE_FILE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISTechnologicalCorrespondenceTypes <em>IS Technological Correspondence Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2104,7 +2168,7 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISFieldOfActivityAnnotationsPackageImpl#getISTechnologicalCorrespondenceTypes()
 	 * @generated
 	 */
-	int IS_TECHNOLOGICAL_CORRESPONDENCE_TYPES = 40;
+	int IS_TECHNOLOGICAL_CORRESPONDENCE_TYPES = 41;
 
 
 	/**
@@ -3553,6 +3617,27 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 	EReference getISTechnologicalCorrespondence_Component();
 
 	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile <em>IS Configuration File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IS Configuration File</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile
+	 * @generated
+	 */
+	EClass getISConfigurationFile();
+
+	/**
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile#getDependentConfigurations <em>Dependent Configurations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Dependent Configurations</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile#getDependentConfigurations()
+	 * @see #getISConfigurationFile()
+	 * @generated
+	 */
+	EReference getISConfigurationFile_DependentConfigurations();
+
+	/**
 	 * Returns the meta object for enum '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISTechnologicalCorrespondenceTypes <em>IS Technological Correspondence Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4743,6 +4828,24 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IS_TECHNOLOGICAL_CORRESPONDENCE__COMPONENT = eINSTANCE.getISTechnologicalCorrespondence_Component();
+
+		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISConfigurationFileImpl <em>IS Configuration File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISConfigurationFileImpl
+		 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISFieldOfActivityAnnotationsPackageImpl#getISConfigurationFile()
+		 * @generated
+		 */
+		EClass IS_CONFIGURATION_FILE = eINSTANCE.getISConfigurationFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependent Configurations</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_CONFIGURATION_FILE__DEPENDENT_CONFIGURATIONS = eINSTANCE.getISConfigurationFile_DependentConfigurations();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISTechnologicalCorrespondenceTypes <em>IS Technological Correspondence Types</em>}' enum.

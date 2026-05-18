@@ -11,7 +11,6 @@ import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISTechnologicalC
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -87,6 +86,7 @@ public class ISTechnologicalCorrespondenceImpl extends IdentifierImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTechnologicalCorrespondenceTypes getTechnologicalCorrespondenceType() {
 		return technologicalCorrespondenceType;
 	}
@@ -96,6 +96,7 @@ public class ISTechnologicalCorrespondenceImpl extends IdentifierImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTechnologicalCorrespondenceType(ISTechnologicalCorrespondenceTypes newTechnologicalCorrespondenceType) {
 		ISTechnologicalCorrespondenceTypes oldTechnologicalCorrespondenceType = technologicalCorrespondenceType;
 		technologicalCorrespondenceType = newTechnologicalCorrespondenceType == null ? TECHNOLOGICAL_CORRESPONDENCE_TYPE_EDEFAULT : newTechnologicalCorrespondenceType;
@@ -108,8 +109,9 @@ public class ISTechnologicalCorrespondenceImpl extends IdentifierImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RepositoryComponent getComponent() {
-		if (component != null && ((EObject)component).eIsProxy()) {
+		if (component != null && component.eIsProxy()) {
 			InternalEObject oldComponent = (InternalEObject)component;
 			component = (RepositoryComponent)eResolveProxy(oldComponent);
 			if (component != oldComponent) {
@@ -134,6 +136,7 @@ public class ISTechnologicalCorrespondenceImpl extends IdentifierImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponent(RepositoryComponent newComponent) {
 		RepositoryComponent oldComponent = component;
 		component = newComponent;
@@ -219,7 +222,7 @@ public class ISTechnologicalCorrespondenceImpl extends IdentifierImpl implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (technologicalCorrespondenceType: ");
 		result.append(technologicalCorrespondenceType);
 		result.append(')');

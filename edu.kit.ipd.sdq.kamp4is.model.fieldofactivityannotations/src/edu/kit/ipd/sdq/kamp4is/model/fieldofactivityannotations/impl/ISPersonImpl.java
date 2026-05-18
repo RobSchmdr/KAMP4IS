@@ -94,6 +94,7 @@ public class ISPersonImpl extends EObjectImpl implements ISPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISPersonList getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_PERSON__PARENT) return null;
 		return (ISPersonList)eInternalContainer();
@@ -114,6 +115,7 @@ public class ISPersonImpl extends EObjectImpl implements ISPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISPersonList newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_PERSON__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -135,6 +137,7 @@ public class ISPersonImpl extends EObjectImpl implements ISPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISRole> getRoles() {
 		if (roles == null) {
 			roles = new EObjectWithInverseResolvingEList.ManyInverse<ISRole>(ISRole.class, this, ISFieldOfActivityAnnotationsPackage.IS_PERSON__ROLES, ISFieldOfActivityAnnotationsPackage.IS_ROLE__PERSON);
@@ -147,6 +150,7 @@ public class ISPersonImpl extends EObjectImpl implements ISPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -156,6 +160,7 @@ public class ISPersonImpl extends EObjectImpl implements ISPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -301,7 +306,7 @@ public class ISPersonImpl extends EObjectImpl implements ISPerson {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

@@ -12,6 +12,7 @@ import org.palladiosimulator.pcm.repository.RequiredRole;
 import org.palladiosimulator.pcm.repository.Signature;
 
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfiguration;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISMetadataFile;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISReleaseConfiguration;
@@ -44,7 +45,8 @@ public enum ISActivityElementType implements AbstractActivityElementType {
 	
 	
 	//automotive related
-	OPERATION_TIMING(OperationTiming.class);
+	OPERATION_TIMING(OperationTiming.class),
+	CONFIGURATIONFFILES(ISConfigurationFile.class);
 	
 	private final Class<?> clazz;
 	private final String name;

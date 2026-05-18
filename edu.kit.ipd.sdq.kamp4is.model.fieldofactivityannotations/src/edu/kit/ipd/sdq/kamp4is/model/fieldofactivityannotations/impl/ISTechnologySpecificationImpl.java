@@ -73,6 +73,7 @@ public class ISTechnologySpecificationImpl extends EObjectImpl implements ISTech
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_TECHNOLOGY_SPECIFICATION__PARENT) return null;
 		return (ISFieldOfActivityAnnotationsRepository)eInternalContainer();
@@ -93,6 +94,7 @@ public class ISTechnologySpecificationImpl extends EObjectImpl implements ISTech
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISFieldOfActivityAnnotationsRepository newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_TECHNOLOGY_SPECIFICATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -114,6 +116,7 @@ public class ISTechnologySpecificationImpl extends EObjectImpl implements ISTech
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISTechnologicalCorrespondence> getTechnologicalCorrespondences() {
 		if (technologicalCorrespondences == null) {
 			technologicalCorrespondences = new EObjectContainmentEList<ISTechnologicalCorrespondence>(ISTechnologicalCorrespondence.class, this, ISFieldOfActivityAnnotationsPackage.IS_TECHNOLOGY_SPECIFICATION__TECHNOLOGICAL_CORRESPONDENCES);

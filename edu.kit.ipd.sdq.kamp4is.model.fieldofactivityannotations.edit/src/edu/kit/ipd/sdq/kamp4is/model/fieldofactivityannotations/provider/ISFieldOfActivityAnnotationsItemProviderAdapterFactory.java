@@ -879,11 +879,35 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ISConfigurationFileItemProvider isConfigurationFileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createISConfigurationFileAdapter() {
+		if (isConfigurationFileItemProvider == null) {
+			isConfigurationFileItemProvider = new ISConfigurationFileItemProvider(this);
+		}
+
+		return isConfigurationFileItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -894,6 +918,7 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -942,6 +967,7 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -952,6 +978,7 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -962,6 +989,7 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -976,6 +1004,7 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (isFieldOfActivityAnnotationsRepositoryItemProvider != null) isFieldOfActivityAnnotationsRepositoryItemProvider.dispose();
 		if (isDevelopmentArtefactSpecificationItemProvider != null) isDevelopmentArtefactSpecificationItemProvider.dispose();
@@ -1012,6 +1041,7 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 		if (isDesignPatternRoleItemProvider != null) isDesignPatternRoleItemProvider.dispose();
 		if (isTechnologySpecificationItemProvider != null) isTechnologySpecificationItemProvider.dispose();
 		if (isTechnologicalCorrespondenceItemProvider != null) isTechnologicalCorrespondenceItemProvider.dispose();
+		if (isConfigurationFileItemProvider != null) isConfigurationFileItemProvider.dispose();
 	}
 
 }

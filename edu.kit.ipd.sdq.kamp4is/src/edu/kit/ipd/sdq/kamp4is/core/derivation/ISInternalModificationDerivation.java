@@ -10,8 +10,10 @@ import org.palladiosimulator.pcm.repository.DataType;
 
 import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyDataType;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyEntity;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyInterface;
@@ -45,6 +47,10 @@ public class ISInternalModificationDerivation {
 				ISModifyOperationTiming opTiming = (ISModifyOperationTiming) causingElement;
 				causingElementNames.add(opTiming.eClass().getName() + " \""
 						+ ((Entity) opTiming.getAffectedElement()).getEntityName()+ "\"");
+			} else if (causingElement instanceof ISConfigurationFile) {
+				ISConfigurationFile modifyConfiguration = (ISConfigurationFile) causingElement;
+				causingElementNames.add(modifyConfiguration.eClass().getName() + " \""
+						+ modifyConfiguration.getFilename() + " \"");
 			}
 		}
 		return causingElementNames;

@@ -115,6 +115,7 @@ public class ISReleaseConfigurationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISReleaseSpecification getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_RELEASE_CONFIGURATION__PARENT) return null;
 		return (ISReleaseSpecification)eInternalContainer();
@@ -135,6 +136,7 @@ public class ISReleaseConfigurationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISReleaseSpecification newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_RELEASE_CONFIGURATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -156,6 +158,7 @@ public class ISReleaseConfigurationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RepositoryComponent> getComponents() {
 		if (components == null) {
 			components = new EObjectResolvingEList<RepositoryComponent>(RepositoryComponent.class, this, ISFieldOfActivityAnnotationsPackage.IS_RELEASE_CONFIGURATION__COMPONENTS);
@@ -168,6 +171,7 @@ public class ISReleaseConfigurationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPathname() {
 		return pathname;
 	}
@@ -177,6 +181,7 @@ public class ISReleaseConfigurationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPathname(String newPathname) {
 		String oldPathname = pathname;
 		pathname = newPathname;
@@ -189,6 +194,7 @@ public class ISReleaseConfigurationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -198,6 +204,7 @@ public class ISReleaseConfigurationImpl extends EObjectImpl implements ISRelease
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -348,7 +355,7 @@ public class ISReleaseConfigurationImpl extends EObjectImpl implements ISRelease
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (pathname: ");
 		result.append(pathname);
 		result.append(", description: ");

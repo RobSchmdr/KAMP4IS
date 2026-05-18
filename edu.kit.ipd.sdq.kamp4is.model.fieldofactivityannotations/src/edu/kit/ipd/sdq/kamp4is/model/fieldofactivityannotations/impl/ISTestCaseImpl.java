@@ -70,6 +70,7 @@ public abstract class ISTestCaseImpl extends EObjectImpl implements ISTestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNameOfTest() {
 		return nameOfTest;
 	}
@@ -79,6 +80,7 @@ public abstract class ISTestCaseImpl extends EObjectImpl implements ISTestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNameOfTest(String newNameOfTest) {
 		String oldNameOfTest = nameOfTest;
 		nameOfTest = newNameOfTest;
@@ -153,7 +155,7 @@ public abstract class ISTestCaseImpl extends EObjectImpl implements ISTestCase {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nameOfTest: ");
 		result.append(nameOfTest);
 		result.append(')');

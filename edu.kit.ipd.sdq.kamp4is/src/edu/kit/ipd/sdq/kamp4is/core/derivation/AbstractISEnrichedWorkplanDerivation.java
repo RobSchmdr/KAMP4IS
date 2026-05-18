@@ -9,6 +9,7 @@ import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.palladiosimulator.pcm.repository.RequiredRole;
 
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfiguration;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISMetadataFile;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISMetadataFileAggregation;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISSourceFile;
@@ -32,6 +33,7 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 		List<Activity> result = new ArrayList<Activity>(baseActivityList);
 		
 		deriveCodingActivities(baseArchitectureVersion, subVersion, result);
+		deriveConfigurationActivities(baseArchitectureVersion, subVersion, result);
 		deriveMetadataActivities(baseArchitectureVersion, subVersion, result);
 		deriveBuildConfigurationActivities(baseArchitectureVersion, subVersion, result);
 		deriveBuildExecutionActivities(subVersion, result);		
@@ -49,6 +51,8 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 
 		return result;
 	}
+
+
 
 	public static List<Activity> calculateFlattenendActivityList(List<Activity> activityList) {
 		List<Activity> flatActivityList = new ArrayList<Activity>();
@@ -107,7 +111,43 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 		}
 		return numberOfISSourceFiles;
 	}
-
+	
+	private void deriveConfigurationActivities(ISArchitectureVersion baseVersion, 
+			ISArchitectureVersion targetVersion,
+			List<Activity> baseActivityList) {
+		
+		for (Activity activity : baseActivityList) {
+			int numberOfFiles = determineNumberOfConfigurationFiles(determineRelevantArchitectureVersion(
+					activity, baseVersion, targetVersion), activity);
+			if (activity.getElementType() == ISActivityElementType.COMPONENT && numberOfFiles > 0) {
+				activity.addFollowupActivity(new Activity(ISActivityType.IMPLEMENTATION_SOURCECODE,
+						ISActivityElementType.CONFIGURATIONFFILES,
+						activity.getElement(),
+						"1 configuration file",
+						null,
+						activity.getBasicActivity(),
+						"Test"));
+			} 
+			deriveCodingActivities(baseVersion, targetVersion, activity.getSubActivities());
+		}
+	}
+	
+	private static int determineNumberOfConfigurationFiles(ISArchitectureVersion version, 
+			Activity activity) {
+		int numberOfISConfigurationFiles = 0;
+		if (activity.getElement() instanceof RepositoryComponent) {
+			RepositoryComponent component = (RepositoryComponent)activity.getElement();
+			List<ISConfigurationFile> configurationFiles = ISArchitectureAnnotationLookup.
+					lookUpISConfigurationFilesForComponent(version, component);
+			numberOfISConfigurationFiles += configurationFiles.size();
+//			ISSourceFileAggregation sourceFileAggregation = ISArchitectureAnnotationLookup.
+//					lookUpSourceFileAggregationForComponent(version, component);
+//			if (sourceFileAggregation != null)
+//				numberOfISSourceFiles += sourceFileAggregation.getNumberOfFiles(); 
+		}
+		return numberOfISConfigurationFiles;
+	}
+	
 	private static void deriveMetadataActivities(ISArchitectureVersion baseVersion, 
 			ISArchitectureVersion targetVersion, List<Activity> baseActivityList) {
 		for (Activity activity : baseActivityList) {

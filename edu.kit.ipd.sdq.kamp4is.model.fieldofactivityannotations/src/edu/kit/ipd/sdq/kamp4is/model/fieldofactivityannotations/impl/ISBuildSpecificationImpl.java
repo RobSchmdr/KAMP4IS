@@ -85,6 +85,7 @@ public class ISBuildSpecificationImpl extends EObjectImpl implements ISBuildSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_BUILD_SPECIFICATION__PARENT) return null;
 		return (ISFieldOfActivityAnnotationsRepository)eInternalContainer();
@@ -105,6 +106,7 @@ public class ISBuildSpecificationImpl extends EObjectImpl implements ISBuildSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISFieldOfActivityAnnotationsRepository newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_BUILD_SPECIFICATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -126,6 +128,7 @@ public class ISBuildSpecificationImpl extends EObjectImpl implements ISBuildSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISBuildConfiguration> getBuildConfigurations() {
 		if (buildConfigurations == null) {
 			buildConfigurations = new EObjectContainmentWithInverseEList<ISBuildConfiguration>(ISBuildConfiguration.class, this, ISFieldOfActivityAnnotationsPackage.IS_BUILD_SPECIFICATION__BUILD_CONFIGURATIONS, ISFieldOfActivityAnnotationsPackage.IS_BUILD_CONFIGURATION__PARENT);
@@ -138,6 +141,7 @@ public class ISBuildSpecificationImpl extends EObjectImpl implements ISBuildSpec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISThirdPartyComponentOrLibrary> getThirdPartyComponentOrLibraries() {
 		if (thirdPartyComponentOrLibraries == null) {
 			thirdPartyComponentOrLibraries = new EObjectContainmentWithInverseEList<ISThirdPartyComponentOrLibrary>(ISThirdPartyComponentOrLibrary.class, this, ISFieldOfActivityAnnotationsPackage.IS_BUILD_SPECIFICATION__THIRD_PARTY_COMPONENT_OR_LIBRARIES, ISFieldOfActivityAnnotationsPackage.IS_THIRD_PARTY_COMPONENT_OR_LIBRARY__PARENT);

@@ -4,6 +4,7 @@ package edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl;
 
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyProvidedRole;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyRequiredRole;
 
@@ -31,6 +32,7 @@ import org.palladiosimulator.pcm.repository.RepositoryComponent;
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyComponentImpl#getProvidedRoleModifications <em>Provided Role Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyComponentImpl#getRequiredRoleModifications <em>Required Role Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyComponentImpl#getIsmodifyconfiguration <em>Ismodifyconfiguration</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +57,16 @@ public class ISModifyComponentImpl extends ISModifyEntityImpl<RepositoryComponen
 	 * @ordered
 	 */
 	protected EList<ISModifyRequiredRole> requiredRoleModifications;
+
+	/**
+	 * The cached value of the '{@link #getIsmodifyconfiguration() <em>Ismodifyconfiguration</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIsmodifyconfiguration()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ISModifyConfiguration> ismodifyconfiguration;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,12 +119,27 @@ public class ISModifyComponentImpl extends ISModifyEntityImpl<RepositoryComponen
 	 * @generated
 	 */
 	@Override
+	public EList<ISModifyConfiguration> getIsmodifyconfiguration() {
+		if (ismodifyconfiguration == null) {
+			ismodifyconfiguration = new EObjectContainmentEList<ISModifyConfiguration>(ISModifyConfiguration.class, this, ISModificationmarksPackage.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION);
+		}
+		return ismodifyconfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__PROVIDED_ROLE_MODIFICATIONS:
 				return ((InternalEList<?>)getProvidedRoleModifications()).basicRemove(otherEnd, msgs);
 			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS:
 				return ((InternalEList<?>)getRequiredRoleModifications()).basicRemove(otherEnd, msgs);
+			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION:
+				return ((InternalEList<?>)getIsmodifyconfiguration()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -129,6 +156,8 @@ public class ISModifyComponentImpl extends ISModifyEntityImpl<RepositoryComponen
 				return getProvidedRoleModifications();
 			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS:
 				return getRequiredRoleModifications();
+			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION:
+				return getIsmodifyconfiguration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,6 +179,10 @@ public class ISModifyComponentImpl extends ISModifyEntityImpl<RepositoryComponen
 				getRequiredRoleModifications().clear();
 				getRequiredRoleModifications().addAll((Collection<? extends ISModifyRequiredRole>)newValue);
 				return;
+			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION:
+				getIsmodifyconfiguration().clear();
+				getIsmodifyconfiguration().addAll((Collection<? extends ISModifyConfiguration>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -168,6 +201,9 @@ public class ISModifyComponentImpl extends ISModifyEntityImpl<RepositoryComponen
 			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS:
 				getRequiredRoleModifications().clear();
 				return;
+			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION:
+				getIsmodifyconfiguration().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,6 +220,8 @@ public class ISModifyComponentImpl extends ISModifyEntityImpl<RepositoryComponen
 				return providedRoleModifications != null && !providedRoleModifications.isEmpty();
 			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS:
 				return requiredRoleModifications != null && !requiredRoleModifications.isEmpty();
+			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION:
+				return ismodifyconfiguration != null && !ismodifyconfiguration.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

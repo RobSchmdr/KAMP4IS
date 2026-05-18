@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -68,6 +67,7 @@ public class ISUnitTestCaseImpl extends ISTestCaseImpl implements ISUnitTestCase
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTestSpecification getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_UNIT_TEST_CASE__PARENT) return null;
 		return (ISTestSpecification)eInternalContainer();
@@ -88,6 +88,7 @@ public class ISUnitTestCaseImpl extends ISTestCaseImpl implements ISUnitTestCase
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISTestSpecification newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_UNIT_TEST_CASE__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -109,8 +110,9 @@ public class ISUnitTestCaseImpl extends ISTestCaseImpl implements ISUnitTestCase
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OperationProvidedRole getProvidedrole() {
-		if (providedrole != null && ((EObject)providedrole).eIsProxy()) {
+		if (providedrole != null && providedrole.eIsProxy()) {
 			InternalEObject oldProvidedrole = (InternalEObject)providedrole;
 			providedrole = (OperationProvidedRole)eResolveProxy(oldProvidedrole);
 			if (providedrole != oldProvidedrole) {
@@ -135,6 +137,7 @@ public class ISUnitTestCaseImpl extends ISTestCaseImpl implements ISUnitTestCase
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProvidedrole(OperationProvidedRole newProvidedrole) {
 		OperationProvidedRole oldProvidedrole = providedrole;
 		providedrole = newProvidedrole;

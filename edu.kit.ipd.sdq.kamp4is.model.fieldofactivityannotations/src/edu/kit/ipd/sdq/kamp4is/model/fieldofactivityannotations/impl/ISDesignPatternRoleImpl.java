@@ -10,7 +10,6 @@ import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivit
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -77,8 +76,9 @@ public class ISDesignPatternRoleImpl extends IdentifierImpl implements ISDesignP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProvidedRole getProvidedRole() {
-		if (providedRole != null && ((EObject)providedRole).eIsProxy()) {
+		if (providedRole != null && providedRole.eIsProxy()) {
 			InternalEObject oldProvidedRole = (InternalEObject)providedRole;
 			providedRole = (ProvidedRole)eResolveProxy(oldProvidedRole);
 			if (providedRole != oldProvidedRole) {
@@ -103,6 +103,7 @@ public class ISDesignPatternRoleImpl extends IdentifierImpl implements ISDesignP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProvidedRole(ProvidedRole newProvidedRole) {
 		ProvidedRole oldProvidedRole = providedRole;
 		providedRole = newProvidedRole;
@@ -115,8 +116,9 @@ public class ISDesignPatternRoleImpl extends IdentifierImpl implements ISDesignP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RepositoryComponent getComponent() {
-		if (component != null && ((EObject)component).eIsProxy()) {
+		if (component != null && component.eIsProxy()) {
 			InternalEObject oldComponent = (InternalEObject)component;
 			component = (RepositoryComponent)eResolveProxy(oldComponent);
 			if (component != oldComponent) {
@@ -141,6 +143,7 @@ public class ISDesignPatternRoleImpl extends IdentifierImpl implements ISDesignP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponent(RepositoryComponent newComponent) {
 		RepositoryComponent oldComponent = component;
 		component = newComponent;

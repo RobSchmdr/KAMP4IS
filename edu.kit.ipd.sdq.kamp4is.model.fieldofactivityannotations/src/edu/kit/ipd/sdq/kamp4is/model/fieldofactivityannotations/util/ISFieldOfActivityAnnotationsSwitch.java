@@ -328,6 +328,14 @@ public class ISFieldOfActivityAnnotationsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ISFieldOfActivityAnnotationsPackage.IS_CONFIGURATION_FILE: {
+				ISConfigurationFile isConfigurationFile = (ISConfigurationFile)theEObject;
+				T result = caseISConfigurationFile(isConfigurationFile);
+				if (result == null) result = caseISSourceFile(isConfigurationFile);
+				if (result == null) result = caseISFile(isConfigurationFile);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -929,6 +937,21 @@ public class ISFieldOfActivityAnnotationsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseISTechnologicalCorrespondence(ISTechnologicalCorrespondence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IS Configuration File</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IS Configuration File</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseISConfigurationFile(ISConfigurationFile object) {
 		return null;
 	}
 

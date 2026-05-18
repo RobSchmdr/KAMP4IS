@@ -73,6 +73,7 @@ public class ISPersonListImpl extends EObjectImpl implements ISPersonList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISStaffSpecification getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_PERSON_LIST__PARENT) return null;
 		return (ISStaffSpecification)eInternalContainer();
@@ -93,6 +94,7 @@ public class ISPersonListImpl extends EObjectImpl implements ISPersonList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISStaffSpecification newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_PERSON_LIST__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -114,6 +116,7 @@ public class ISPersonListImpl extends EObjectImpl implements ISPersonList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISPerson> getPersons() {
 		if (persons == null) {
 			persons = new EObjectContainmentWithInverseEList<ISPerson>(ISPerson.class, this, ISFieldOfActivityAnnotationsPackage.IS_PERSON_LIST__PERSONS, ISFieldOfActivityAnnotationsPackage.IS_PERSON__PARENT);

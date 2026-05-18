@@ -72,6 +72,7 @@ public class ISBuildConfigurationImpl extends ISFileImpl implements ISBuildConfi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISBuildSpecification getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_BUILD_CONFIGURATION__PARENT) return null;
 		return (ISBuildSpecification)eInternalContainer();
@@ -92,6 +93,7 @@ public class ISBuildConfigurationImpl extends ISFileImpl implements ISBuildConfi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISBuildSpecification newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_BUILD_CONFIGURATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -113,6 +115,7 @@ public class ISBuildConfigurationImpl extends ISFileImpl implements ISBuildConfi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RepositoryComponent> getComponent() {
 		if (component == null) {
 			component = new EObjectResolvingEList<RepositoryComponent>(RepositoryComponent.class, this, ISFieldOfActivityAnnotationsPackage.IS_BUILD_CONFIGURATION__COMPONENT);

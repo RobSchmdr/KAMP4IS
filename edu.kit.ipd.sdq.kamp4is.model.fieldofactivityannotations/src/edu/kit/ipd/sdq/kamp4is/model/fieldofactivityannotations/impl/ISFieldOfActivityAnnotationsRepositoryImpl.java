@@ -147,6 +147,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDevelopmentArtefactSpecification getDevelopmentArtefactSpecification() {
 		return developmentArtefactSpecification;
 	}
@@ -171,6 +172,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDevelopmentArtefactSpecification(ISDevelopmentArtefactSpecification newDevelopmentArtefactSpecification) {
 		if (newDevelopmentArtefactSpecification != developmentArtefactSpecification) {
 			NotificationChain msgs = null;
@@ -190,6 +192,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISBuildSpecification getBuildSpecification() {
 		return buildSpecification;
 	}
@@ -214,6 +217,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBuildSpecification(ISBuildSpecification newBuildSpecification) {
 		if (newBuildSpecification != buildSpecification) {
 			NotificationChain msgs = null;
@@ -233,6 +237,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTestSpecification getTestSpecification() {
 		return testSpecification;
 	}
@@ -257,6 +262,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTestSpecification(ISTestSpecification newTestSpecification) {
 		if (newTestSpecification != testSpecification) {
 			NotificationChain msgs = null;
@@ -276,6 +282,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISReleaseSpecification getReleaseSpecification() {
 		return releaseSpecification;
 	}
@@ -300,6 +307,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReleaseSpecification(ISReleaseSpecification newReleaseSpecification) {
 		if (newReleaseSpecification != releaseSpecification) {
 			NotificationChain msgs = null;
@@ -319,6 +327,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDeploymentSpecification getDeploymentSpecification() {
 		return deploymentSpecification;
 	}
@@ -343,6 +352,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeploymentSpecification(ISDeploymentSpecification newDeploymentSpecification) {
 		if (newDeploymentSpecification != deploymentSpecification) {
 			NotificationChain msgs = null;
@@ -362,6 +372,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISStaffSpecification getStaffSpecification() {
 		return staffSpecification;
 	}
@@ -386,6 +397,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStaffSpecification(ISStaffSpecification newStaffSpecification) {
 		if (newStaffSpecification != staffSpecification) {
 			NotificationChain msgs = null;
@@ -405,6 +417,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISTechnologySpecification getTechnologySpecification() {
 		return technologySpecification;
 	}
@@ -429,6 +442,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTechnologySpecification(ISTechnologySpecification newTechnologySpecification) {
 		if (newTechnologySpecification != technologySpecification) {
 			NotificationChain msgs = null;
@@ -448,6 +462,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDesignPatternSpecification getDesignPatternSpecification() {
 		return designPatternSpecification;
 	}
@@ -472,6 +487,7 @@ public class ISFieldOfActivityAnnotationsRepositoryImpl extends EObjectImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDesignPatternSpecification(ISDesignPatternSpecification newDesignPatternSpecification) {
 		if (newDesignPatternSpecification != designPatternSpecification) {
 			NotificationChain msgs = null;

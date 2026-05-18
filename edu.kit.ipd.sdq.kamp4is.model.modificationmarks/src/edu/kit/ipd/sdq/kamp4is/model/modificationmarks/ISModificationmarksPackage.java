@@ -204,13 +204,22 @@ public interface ISModificationmarksPackage extends EPackage {
 	int IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Ismodifyconfiguration</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_SEED_MODIFICATIONS__ISMODIFYCONFIGURATION = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>IS Seed Modifications</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IS_SEED_MODIFICATIONS_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 5;
+	int IS_SEED_MODIFICATIONS_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>IS Seed Modifications</em>' class.
@@ -607,13 +616,22 @@ public interface ISModificationmarksPackage extends EPackage {
 	int IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS = IS_MODIFY_ENTITY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Ismodifyconfiguration</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION = IS_MODIFY_ENTITY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>IS Modify Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_COMPONENT_FEATURE_COUNT = IS_MODIFY_ENTITY_FEATURE_COUNT + 2;
+	int IS_MODIFY_COMPONENT_FEATURE_COUNT = IS_MODIFY_ENTITY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>IS Modify Component</em>' class.
@@ -1220,6 +1238,125 @@ public interface ISModificationmarksPackage extends EPackage {
 	int IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES_OPERATION_COUNT = ModificationmarksPackage.CHANGE_PROPAGATION_STEP_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyConfigurationImpl <em>IS Modify Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyConfigurationImpl
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModificationmarksPackageImpl#getISModifyConfiguration()
+	 * @generated
+	 */
+	int IS_MODIFY_CONFIGURATION = 18;
+
+	/**
+	 * The feature id for the '<em><b>Affected Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_CONFIGURATION__AFFECTED_ELEMENT = ModificationmarksPackage.ABSTRACT_MODIFICATION__AFFECTED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Causing Elements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_CONFIGURATION__CAUSING_ELEMENTS = ModificationmarksPackage.ABSTRACT_MODIFICATION__CAUSING_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_CONFIGURATION__ID = ModificationmarksPackage.ABSTRACT_MODIFICATION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Toolderived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_CONFIGURATION__TOOLDERIVED = ModificationmarksPackage.ABSTRACT_MODIFICATION__TOOLDERIVED;
+
+	/**
+	 * The feature id for the '<em><b>User Decision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_CONFIGURATION__USER_DECISION = ModificationmarksPackage.ABSTRACT_MODIFICATION__USER_DECISION;
+
+	/**
+	 * The number of structural features of the '<em>IS Modify Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_CONFIGURATION_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_MODIFICATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>IS Modify Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_MODIFY_CONFIGURATION_OPERATION_COUNT = ModificationmarksPackage.ABSTRACT_MODIFICATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToConfigurationDependenciesImpl <em>IS Change Propagation Due To Configuration Dependencies</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToConfigurationDependenciesImpl
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModificationmarksPackageImpl#getISChangePropagationDueToConfigurationDependencies()
+	 * @generated
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES = 19;
+
+	/**
+	 * The feature id for the '<em><b>Ismodifyconfiguration</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES__ISMODIFYCONFIGURATION = ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Ismodifycomponent</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES__ISMODIFYCOMPONENT = ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>IS Change Propagation Due To Configuration Dependencies</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES_FEATURE_COUNT = ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>IS Change Propagation Due To Configuration Dependencies</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES_OPERATION_COUNT = ModificationmarksPackage.CHANGE_PROPAGATION_STEP_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.AbstractISModificationRepository <em>Abstract IS Modification Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1303,6 +1440,17 @@ public interface ISModificationmarksPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getISSeedModifications_Ismodifyoperationtiming();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyconfiguration <em>Ismodifyconfiguration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ismodifyconfiguration</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyconfiguration()
+	 * @see #getISSeedModifications()
+	 * @generated
+	 */
+	EReference getISSeedModifications_Ismodifyconfiguration();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToDataDependencies <em>IS Change Propagation Due To Data Dependencies</em>}'.
@@ -1463,6 +1611,17 @@ public interface ISModificationmarksPackage extends EPackage {
 	EReference getISModifyComponent_RequiredRoleModifications();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent#getIsmodifyconfiguration <em>Ismodifyconfiguration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ismodifyconfiguration</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent#getIsmodifyconfiguration()
+	 * @see #getISModifyComponent()
+	 * @generated
+	 */
+	EReference getISModifyComponent_Ismodifyconfiguration();
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConnector <em>IS Modify Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1587,6 +1746,48 @@ public interface ISModificationmarksPackage extends EPackage {
 	EReference getISChangePropagationDueToTimingDependencies_InterfaceModifications();
 
 	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration <em>IS Modify Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IS Modify Configuration</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration
+	 * @generated
+	 */
+	EClass getISModifyConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies <em>IS Change Propagation Due To Configuration Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IS Change Propagation Due To Configuration Dependencies</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies
+	 * @generated
+	 */
+	EClass getISChangePropagationDueToConfigurationDependencies();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies#getIsmodifyconfiguration <em>Ismodifyconfiguration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ismodifyconfiguration</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies#getIsmodifyconfiguration()
+	 * @see #getISChangePropagationDueToConfigurationDependencies()
+	 * @generated
+	 */
+	EReference getISChangePropagationDueToConfigurationDependencies_Ismodifyconfiguration();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies#getIsmodifycomponent <em>Ismodifycomponent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ismodifycomponent</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies#getIsmodifycomponent()
+	 * @see #getISChangePropagationDueToConfigurationDependencies()
+	 * @generated
+	 */
+	EReference getISChangePropagationDueToConfigurationDependencies_Ismodifycomponent();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1678,6 +1879,14 @@ public interface ISModificationmarksPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING = eINSTANCE.getISSeedModifications_Ismodifyoperationtiming();
+
+		/**
+		 * The meta object literal for the '<em><b>Ismodifyconfiguration</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_SEED_MODIFICATIONS__ISMODIFYCONFIGURATION = eINSTANCE.getISSeedModifications_Ismodifyconfiguration();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToDataDependenciesImpl <em>IS Change Propagation Due To Data Dependencies</em>}' class.
@@ -1814,6 +2023,14 @@ public interface ISModificationmarksPackage extends EPackage {
 		EReference IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS = eINSTANCE.getISModifyComponent_RequiredRoleModifications();
 
 		/**
+		 * The meta object literal for the '<em><b>Ismodifyconfiguration</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION = eINSTANCE.getISModifyComponent_Ismodifyconfiguration();
+
+		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyConnectorImpl <em>IS Modify Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1924,6 +2141,42 @@ public interface ISModificationmarksPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES__INTERFACE_MODIFICATIONS = eINSTANCE.getISChangePropagationDueToTimingDependencies_InterfaceModifications();
+
+		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyConfigurationImpl <em>IS Modify Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyConfigurationImpl
+		 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModificationmarksPackageImpl#getISModifyConfiguration()
+		 * @generated
+		 */
+		EClass IS_MODIFY_CONFIGURATION = eINSTANCE.getISModifyConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToConfigurationDependenciesImpl <em>IS Change Propagation Due To Configuration Dependencies</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISChangePropagationDueToConfigurationDependenciesImpl
+		 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModificationmarksPackageImpl#getISChangePropagationDueToConfigurationDependencies()
+		 * @generated
+		 */
+		EClass IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES = eINSTANCE.getISChangePropagationDueToConfigurationDependencies();
+
+		/**
+		 * The meta object literal for the '<em><b>Ismodifyconfiguration</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES__ISMODIFYCONFIGURATION = eINSTANCE.getISChangePropagationDueToConfigurationDependencies_Ismodifyconfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Ismodifycomponent</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES__ISMODIFYCOMPONENT = eINSTANCE.getISChangePropagationDueToConfigurationDependencies_Ismodifycomponent();
 
 	}
 

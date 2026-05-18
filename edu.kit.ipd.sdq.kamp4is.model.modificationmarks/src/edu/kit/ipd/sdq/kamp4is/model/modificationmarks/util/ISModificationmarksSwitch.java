@@ -216,6 +216,21 @@ public class ISModificationmarksSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ISModificationmarksPackage.IS_MODIFY_CONFIGURATION: {
+				ISModifyConfiguration isModifyConfiguration = (ISModifyConfiguration)theEObject;
+				T1 result = caseISModifyConfiguration(isModifyConfiguration);
+				if (result == null) result = (T1)caseAbstractModification(isModifyConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES: {
+				ISChangePropagationDueToConfigurationDependencies isChangePropagationDueToConfigurationDependencies = (ISChangePropagationDueToConfigurationDependencies)theEObject;
+				T1 result = caseISChangePropagationDueToConfigurationDependencies(isChangePropagationDueToConfigurationDependencies);
+				if (result == null) result = caseChangePropagationStep(isChangePropagationDueToConfigurationDependencies);
+				if (result == null) result = caseAbstractChangePropagationStep(isChangePropagationDueToConfigurationDependencies);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -487,6 +502,36 @@ public class ISModificationmarksSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseISChangePropagationDueToTimingDependencies(ISChangePropagationDueToTimingDependencies object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IS Modify Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IS Modify Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseISModifyConfiguration(ISModifyConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IS Change Propagation Due To Configuration Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IS Change Propagation Due To Configuration Dependencies</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseISChangePropagationDueToConfigurationDependencies(ISChangePropagationDueToConfigurationDependencies object) {
 		return null;
 	}
 

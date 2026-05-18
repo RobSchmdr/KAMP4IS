@@ -73,6 +73,7 @@ public class ISRoleListImpl extends EObjectImpl implements ISRoleList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISStaffSpecification getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_ROLE_LIST__PARENT) return null;
 		return (ISStaffSpecification)eInternalContainer();
@@ -93,6 +94,7 @@ public class ISRoleListImpl extends EObjectImpl implements ISRoleList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISStaffSpecification newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_ROLE_LIST__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -114,6 +116,7 @@ public class ISRoleListImpl extends EObjectImpl implements ISRoleList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISRole> getRoles() {
 		if (roles == null) {
 			roles = new EObjectContainmentWithInverseEList<ISRole>(ISRole.class, this, ISFieldOfActivityAnnotationsPackage.IS_ROLE_LIST__ROLES, ISFieldOfActivityAnnotationsPackage.IS_ROLE__PARENT);

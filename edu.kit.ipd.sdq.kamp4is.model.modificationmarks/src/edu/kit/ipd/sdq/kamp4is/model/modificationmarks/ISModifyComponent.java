@@ -17,6 +17,7 @@ import org.palladiosimulator.pcm.repository.RepositoryComponent;
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent#getProvidedRoleModifications <em>Provided Role Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent#getRequiredRoleModifications <em>Required Role Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent#getIsmodifyconfiguration <em>Ismodifyconfiguration</em>}</li>
  * </ul>
  *
  * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage#getISModifyComponent()
@@ -55,5 +56,17 @@ public interface ISModifyComponent extends ISModifyEntity<RepositoryComponent> {
 	 * @generated
 	 */
 	EList<ISModifyRequiredRole> getRequiredRoleModifications();
+
+	/**
+	 * Returns the value of the '<em><b>Ismodifyconfiguration</b></em>' containment reference list.
+	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ismodifyconfiguration</em>' containment reference list.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage#getISModifyComponent_Ismodifyconfiguration()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ISModifyConfiguration> getIsmodifyconfiguration();
 
 } // ISModifyComponent

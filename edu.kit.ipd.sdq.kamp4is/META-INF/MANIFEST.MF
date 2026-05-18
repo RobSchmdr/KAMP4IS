@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.ui,
  edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations,
  edu.kit.ipd.sdq.kamp4is.model.modificationmarks,
  edu.kit.ipd.sdq.kamp4is.model.modificationmarks.edit,
- de.uhd.ifi.se.pcm.bppcm
+ de.uhd.ifi.se.pcm.bppcm,
+ org.eclipse.emf.common
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
@@ -26,4 +27,5 @@ Bundle-Vendor: SDQ
 Export-Package: edu.kit.ipd.sdq.kamp4is.activator,
  edu.kit.ipd.sdq.kamp4is.core,
  edu.kit.ipd.sdq.kamp4is.core.derivation,
+ edu.kit.ipd.sdq.kamp4is.core.propagation,
  edu.kit.ipd.sdq.kamp4is.ui

@@ -115,6 +115,7 @@ public class ISRuntimeInstanceAggregationImpl extends EObjectImpl implements ISR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISDeploymentSpecification getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_RUNTIME_INSTANCE_AGGREGATION__PARENT) return null;
 		return (ISDeploymentSpecification)eInternalContainer();
@@ -135,6 +136,7 @@ public class ISRuntimeInstanceAggregationImpl extends EObjectImpl implements ISR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISDeploymentSpecification newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_RUNTIME_INSTANCE_AGGREGATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -156,6 +158,7 @@ public class ISRuntimeInstanceAggregationImpl extends EObjectImpl implements ISR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getNumberOfInstances() {
 		return numberOfInstances;
 	}
@@ -165,6 +168,7 @@ public class ISRuntimeInstanceAggregationImpl extends EObjectImpl implements ISR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNumberOfInstances(int newNumberOfInstances) {
 		int oldNumberOfInstances = numberOfInstances;
 		numberOfInstances = newNumberOfInstances;
@@ -177,6 +181,7 @@ public class ISRuntimeInstanceAggregationImpl extends EObjectImpl implements ISR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -186,6 +191,7 @@ public class ISRuntimeInstanceAggregationImpl extends EObjectImpl implements ISR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -198,6 +204,7 @@ public class ISRuntimeInstanceAggregationImpl extends EObjectImpl implements ISR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RepositoryComponent> getComponents() {
 		if (components == null) {
 			components = new EObjectResolvingEList<RepositoryComponent>(RepositoryComponent.class, this, ISFieldOfActivityAnnotationsPackage.IS_RUNTIME_INSTANCE_AGGREGATION__COMPONENTS);
@@ -348,7 +355,7 @@ public class ISRuntimeInstanceAggregationImpl extends EObjectImpl implements ISR
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (numberOfInstances: ");
 		result.append(numberOfInstances);
 		result.append(", description: ");

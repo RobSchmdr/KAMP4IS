@@ -109,6 +109,7 @@ public class ISDevelopmentArtefactSpecificationImpl extends EObjectImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISFieldOfActivityAnnotationsRepository getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_DEVELOPMENT_ARTEFACT_SPECIFICATION__PARENT) return null;
 		return (ISFieldOfActivityAnnotationsRepository)eInternalContainer();
@@ -129,6 +130,7 @@ public class ISDevelopmentArtefactSpecificationImpl extends EObjectImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISFieldOfActivityAnnotationsRepository newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_DEVELOPMENT_ARTEFACT_SPECIFICATION__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -150,6 +152,7 @@ public class ISDevelopmentArtefactSpecificationImpl extends EObjectImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISSourceFile> getSourceFiles() {
 		if (sourceFiles == null) {
 			sourceFiles = new EObjectContainmentWithInverseEList<ISSourceFile>(ISSourceFile.class, this, ISFieldOfActivityAnnotationsPackage.IS_DEVELOPMENT_ARTEFACT_SPECIFICATION__SOURCE_FILES, ISFieldOfActivityAnnotationsPackage.IS_SOURCE_FILE__PARENT);
@@ -162,6 +165,7 @@ public class ISDevelopmentArtefactSpecificationImpl extends EObjectImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISSourceFileAggregation> getSourceFileAggregations() {
 		if (sourceFileAggregations == null) {
 			sourceFileAggregations = new EObjectContainmentWithInverseEList<ISSourceFileAggregation>(ISSourceFileAggregation.class, this, ISFieldOfActivityAnnotationsPackage.IS_DEVELOPMENT_ARTEFACT_SPECIFICATION__SOURCE_FILE_AGGREGATIONS, ISFieldOfActivityAnnotationsPackage.IS_SOURCE_FILE_AGGREGATION__PARENT);
@@ -174,6 +178,7 @@ public class ISDevelopmentArtefactSpecificationImpl extends EObjectImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISMetadataFile> getMetadataFiles() {
 		if (metadataFiles == null) {
 			metadataFiles = new EObjectContainmentWithInverseEList<ISMetadataFile>(ISMetadataFile.class, this, ISFieldOfActivityAnnotationsPackage.IS_DEVELOPMENT_ARTEFACT_SPECIFICATION__METADATA_FILES, ISFieldOfActivityAnnotationsPackage.IS_METADATA_FILE__PARENT);
@@ -186,6 +191,7 @@ public class ISDevelopmentArtefactSpecificationImpl extends EObjectImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISMetadataFileAggregation> getMetadataFileAggregations() {
 		if (metadataFileAggregations == null) {
 			metadataFileAggregations = new EObjectContainmentWithInverseEList<ISMetadataFileAggregation>(ISMetadataFileAggregation.class, this, ISFieldOfActivityAnnotationsPackage.IS_DEVELOPMENT_ARTEFACT_SPECIFICATION__METADATA_FILE_AGGREGATIONS, ISFieldOfActivityAnnotationsPackage.IS_METADATA_FILE_AGGREGATION__PARENT);

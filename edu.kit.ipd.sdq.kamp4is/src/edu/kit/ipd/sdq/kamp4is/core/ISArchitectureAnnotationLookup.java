@@ -1,7 +1,10 @@
 package edu.kit.ipd.sdq.kamp4is.core;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector;
 import org.palladiosimulator.pcm.repository.ProvidedRole;
@@ -9,6 +12,7 @@ import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISAcceptanceTestCase;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISAcceptanceTestCaseAggregation;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfiguration;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISIntegrationTestCase;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISIntegrationTestCaseAggregation;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISMetadataFile;
@@ -31,7 +35,7 @@ public class ISArchitectureAnnotationLookup {
 		if (version.getFieldOfActivityRepository().getDevelopmentArtefactSpecification() != null) {
 			for (ISSourceFile sourceFile : version.getFieldOfActivityRepository().
 					getDevelopmentArtefactSpecification().getSourceFiles()) {
-				if (sourceFile.getComponent()==component) {
+				if (sourceFile.getComponent()==component && !(sourceFile instanceof ISConfigurationFile)) {
 					sourceFiles.add(sourceFile);
 				}
 			}
@@ -52,6 +56,22 @@ public class ISArchitectureAnnotationLookup {
 		}
 		
 		return null;
+	}
+	
+	public static List<ISConfigurationFile> lookUpISConfigurationFilesForComponent(ISArchitectureVersion version, 
+			RepositoryComponent component) {
+		List<ISConfigurationFile> configurationFiles = new ArrayList<ISConfigurationFile>();
+		
+		if (version.getFieldOfActivityRepository().getDevelopmentArtefactSpecification() != null) {
+			for (ISSourceFile sourceFile : version.getFieldOfActivityRepository().
+					getDevelopmentArtefactSpecification().getSourceFiles()) {
+				if (sourceFile.getComponent()==component && sourceFile instanceof ISConfigurationFile) {
+					configurationFiles.add((ISConfigurationFile)sourceFile);
+				}
+			}
+		}
+		return configurationFiles;
+
 	}
 	
 	public static List<ISMetadataFile> lookUpMetadataFilesForComponent(ISArchitectureVersion version, 

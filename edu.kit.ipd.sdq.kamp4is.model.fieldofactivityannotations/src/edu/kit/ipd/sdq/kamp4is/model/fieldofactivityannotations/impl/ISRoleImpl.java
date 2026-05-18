@@ -108,6 +108,7 @@ public abstract class ISRoleImpl extends EObjectImpl implements ISRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISRoleList getParent() {
 		if (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_ROLE__PARENT) return null;
 		return (ISRoleList)eInternalContainer();
@@ -128,6 +129,7 @@ public abstract class ISRoleImpl extends EObjectImpl implements ISRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(ISRoleList newParent) {
 		if (newParent != eInternalContainer() || (eContainerFeatureID() != ISFieldOfActivityAnnotationsPackage.IS_ROLE__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
@@ -149,6 +151,7 @@ public abstract class ISRoleImpl extends EObjectImpl implements ISRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISPerson> getPerson() {
 		if (person == null) {
 			person = new EObjectWithInverseResolvingEList.ManyInverse<ISPerson>(ISPerson.class, this, ISFieldOfActivityAnnotationsPackage.IS_ROLE__PERSON, ISFieldOfActivityAnnotationsPackage.IS_PERSON__ROLES);
@@ -161,6 +164,7 @@ public abstract class ISRoleImpl extends EObjectImpl implements ISRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -170,6 +174,7 @@ public abstract class ISRoleImpl extends EObjectImpl implements ISRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -182,6 +187,7 @@ public abstract class ISRoleImpl extends EObjectImpl implements ISRole {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<RepositoryComponent> getComponents() {
 		if (components == null) {
 			components = new EObjectResolvingEList<RepositoryComponent>(RepositoryComponent.class, this, ISFieldOfActivityAnnotationsPackage.IS_ROLE__COMPONENTS);
@@ -338,7 +344,7 @@ public abstract class ISRoleImpl extends EObjectImpl implements ISRole {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (description: ");
 		result.append(description);
 		result.append(')');

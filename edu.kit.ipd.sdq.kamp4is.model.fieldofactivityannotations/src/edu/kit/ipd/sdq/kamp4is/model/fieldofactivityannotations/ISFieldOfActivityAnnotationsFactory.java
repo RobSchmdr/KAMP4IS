@@ -337,6 +337,15 @@ public interface ISFieldOfActivityAnnotationsFactory extends EFactory {
 	ISTechnologicalCorrespondence createISTechnologicalCorrespondence();
 
 	/**
+	 * Returns a new object of class '<em>IS Configuration File</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IS Configuration File</em>'.
+	 * @generated
+	 */
+	ISConfigurationFile createISConfigurationFile();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

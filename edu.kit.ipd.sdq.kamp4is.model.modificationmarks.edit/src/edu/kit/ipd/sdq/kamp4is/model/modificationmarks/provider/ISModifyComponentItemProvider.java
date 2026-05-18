@@ -62,6 +62,7 @@ public class ISModifyComponentItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_MODIFY_COMPONENT__PROVIDED_ROLE_MODIFICATIONS);
 			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS);
+			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION);
 		}
 		return childrenFeatures;
 	}
@@ -120,6 +121,7 @@ public class ISModifyComponentItemProvider
 		switch (notification.getFeatureID(ISModifyComponent.class)) {
 			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__PROVIDED_ROLE_MODIFICATIONS:
 			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS:
+			case ISModificationmarksPackage.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -146,6 +148,11 @@ public class ISModifyComponentItemProvider
 			(createChildParameter
 				(ISModificationmarksPackage.Literals.IS_MODIFY_COMPONENT__REQUIRED_ROLE_MODIFICATIONS,
 				 ISModificationmarksFactory.eINSTANCE.createISModifyRequiredRole()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ISModificationmarksPackage.Literals.IS_MODIFY_COMPONENT__ISMODIFYCONFIGURATION,
+				 ISModificationmarksFactory.eINSTANCE.createISModifyConfiguration()));
 	}
 
 }

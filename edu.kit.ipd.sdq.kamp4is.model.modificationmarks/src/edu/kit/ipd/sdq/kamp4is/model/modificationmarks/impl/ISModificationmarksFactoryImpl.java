@@ -74,6 +74,8 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE: return createISModifySignature();
 			case ISModificationmarksPackage.IS_MODIFY_OPERATION_TIMING: return createISModifyOperationTiming();
 			case ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_TIMING_DEPENDENCIES: return createISChangePropagationDueToTimingDependencies();
+			case ISModificationmarksPackage.IS_MODIFY_CONFIGURATION: return createISModifyConfiguration();
+			case ISModificationmarksPackage.IS_CHANGE_PROPAGATION_DUE_TO_CONFIGURATION_DEPENDENCIES: return createISChangePropagationDueToConfigurationDependencies();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -253,6 +255,28 @@ public class ISModificationmarksFactoryImpl extends EFactoryImpl implements ISMo
 	public ISChangePropagationDueToTimingDependencies createISChangePropagationDueToTimingDependencies() {
 		ISChangePropagationDueToTimingDependenciesImpl isChangePropagationDueToTimingDependencies = new ISChangePropagationDueToTimingDependenciesImpl();
 		return isChangePropagationDueToTimingDependencies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ISModifyConfiguration createISModifyConfiguration() {
+		ISModifyConfigurationImpl isModifyConfiguration = new ISModifyConfigurationImpl();
+		return isModifyConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ISChangePropagationDueToConfigurationDependencies createISChangePropagationDueToConfigurationDependencies() {
+		ISChangePropagationDueToConfigurationDependenciesImpl isChangePropagationDueToConfigurationDependencies = new ISChangePropagationDueToConfigurationDependenciesImpl();
+		return isChangePropagationDueToConfigurationDependencies;
 	}
 
 	/**

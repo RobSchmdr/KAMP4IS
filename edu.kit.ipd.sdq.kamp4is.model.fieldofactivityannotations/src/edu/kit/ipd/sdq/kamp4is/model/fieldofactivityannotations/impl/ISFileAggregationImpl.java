@@ -91,6 +91,7 @@ public abstract class ISFileAggregationImpl extends EObjectImpl implements ISFil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getNumberOfFiles() {
 		return numberOfFiles;
 	}
@@ -100,6 +101,7 @@ public abstract class ISFileAggregationImpl extends EObjectImpl implements ISFil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNumberOfFiles(int newNumberOfFiles) {
 		int oldNumberOfFiles = numberOfFiles;
 		numberOfFiles = newNumberOfFiles;
@@ -112,6 +114,7 @@ public abstract class ISFileAggregationImpl extends EObjectImpl implements ISFil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTechnology() {
 		return technology;
 	}
@@ -121,6 +124,7 @@ public abstract class ISFileAggregationImpl extends EObjectImpl implements ISFil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTechnology(String newTechnology) {
 		String oldTechnology = technology;
 		technology = newTechnology;
@@ -205,7 +209,7 @@ public abstract class ISFileAggregationImpl extends EObjectImpl implements ISFil
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (numberOfFiles: ");
 		result.append(numberOfFiles);
 		result.append(", technology: ");
