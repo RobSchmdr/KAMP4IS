@@ -123,10 +123,12 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 				activity.addFollowupActivity(new Activity(ISActivityType.IMPLEMENTATION_SOURCECODE,
 						ISActivityElementType.CONFIGURATIONFFILES,
 						activity.getElement(),
-						"1 configuration file",
+						numberOfFiles + " configuration file",
 						null,
 						activity.getBasicActivity(),
-						"Test"));
+						"Source code implementation: " + activity.getBasicActivity().getName() + 
+						" configuration file(s) (" + numberOfFiles + " files) of component " + 
+						activity.getElementName() + "."));
 			} 
 			deriveCodingActivities(baseVersion, targetVersion, activity.getSubActivities());
 		}
