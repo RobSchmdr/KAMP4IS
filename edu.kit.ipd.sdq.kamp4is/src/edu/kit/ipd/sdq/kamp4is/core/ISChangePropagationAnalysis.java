@@ -1,5 +1,6 @@
 package edu.kit.ipd.sdq.kamp4is.core;
 
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToConfigurationDependencies;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToDataDependencies;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISChangePropagationDueToTimingDependencies;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
@@ -18,7 +19,10 @@ import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactor
  * @author stammel
  *
  */
-public class ISChangePropagationAnalysis extends AbstractISChangePropagationAnalysis<ISArchitectureVersion, ISChangePropagationDueToDataDependencies, ISChangePropagationDueToTimingDependencies> {
+public class ISChangePropagationAnalysis extends AbstractISChangePropagationAnalysis<ISArchitectureVersion,
+																					ISChangePropagationDueToDataDependencies,
+																					ISChangePropagationDueToTimingDependencies,
+																					ISChangePropagationDueToConfigurationDependencies> {
 	
 	@Override
 	public void runChangePropagationAnalysis(ISArchitectureVersion version) {
@@ -50,7 +54,8 @@ public class ISChangePropagationAnalysis extends AbstractISChangePropagationAnal
 		//All other steps
 		this.calculateInterfaceAndComponentPropagation(version);	
 		
-
+		//TODO refactor this part with propagation strategies and a shared context class
+//		
 //		ChangePropagationEngine<ISArchitectureVersion> engine =
 //                new ChangePropagationEngine<>();
 //

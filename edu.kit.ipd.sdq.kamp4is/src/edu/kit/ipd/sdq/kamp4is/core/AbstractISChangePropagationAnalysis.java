@@ -52,12 +52,15 @@ import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
  * @param S The type of the architecture version.
  * @param T The type of the ISChangePropagationDueToDataDependencies object.
  */
-public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectureVersion, 
-	T extends ISChangePropagationDueToDataDependencies, U extends ISChangePropagationDueToTimingDependencies> implements AbstractChangePropagationAnalysis<S> {
+public abstract class AbstractISChangePropagationAnalysis<
+	S extends ISArchitectureVersion, 
+	T extends ISChangePropagationDueToDataDependencies,
+	U extends ISChangePropagationDueToTimingDependencies,
+	V extends ISChangePropagationDueToConfigurationDependencies> implements AbstractChangePropagationAnalysis<S> {
 	
 	private T changePropagationDueToDataDependencies;
 	private U changePropagationDueToTimingDependencies;
-	private ISChangePropagationDueToConfigurationDependencies changePropagationDueToConfigurationDependencies;
+	private V changePropagationDueToConfigurationDependencies;
 	private Map<ProvidedRole, Set<Signature>> visitedProvidedRoles = 
 			new HashMap<ProvidedRole, Set<Signature>>();
 	
@@ -156,64 +159,11 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 		}
 	}
 
-	private void createAndAddInterfaceModificationsFromDataType(
+	private <X> void createAndAddInterfaceModifications(
 			Map<Interface, Set<Signature>> interfacesToBeMarked,
-			Map<Signature, Set<DataType>> signaturesToBeMarked, 
-			Collection<ISModifyInterface> targetCollection) {
-		
-		for (Map.Entry<Interface, Set<Signature>> interfaceToBeMarkedEntry : interfacesToBeMarked.entrySet()) {
-			ISModifyInterface modifyInterface = ISModificationmarksFactory.eINSTANCE.createISModifyInterface();
-			modifyInterface.setToolderived(true);
-			modifyInterface.setAffectedElement(interfaceToBeMarkedEntry.getKey());
-			modifyInterface.getCausingElements().addAll(interfaceToBeMarkedEntry.getValue());
-			
-			for (Signature signature: interfaceToBeMarkedEntry.getValue()) {
-				// Mark only those signatures which are not initially marked
-				if (signaturesToBeMarked.containsKey(signature)) {
-					ISModifySignature modifySignature = ISModificationmarksFactory.eINSTANCE.createISModifySignature();
-					modifySignature.setToolderived(true);
-					modifySignature.setAffectedElement(signature);
-					modifySignature.getCausingElements().addAll(signaturesToBeMarked.get(signature));
-					modifyInterface.getSignatureModifications().add(modifySignature);
-				}
-			}
-			
-			targetCollection.add(modifyInterface);
-		}
-	}
-	
-	private void createAndAddInterfaceModificationsFromOperationTiming(
-			Map<Interface, Set<Signature>> interfacesToBeMarked,
-			Map<Signature,ISModifyOperationTiming> signaturesToBeMarked, 
-			Collection<ISModifyInterface> targetCollectionInterface) {
-		
-		for (Map.Entry<Interface, Set<Signature>> interfaceToBeMarkedEntry : interfacesToBeMarked.entrySet()) {
-			ISModifyInterface modifyInterface = ISModificationmarksFactory.eINSTANCE.createISModifyInterface();
-			modifyInterface.setToolderived(true);
-			modifyInterface.setAffectedElement(interfaceToBeMarkedEntry.getKey());
-			modifyInterface.getCausingElements().addAll(interfaceToBeMarkedEntry.getValue());
-			
-			for (Signature signature: interfaceToBeMarkedEntry.getValue()) {
-				// Mark only those signatures which are not initially marked
-				if (signaturesToBeMarked.containsKey(signature)) {
-					ISModifySignature modifySignature = ISModificationmarksFactory.eINSTANCE.createISModifySignature();
-					modifySignature.setToolderived(true);
-					modifySignature.setAffectedElement(signature);
-					modifySignature.getCausingElements().add(signaturesToBeMarked.get(signature));
-					modifySignature.getIsmodifyoperationtiming().add(signaturesToBeMarked.get(signature));
-					modifyInterface.getSignatureModifications().add(modifySignature);
-				}
-			}
-			
-			targetCollectionInterface.add(modifyInterface);
-		}
-	}
-	
-	private <V> void createAndAddInterfaceModifications(
-			Map<Interface, Set<Signature>> interfacesToBeMarked,
-			Map<Signature,V> signaturesToBeMarked, 
+			Map<Signature,X> signaturesToBeMarked, 
 			Collection<ISModifyInterface> targetCollection,
-			BiConsumer<ISModifySignature,V> signatureHandler) {
+			BiConsumer<ISModifySignature,X> signatureHandler) {
 		
 		for (Map.Entry<Interface, Set<Signature>> interfaceToBeMarkedEntry : interfacesToBeMarked.entrySet()) {
 			ISModifyInterface modifyInterface = ISModificationmarksFactory.eINSTANCE.createISModifyInterface();
@@ -781,11 +731,11 @@ public abstract class AbstractISChangePropagationAnalysis<S extends ISArchitectu
 		this.changePropagationDueToDataDependencies = changePropagationDueToDataDependencies;
 	}
 	
-	protected ISChangePropagationDueToConfigurationDependencies getChangePropagationDueToConfigurationDependencies() {
+	protected V getChangePropagationDueToConfigurationDependencies() {
 		return changePropagationDueToConfigurationDependencies;
 	}
 	
-	protected void setChangePropagationDueToConfigurationDependencies(ISChangePropagationDueToConfigurationDependencies changePropagationDueToConfigurationDependencies) {
+	protected void setChangePropagationDueToConfigurationDependencies(V changePropagationDueToConfigurationDependencies) {
 		this.changePropagationDueToConfigurationDependencies = changePropagationDueToConfigurationDependencies;
 	}
 	
