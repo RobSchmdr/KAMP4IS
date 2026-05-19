@@ -27,5 +27,4 @@ Bundle-Vendor: SDQ
 Export-Package: edu.kit.ipd.sdq.kamp4is.activator,
  edu.kit.ipd.sdq.kamp4is.core,
  edu.kit.ipd.sdq.kamp4is.core.derivation,
- edu.kit.ipd.sdq.kamp4is.core.propagation,
  edu.kit.ipd.sdq.kamp4is.ui

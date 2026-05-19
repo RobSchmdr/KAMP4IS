@@ -125,7 +125,8 @@ public class ISInternalModificationDerivation {
 			for (ISModifySignature modifySignature : modifyInterface.getSignatureModifications()) {
 				Activity modifySignatureActivity = addModificationSubActivity(modifySignature, ISActivityElementType.SIGNATURE, 
 						interfaceActivity);
-				for (ISModifyOperationTiming opTiming: modifySignature.getIsmodifyoperationtiming()) {
+				ISModifyOperationTiming opTiming = modifySignature.getOperationTimingModification();
+				if (opTiming != null) {
 					addModificationSubActivity(opTiming, ISActivityElementType.OPERATION_TIMING, modifySignatureActivity);
 				}
 			}
@@ -140,7 +141,8 @@ public class ISInternalModificationDerivation {
 		    for (ISModifySignature modifySignature : modifyProvidedRole.getSignatureModifications()) {	
 		    	Activity modifySignatureActivity = addModificationSubActivity(modifySignature, ISActivityElementType.PROVIDEDOPERATION, 
 							providedRoleActivity);
-		    	for (ISModifyOperationTiming opTiming: modifySignature.getIsmodifyoperationtiming()) {
+		    	ISModifyOperationTiming opTiming = modifySignature.getOperationTimingModification();
+				if (opTiming != null) {
 					addModificationSubActivity(opTiming, ISActivityElementType.OPERATION_TIMING, modifySignatureActivity);
 				}
 			}
@@ -151,7 +153,8 @@ public class ISInternalModificationDerivation {
 		    for (ISModifySignature modifySignature : modifyRequiredRole.getSignatureModifications()) {
 		    	Activity modifySignatureActivity = addModificationSubActivity(modifySignature, ISActivityElementType.REQUIREDOPERATION, 
 							requiredRoleActivity);
-		    	for (ISModifyOperationTiming opTiming: modifySignature.getIsmodifyoperationtiming()) {
+		    	ISModifyOperationTiming opTiming = modifySignature.getOperationTimingModification();
+				if (opTiming != null) {
 					addModificationSubActivity(opTiming, ISActivityElementType.OPERATION_TIMING, modifySignatureActivity);
 				}
 			}

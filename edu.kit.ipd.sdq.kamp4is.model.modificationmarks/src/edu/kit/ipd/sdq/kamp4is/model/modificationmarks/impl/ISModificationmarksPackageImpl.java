@@ -340,7 +340,7 @@ public class ISModificationmarksPackageImpl extends EPackageImpl implements ISMo
 	 * @generated
 	 */
 	@Override
-	public EReference getISSeedModifications_Ismodifyoperationtiming() {
+	public EReference getISSeedModifications_OperationTimingModifications() {
 		return (EReference)isSeedModificationsEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -600,7 +600,7 @@ public class ISModificationmarksPackageImpl extends EPackageImpl implements ISMo
 	 * @generated
 	 */
 	@Override
-	public EReference getISModifySignature_Ismodifyoperationtiming() {
+	public EReference getISModifySignature_OperationTimingModification() {
 		return (EReference)isModifySignatureEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -712,7 +712,7 @@ public class ISModificationmarksPackageImpl extends EPackageImpl implements ISMo
 		createEReference(isSeedModificationsEClass, IS_SEED_MODIFICATIONS__SIGNATURE_MODIFICATIONS);
 		createEReference(isSeedModificationsEClass, IS_SEED_MODIFICATIONS__INTERFACE_MODIFICATIONS);
 		createEReference(isSeedModificationsEClass, IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS);
-		createEReference(isSeedModificationsEClass, IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING);
+		createEReference(isSeedModificationsEClass, IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS);
 		createEReference(isSeedModificationsEClass, IS_SEED_MODIFICATIONS__ISMODIFYCONFIGURATION);
 
 		isChangePropagationDueToDataDependenciesEClass = createEClass(IS_CHANGE_PROPAGATION_DUE_TO_DATA_DEPENDENCIES);
@@ -751,7 +751,7 @@ public class ISModificationmarksPackageImpl extends EPackageImpl implements ISMo
 		createEReference(isModifyInterfaceEClass, IS_MODIFY_INTERFACE__SIGNATURE_MODIFICATIONS);
 
 		isModifySignatureEClass = createEClass(IS_MODIFY_SIGNATURE);
-		createEReference(isModifySignatureEClass, IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING);
+		createEReference(isModifySignatureEClass, IS_MODIFY_SIGNATURE__OPERATION_TIMING_MODIFICATION);
 
 		isModifyOperationTimingEClass = createEClass(IS_MODIFY_OPERATION_TIMING);
 
@@ -884,7 +884,7 @@ public class ISModificationmarksPackageImpl extends EPackageImpl implements ISMo
 		initEReference(getISSeedModifications_SignatureModifications(), this.getISModifySignature(), null, "signatureModifications", null, 0, -1, ISSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getISSeedModifications_InterfaceModifications(), this.getISModifyInterface(), null, "interfaceModifications", null, 0, -1, ISSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getISSeedModifications_ComponentModifications(), this.getISModifyComponent(), null, "componentModifications", null, 0, -1, ISSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getISSeedModifications_Ismodifyoperationtiming(), this.getISModifyOperationTiming(), null, "ismodifyoperationtiming", null, 0, -1, ISSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getISSeedModifications_OperationTimingModifications(), this.getISModifyOperationTiming(), null, "operationTimingModifications", null, 0, -1, ISSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getISSeedModifications_Ismodifyconfiguration(), this.getISModifyConfiguration(), null, "ismodifyconfiguration", null, 0, -1, ISSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(isChangePropagationDueToDataDependenciesEClass, ISChangePropagationDueToDataDependencies.class, "ISChangePropagationDueToDataDependencies", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -923,7 +923,7 @@ public class ISModificationmarksPackageImpl extends EPackageImpl implements ISMo
 		initEReference(getISModifyInterface_SignatureModifications(), this.getISModifySignature(), null, "signatureModifications", null, 0, -1, ISModifyInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(isModifySignatureEClass, ISModifySignature.class, "ISModifySignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getISModifySignature_Ismodifyoperationtiming(), this.getISModifyOperationTiming(), null, "ismodifyoperationtiming", null, 0, -1, ISModifySignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getISModifySignature_OperationTimingModification(), this.getISModifyOperationTiming(), null, "operationTimingModification", null, 0, 1, ISModifySignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(isModifyOperationTimingEClass, ISModifyOperationTiming.class, "ISModifyOperationTiming", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

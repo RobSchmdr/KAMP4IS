@@ -2,7 +2,6 @@
  */
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks;
 
-import org.eclipse.emf.common.util.EList;
 import org.palladiosimulator.pcm.repository.Signature;
 
 /**
@@ -14,7 +13,7 @@ import org.palladiosimulator.pcm.repository.Signature;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getOperationTimingModification <em>Operation Timing Modification</em>}</li>
  * </ul>
  *
  * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage#getISModifySignature()
@@ -24,14 +23,24 @@ import org.palladiosimulator.pcm.repository.Signature;
 public interface ISModifySignature extends ISModifyEntity<Signature> {
 
 	/**
-	 * Returns the value of the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list.
-	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming}.
+	 * Returns the value of the '<em><b>Operation Timing Modification</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ismodifyoperationtiming</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage#getISModifySignature_Ismodifyoperationtiming()
+	 * @return the value of the '<em>Operation Timing Modification</em>' containment reference.
+	 * @see #setOperationTimingModification(ISModifyOperationTiming)
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage#getISModifySignature_OperationTimingModification()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ISModifyOperationTiming> getIsmodifyoperationtiming();
+	ISModifyOperationTiming getOperationTimingModification();
+
+	/**
+	 * Sets the value of the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getOperationTimingModification <em>Operation Timing Modification</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation Timing Modification</em>' containment reference.
+	 * @see #getOperationTimingModification()
+	 * @generated
+	 */
+	void setOperationTimingModification(ISModifyOperationTiming value);
 } // ISModifySignature

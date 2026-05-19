@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getSignatureModifications <em>Signature Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getInterfaceModifications <em>Interface Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getComponentModifications <em>Component Modifications</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getOperationTimingModifications <em>Operation Timing Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyconfiguration <em>Ismodifyconfiguration</em>}</li>
  * </ul>
  *
@@ -93,16 +93,16 @@ public interface ISSeedModifications extends AbstractSeedModifications {
 	EList<ISModifyComponent> getComponentModifications();
 
 	/**
-	 * Returns the value of the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Operation Timing Modifications</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ismodifyoperationtiming</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage#getISSeedModifications_Ismodifyoperationtiming()
+	 * @return the value of the '<em>Operation Timing Modifications</em>' containment reference list.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage#getISSeedModifications_OperationTimingModifications()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ISModifyOperationTiming> getIsmodifyoperationtiming();
+	EList<ISModifyOperationTiming> getOperationTimingModifications();
 
 	/**
 	 * Returns the value of the '<em><b>Ismodifyconfiguration</b></em>' containment reference list.

@@ -25,7 +25,7 @@
         upperBound="-1" eType="#//ISModifyInterface" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentModifications"
         upperBound="-1" eType="#//ISModifyComponent" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyoperationtiming"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationTimingModifications"
         upperBound="-1" eType="#//ISModifyOperationTiming" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyconfiguration"
         upperBound="-1" eType="#//ISModifyConfiguration" containment="true"/>
@@ -111,8 +111,8 @@
     </eGenericSuperTypes>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ISModifySignature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ismodifyoperationtiming"
-        upperBound="-1" eType="#//ISModifyOperationTiming" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationTimingModification"
+        eType="#//ISModifyOperationTiming" containment="true"/>
     <eGenericSuperTypes eClassifier="#//ISModifyEntity">
       <eTypeArguments eClassifier="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/Signature"/>
     </eGenericSuperTypes>

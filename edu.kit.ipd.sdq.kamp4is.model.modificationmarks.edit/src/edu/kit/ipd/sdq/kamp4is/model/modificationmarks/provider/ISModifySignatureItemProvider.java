@@ -3,16 +3,14 @@
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks.provider;
 
 
-import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
 
 /**
@@ -44,38 +42,31 @@ public class ISModifySignatureItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOperationTimingModificationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Operation Timing Modification feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ISModificationmarksPackage.Literals.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addOperationTimingModificationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ISModifySignature_operationTimingModification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ISModifySignature_operationTimingModification_feature", "_UI_ISModifySignature_type"),
+				 ISModificationmarksPackage.Literals.IS_MODIFY_SIGNATURE__OPERATION_TIMING_MODIFICATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -115,12 +106,6 @@ public class ISModifySignatureItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ISModifySignature.class)) {
-			case ISModificationmarksPackage.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -134,11 +119,6 @@ public class ISModifySignatureItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ISModificationmarksPackage.Literals.IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING,
-				 ISModificationmarksFactory.eINSTANCE.createISModifyOperationTiming()));
 	}
 
 }

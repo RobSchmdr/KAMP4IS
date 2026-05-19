@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getSignatureModifications <em>Signature Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getInterfaceModifications <em>Interface Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getComponentModifications <em>Component Modifications</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getOperationTimingModifications <em>Operation Timing Modifications</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISSeedModificationsImpl#getIsmodifyconfiguration <em>Ismodifyconfiguration</em>}</li>
  * </ul>
  *
@@ -85,14 +85,14 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 	protected EList<ISModifyComponent> componentModifications;
 
 	/**
-	 * The cached value of the '{@link #getIsmodifyoperationtiming() <em>Ismodifyoperationtiming</em>}' containment reference list.
+	 * The cached value of the '{@link #getOperationTimingModifications() <em>Operation Timing Modifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIsmodifyoperationtiming()
+	 * @see #getOperationTimingModifications()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ISModifyOperationTiming> ismodifyoperationtiming;
+	protected EList<ISModifyOperationTiming> operationTimingModifications;
 
 	/**
 	 * The cached value of the '{@link #getIsmodifyconfiguration() <em>Ismodifyconfiguration</em>}' containment reference list.
@@ -181,11 +181,11 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 	 * @generated
 	 */
 	@Override
-	public EList<ISModifyOperationTiming> getIsmodifyoperationtiming() {
-		if (ismodifyoperationtiming == null) {
-			ismodifyoperationtiming = new EObjectContainmentEList<ISModifyOperationTiming>(ISModifyOperationTiming.class, this, ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING);
+	public EList<ISModifyOperationTiming> getOperationTimingModifications() {
+		if (operationTimingModifications == null) {
+			operationTimingModifications = new EObjectContainmentEList<ISModifyOperationTiming>(ISModifyOperationTiming.class, this, ISModificationmarksPackage.IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS);
 		}
-		return ismodifyoperationtiming;
+		return operationTimingModifications;
 	}
 
 	/**
@@ -217,8 +217,8 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 				return ((InternalEList<?>)getInterfaceModifications()).basicRemove(otherEnd, msgs);
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
 				return ((InternalEList<?>)getComponentModifications()).basicRemove(otherEnd, msgs);
-			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
-				return ((InternalEList<?>)getIsmodifyoperationtiming()).basicRemove(otherEnd, msgs);
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS:
+				return ((InternalEList<?>)getOperationTimingModifications()).basicRemove(otherEnd, msgs);
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYCONFIGURATION:
 				return ((InternalEList<?>)getIsmodifyconfiguration()).basicRemove(otherEnd, msgs);
 		}
@@ -241,8 +241,8 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 				return getInterfaceModifications();
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
 				return getComponentModifications();
-			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
-				return getIsmodifyoperationtiming();
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS:
+				return getOperationTimingModifications();
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYCONFIGURATION:
 				return getIsmodifyconfiguration();
 		}
@@ -274,9 +274,9 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 				getComponentModifications().clear();
 				getComponentModifications().addAll((Collection<? extends ISModifyComponent>)newValue);
 				return;
-			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
-				getIsmodifyoperationtiming().clear();
-				getIsmodifyoperationtiming().addAll((Collection<? extends ISModifyOperationTiming>)newValue);
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS:
+				getOperationTimingModifications().clear();
+				getOperationTimingModifications().addAll((Collection<? extends ISModifyOperationTiming>)newValue);
 				return;
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYCONFIGURATION:
 				getIsmodifyconfiguration().clear();
@@ -306,8 +306,8 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
 				getComponentModifications().clear();
 				return;
-			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
-				getIsmodifyoperationtiming().clear();
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS:
+				getOperationTimingModifications().clear();
 				return;
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYCONFIGURATION:
 				getIsmodifyconfiguration().clear();
@@ -332,8 +332,8 @@ public class ISSeedModificationsImpl extends AbstractSeedModificationsImpl imple
 				return interfaceModifications != null && !interfaceModifications.isEmpty();
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS:
 				return componentModifications != null && !componentModifications.isEmpty();
-			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING:
-				return ismodifyoperationtiming != null && !ismodifyoperationtiming.isEmpty();
+			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS:
+				return operationTimingModifications != null && !operationTimingModifications.isEmpty();
 			case ISModificationmarksPackage.IS_SEED_MODIFICATIONS__ISMODIFYCONFIGURATION:
 				return ismodifyconfiguration != null && !ismodifyconfiguration.isEmpty();
 		}

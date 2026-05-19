@@ -18,7 +18,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/signatureModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/interfaceModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/componentModifications"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/ismodifyoperationtiming"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/operationTimingModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISSeedModifications/ismodifyconfiguration"/>
     </genClasses>
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISChangePropagationDueToDataDependencies">
@@ -55,7 +55,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISModifyInterface/signatureModifications"/>
     </genClasses>
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISModifySignature">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISModifySignature/ismodifyoperationtiming"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ISModificationmarks.ecore#//ISModifySignature/operationTimingModification"/>
     </genClasses>
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISModifyOperationTiming"/>
     <genClasses ecoreClass="ISModificationmarks.ecore#//ISChangePropagationDueToTimingDependencies">

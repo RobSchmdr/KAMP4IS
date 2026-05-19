@@ -118,7 +118,7 @@ public abstract class AbstractISChangePropagationAnalysis<
 				this.getChangePropagationDueToTimingDependencies().getInterfaceModifications(),
 				(modifySignature, operationTiming) -> {
 					modifySignature.getCausingElements().add(operationTiming);
-					modifySignature.getIsmodifyoperationtiming().add(operationTiming);
+					modifySignature.setOperationTimingModification(operationTiming);
 				});	
 	}
 	
@@ -650,7 +650,7 @@ public abstract class AbstractISChangePropagationAnalysis<
 								operationTimingModification.setToolderived(true);
 								operationTimingModification.setAffectedElement(modifyProvidedSignature.getAffectedElement());
 								operationTimingModification.getCausingElements().add(timingBySignature.get(requiredSignature));
-								modifyProvidedSignature.getIsmodifyoperationtiming().add(operationTimingModification);
+								modifyProvidedSignature.setOperationTimingModification(operationTimingModification);
 							}
 						}
 					}

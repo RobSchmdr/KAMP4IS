@@ -195,13 +195,13 @@ public interface ISModificationmarksPackage extends EPackage {
 	int IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Operation Timing Modifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 4;
+	int IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Ismodifyconfiguration</b></em>' containment reference list.
@@ -1099,13 +1099,13 @@ public interface ISModificationmarksPackage extends EPackage {
 	int IS_MODIFY_SIGNATURE__USER_DECISION = IS_MODIFY_ENTITY__USER_DECISION;
 
 	/**
-	 * The feature id for the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Operation Timing Modification</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING = IS_MODIFY_ENTITY_FEATURE_COUNT + 0;
+	int IS_MODIFY_SIGNATURE__OPERATION_TIMING_MODIFICATION = IS_MODIFY_ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>IS Modify Signature</em>' class.
@@ -1431,15 +1431,15 @@ public interface ISModificationmarksPackage extends EPackage {
 	EReference getISSeedModifications_ComponentModifications();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getOperationTimingModifications <em>Operation Timing Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ismodifyoperationtiming</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyoperationtiming()
+	 * @return the meta object for the containment reference list '<em>Operation Timing Modifications</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getOperationTimingModifications()
 	 * @see #getISSeedModifications()
 	 * @generated
 	 */
-	EReference getISSeedModifications_Ismodifyoperationtiming();
+	EReference getISSeedModifications_OperationTimingModifications();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISSeedModifications#getIsmodifyconfiguration <em>Ismodifyconfiguration</em>}'.
@@ -1704,15 +1704,15 @@ public interface ISModificationmarksPackage extends EPackage {
 	EClass getISModifySignature();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getIsmodifyoperationtiming <em>Ismodifyoperationtiming</em>}'.
+	 * Returns the meta object for the containment reference '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getOperationTimingModification <em>Operation Timing Modification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ismodifyoperationtiming</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getIsmodifyoperationtiming()
+	 * @return the meta object for the containment reference '<em>Operation Timing Modification</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature#getOperationTimingModification()
 	 * @see #getISModifySignature()
 	 * @generated
 	 */
-	EReference getISModifySignature_Ismodifyoperationtiming();
+	EReference getISModifySignature_OperationTimingModification();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming <em>IS Modify Operation Timing</em>}'.
@@ -1873,12 +1873,12 @@ public interface ISModificationmarksPackage extends EPackage {
 		EReference IS_SEED_MODIFICATIONS__COMPONENT_MODIFICATIONS = eINSTANCE.getISSeedModifications_ComponentModifications();
 
 		/**
-		 * The meta object literal for the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Operation Timing Modifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IS_SEED_MODIFICATIONS__ISMODIFYOPERATIONTIMING = eINSTANCE.getISSeedModifications_Ismodifyoperationtiming();
+		EReference IS_SEED_MODIFICATIONS__OPERATION_TIMING_MODIFICATIONS = eINSTANCE.getISSeedModifications_OperationTimingModifications();
 
 		/**
 		 * The meta object literal for the '<em><b>Ismodifyconfiguration</b></em>' containment reference list feature.
@@ -2107,12 +2107,12 @@ public interface ISModificationmarksPackage extends EPackage {
 		EClass IS_MODIFY_SIGNATURE = eINSTANCE.getISModifySignature();
 
 		/**
-		 * The meta object literal for the '<em><b>Ismodifyoperationtiming</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Operation Timing Modification</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IS_MODIFY_SIGNATURE__ISMODIFYOPERATIONTIMING = eINSTANCE.getISModifySignature_Ismodifyoperationtiming();
+		EReference IS_MODIFY_SIGNATURE__OPERATION_TIMING_MODIFICATION = eINSTANCE.getISModifySignature_OperationTimingModification();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.impl.ISModifyOperationTimingImpl <em>IS Modify Operation Timing</em>}' class.
