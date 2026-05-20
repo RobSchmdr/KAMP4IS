@@ -37,6 +37,7 @@ import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISIntercomponentPropagati
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISIntracomponentPropagation;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyComponent;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConnector;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyInterface;
 import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyOperationTiming;
@@ -144,10 +145,16 @@ public abstract class AbstractISChangePropagationAnalysis<
 				continue; // already visited
 			}
 			
+			ISModifyConfiguration modifyConfiguration = ISModificationmarksFactory.eINSTANCE.createISModifyConfiguration();
+			modifyConfiguration.setToolderived(true);
+			modifyConfiguration.setAffectedElement(configurationFile);
+			
+			
 			ISModifyComponent modifyComponent = ISModificationmarksFactory.eINSTANCE.createISModifyComponent();
 			modifyComponent.setToolderived(true);
 			modifyComponent.setAffectedElement(configurationFile.getComponent());
 			modifyComponent.getCausingElements().add(configurationFile);
+			modifyComponent.getIsmodifyconfiguration().add(modifyConfiguration);
 			
 			targetCollection.add(modifyComponent);
 		

@@ -3,19 +3,16 @@
 package edu.kit.ipd.sdq.kamp4is.model.modificationmarks.provider;
 
 
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.AbstractModificationItemProvider;
-
-import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.AbstractModificationItemProvider;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration;
 
 /**
  * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyConfiguration} object.
@@ -68,7 +65,10 @@ public class ISModifyConfigurationItemProvider extends AbstractModificationItemP
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ISModifyConfiguration)object).getId();
+		// --Start manually modified code
+		String label = ISLabelCustomizing.customize((ISModifyConfiguration)object);
+		// --End manually modified code
+//		String label = ((ISModifyConfiguration)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ISModifyConfiguration_type") :
 			getString("_UI_ISModifyConfiguration_type") + " " + label;
