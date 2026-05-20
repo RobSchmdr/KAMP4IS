@@ -52,6 +52,8 @@ import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifySignature;
  * 
  * @param S The type of the architecture version.
  * @param T The type of the ISChangePropagationDueToDataDependencies object.
+ * @param U The type of the ISChangePropagationDueToTimingDependencies object.
+ * @param V The type of the ISChangePropagationDueToConfigurationDependencies object.
  */
 public abstract class AbstractISChangePropagationAnalysis<
 	S extends ISArchitectureVersion, 
@@ -91,6 +93,10 @@ public abstract class AbstractISChangePropagationAnalysis<
 				});
 	}
 	
+	/**
+	 * Calculates the OperationTimingChanged -> Signature -> Interface propagation
+	 * @param version Reference to the architecture
+	 */
 	protected void calculateAndMarkOperationTimingToInterfacePropagation(S version) {
 		Collection<ISModifyOperationTiming> seedOperationTimingModifications = new HashSet<ISModifyOperationTiming>();
 		Iterator<?> seedModifications = version.getModificationMarkRepository().getSeedModifications().eAllContents();
@@ -123,6 +129,10 @@ public abstract class AbstractISChangePropagationAnalysis<
 				});	
 	}
 	
+	/**
+	 * Calculates the ConfigurationFile -> Component propagation.
+	 * @param version Reference to the architecture
+	 */
 	protected void calculateAndMarkConfigurationToComponentPropagation(S version) {
 		Set<ISConfigurationFile> seedConfigurations = new HashSet<ISConfigurationFile>();
 		seedConfigurations = ArchitectureModelLookup.lookUpMarkedObjectsOfAType(version, ISConfigurationFile.class);
@@ -132,6 +142,11 @@ public abstract class AbstractISChangePropagationAnalysis<
 		
 	}
 	
+	/**
+	 * Create ISModifyComponent and ISModifyConfiguration elements based on marked configuration files
+	 * @param configurationFiles configuration files marked to be modified
+	 * @param targetCollection list of component modifications
+	 */
 	private void createAndAddComponentModificationsFromConfiguration(Set <ISConfigurationFile> configurationFiles,
 			EList<ISModifyComponent> targetCollection) {
 		
@@ -166,6 +181,20 @@ public abstract class AbstractISChangePropagationAnalysis<
 		}
 	}
 
+	/**
+	 * Creates interface and the containing signature modifications
+	 * 
+	 * @param <X>                  This parameter is used to allow signatures to be
+	 *                             marked due to different seed modification types.
+	 *                             e.g. DataType and OperationTiming
+	 * @param interfacesToBeMarked HashMap of Interfaces and sets of contained
+	 *                             Signatures that shall be modified
+	 * @param signaturesToBeMarked HashMap of signatures and their seed
+	 *                             modifications
+	 * @param targetCollection     Collection of created ISModifyInterface elements
+	 * @param signatureHandler     allows handling of different seed modification
+	 *                             types
+	 */
 	private <X> void createAndAddInterfaceModifications(
 			Map<Interface, Set<Signature>> interfacesToBeMarked,
 			Map<Signature,X> signaturesToBeMarked, 
@@ -184,7 +213,7 @@ public abstract class AbstractISChangePropagationAnalysis<
 					ISModifySignature modifySignature = ISModificationmarksFactory.eINSTANCE.createISModifySignature();
 					modifySignature.setToolderived(true);
 					modifySignature.setAffectedElement(signature);
-					//Handle causing elements and getIsmodifyoperationtiming differently
+					// Handle signature modification differently depending on <X>
 					signatureHandler.accept(modifySignature, signaturesToBeMarked.get(signature));
 					modifyInterface.getSignatureModifications().add(modifySignature);
 				}
@@ -753,5 +782,5 @@ public abstract class AbstractISChangePropagationAnalysis<
 	protected void setVisitedProvidedRoles(Map<ProvidedRole, Set<Signature>> visitedProvidedRoles) {
 		this.visitedProvidedRoles = visitedProvidedRoles;
 	}
-	
+
 }
