@@ -377,7 +377,6 @@ public class ISArchitectureModelLookup {
 		    ISModifyOperationTiming.class
 		).stream()
 			.filter(ISModifyOperationTiming::isToolderived)
-		    .filter(t -> t.getAffectedElement() instanceof Signature)
 		    .collect(Collectors.toMap(
 		        t -> (Signature) t.getAffectedElement(),
 		        t -> t

@@ -130,7 +130,7 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 						" configuration file(s) (" + numberOfFiles + " files) of component " + 
 						activity.getElementName() + "."));
 			} 
-			deriveCodingActivities(baseVersion, targetVersion, activity.getSubActivities());
+			deriveConfigurationActivities(baseVersion, targetVersion, activity.getSubActivities());
 		}
 	}
 	
