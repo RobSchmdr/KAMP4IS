@@ -100,6 +100,7 @@ public abstract class AbstractISChangePropagationAnalysis<
 	protected void calculateAndMarkOperationTimingToInterfacePropagation(S version) {
 		Collection<ISModifyOperationTiming> seedOperationTimingModifications = new HashSet<ISModifyOperationTiming>();
 		Iterator<?> seedModifications = version.getModificationMarkRepository().getSeedModifications().eAllContents();
+		// Copy seed modification to have a separate instance in ISChangePropagationDueToTimingDependencies for further propagation
 		while (seedModifications.hasNext()) {
 			Object o = seedModifications.next();
 				if (o instanceof ISModifyOperationTiming) {
@@ -164,7 +165,7 @@ public abstract class AbstractISChangePropagationAnalysis<
 			modifyConfiguration.setToolderived(true);
 			modifyConfiguration.setAffectedElement(configurationFile);
 			
-			
+			//TODO handle case that ISModidyComponent already exists
 			ISModifyComponent modifyComponent = ISModificationmarksFactory.eINSTANCE.createISModifyComponent();
 			modifyComponent.setToolderived(true);
 			modifyComponent.setAffectedElement(configurationFile.getComponent());
@@ -208,7 +209,6 @@ public abstract class AbstractISChangePropagationAnalysis<
 			modifyInterface.getCausingElements().addAll(interfaceToBeMarkedEntry.getValue());
 			
 			for (Signature signature: interfaceToBeMarkedEntry.getValue()) {
-				// Mark only those signatures which are not initially marked
 				if (signaturesToBeMarked.containsKey(signature)) {
 					ISModifySignature modifySignature = ISModificationmarksFactory.eINSTANCE.createISModifySignature();
 					modifySignature.setToolderived(true);

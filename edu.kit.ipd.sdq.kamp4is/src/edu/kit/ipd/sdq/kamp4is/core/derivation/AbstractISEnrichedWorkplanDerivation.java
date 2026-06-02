@@ -120,6 +120,8 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 			int numberOfFiles = determineNumberOfConfigurationFiles(determineRelevantArchitectureVersion(
 					activity, baseVersion, targetVersion), activity);
 			if (activity.getElementType() == ISActivityElementType.COMPONENT && numberOfFiles > 0) {
+				// ISConfigurationFile inherits from ISSourceFile, therefore a change in a configuration file
+				// is considered a change in a source file => "Source code implementation:"
 				activity.addFollowupActivity(new Activity(ISActivityType.IMPLEMENTATION_SOURCECODE,
 						ISActivityElementType.CONFIGURATIONFFILES,
 						activity.getElement(),
