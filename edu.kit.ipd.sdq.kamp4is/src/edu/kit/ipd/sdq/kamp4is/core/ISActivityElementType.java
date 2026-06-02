@@ -46,7 +46,7 @@ public enum ISActivityElementType implements AbstractActivityElementType {
 	
 	//automotive related
 	OPERATION_TIMING(OperationTiming.class),
-	CONFIGURATIONFFILES(ISConfigurationFile.class);
+	CONFIGURATIONFILES(ISConfigurationFile.class);
 	
 	private final Class<?> clazz;
 	private final String name;

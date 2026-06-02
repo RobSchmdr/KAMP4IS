@@ -123,7 +123,7 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 				// ISConfigurationFile inherits from ISSourceFile, therefore a change in a configuration file
 				// is considered a change in a source file => "Source code implementation:"
 				activity.addFollowupActivity(new Activity(ISActivityType.IMPLEMENTATION_SOURCECODE,
-						ISActivityElementType.CONFIGURATIONFFILES,
+						ISActivityElementType.CONFIGURATIONFILES,
 						activity.getElement(),
 						numberOfFiles + " configuration file",
 						null,

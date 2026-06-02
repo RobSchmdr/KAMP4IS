@@ -160,19 +160,33 @@ public abstract class AbstractISChangePropagationAnalysis<
 			if (!visitedConfigurationFiles.add(configurationFile)) {
 				continue; // already visited
 			}
+
 			
 			ISModifyConfiguration modifyConfiguration = ISModificationmarksFactory.eINSTANCE.createISModifyConfiguration();
 			modifyConfiguration.setToolderived(true);
 			modifyConfiguration.setAffectedElement(configurationFile);
 			
-			//TODO handle case that ISModidyComponent already exists
-			ISModifyComponent modifyComponent = ISModificationmarksFactory.eINSTANCE.createISModifyComponent();
-			modifyComponent.setToolderived(true);
-			modifyComponent.setAffectedElement(configurationFile.getComponent());
+				
+			ISModifyComponent modifyComponent = null;
+			
+			// Check if a modification for this component already exists
+			for (ISModifyComponent existing : targetCollection) {
+			    if (existing.getAffectedElement() == configurationFile.getComponent()) {
+			        modifyComponent = existing;
+			        break;
+			    }
+			}
+
+			if (modifyComponent == null) {
+				// Create new one if none exists
+				modifyComponent = ISModificationmarksFactory.eINSTANCE.createISModifyComponent();
+				modifyComponent.setToolderived(true);
+				modifyComponent.setAffectedElement(configurationFile.getComponent());
+				
+				targetCollection.add(modifyComponent);
+			}
 			modifyComponent.getCausingElements().add(configurationFile);
 			modifyComponent.getIsmodifyconfiguration().add(modifyConfiguration);
-			
-			targetCollection.add(modifyComponent);
 		
 			for (ISConfigurationFile dependentFile: configurationFile.getDependentConfigurations()) {
 				if (!visitedConfigurationFiles.contains(dependentFile)) {
