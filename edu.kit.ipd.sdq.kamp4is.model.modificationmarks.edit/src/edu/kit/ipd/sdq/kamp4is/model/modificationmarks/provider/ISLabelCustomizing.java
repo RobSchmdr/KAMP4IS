@@ -77,7 +77,12 @@ public class ISLabelCustomizing {
 		if (modification.getAffectedElement() == null) {
 			return "(Please select an OperationSignature!)";
 		} else {
-			return "\"" + ((Entity)modification.getAffectedElement()).getEntityName() + "\"";
+			Object element = modification.getAffectedElement();
+			if (element instanceof Entity entity) {
+			    return "\"" + entity.getEntityName() + "\"";
+			} else {
+			    return "(Invalid operation timing element)";
+			}
 		}
 	}
 	
@@ -85,7 +90,12 @@ public class ISLabelCustomizing {
 		if (modification.getAffectedElement() == null) {
 			return "(Please select a Configuration File!)";
 		} else {
-			return "\"" + ((ISFile)modification.getAffectedElement()).getFilename() + "\"";
+			Object element = modification.getAffectedElement();
+			if (element instanceof ISFile file) {
+			    return "\"" + file.getFilename() + "\"";
+			} else {
+			    return "(Invalid configuration file)";
+			}
 		}
 	}
 
