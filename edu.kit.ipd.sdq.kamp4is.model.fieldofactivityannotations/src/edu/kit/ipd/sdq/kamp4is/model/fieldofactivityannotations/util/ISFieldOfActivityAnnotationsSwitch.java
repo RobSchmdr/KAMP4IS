@@ -336,6 +336,18 @@ public class ISFieldOfActivityAnnotationsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ISFieldOfActivityAnnotationsPackage.IS_ECU_DEPLOYMENT: {
+				ISEcuDeployment isEcuDeployment = (ISEcuDeployment)theEObject;
+				T result = caseISEcuDeployment(isEcuDeployment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ISFieldOfActivityAnnotationsPackage.IS_BUS_DEPLOYMENT: {
+				ISBusDeployment isBusDeployment = (ISBusDeployment)theEObject;
+				T result = caseISBusDeployment(isBusDeployment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -952,6 +964,36 @@ public class ISFieldOfActivityAnnotationsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseISConfigurationFile(ISConfigurationFile object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IS Ecu Deployment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IS Ecu Deployment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseISEcuDeployment(ISEcuDeployment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IS Bus Deployment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IS Bus Deployment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseISBusDeployment(ISBusDeployment object) {
 		return null;
 	}
 

@@ -15,7 +15,8 @@ public enum ISActivityType implements AbstractActivityType {
 	RELEASECONFIGURATION("Release configuration"),
 	RELEASEEXECUTION("Release execution"),
 	DEPLOYMENTCONFIGURATION("Deployment configuration"),
-	DEPLOYMENTEXECUTION("Deployment execution");
+	DEPLOYMENTEXECUTION("Deployment execution"),
+	DEPLOYMENTCONSTRAINTCHECK("Deployment constraint check");
 	
 	private final String name;
 	

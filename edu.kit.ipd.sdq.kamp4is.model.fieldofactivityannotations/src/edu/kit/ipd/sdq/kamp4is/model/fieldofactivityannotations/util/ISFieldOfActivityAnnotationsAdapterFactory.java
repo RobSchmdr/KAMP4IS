@@ -234,6 +234,14 @@ public class ISFieldOfActivityAnnotationsAdapterFactory extends AdapterFactoryIm
 				return createISConfigurationFileAdapter();
 			}
 			@Override
+			public Adapter caseISEcuDeployment(ISEcuDeployment object) {
+				return createISEcuDeploymentAdapter();
+			}
+			@Override
+			public Adapter caseISBusDeployment(ISBusDeployment object) {
+				return createISBusDeploymentAdapter();
+			}
+			@Override
 			public Adapter caseIdentifier(Identifier object) {
 				return createIdentifierAdapter();
 			}
@@ -828,6 +836,34 @@ public class ISFieldOfActivityAnnotationsAdapterFactory extends AdapterFactoryIm
 	 * @generated
 	 */
 	public Adapter createISConfigurationFileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment <em>IS Ecu Deployment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment
+	 * @generated
+	 */
+	public Adapter createISEcuDeploymentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment <em>IS Bus Deployment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment
+	 * @generated
+	 */
+	public Adapter createISBusDeploymentAdapter() {
 		return null;
 	}
 

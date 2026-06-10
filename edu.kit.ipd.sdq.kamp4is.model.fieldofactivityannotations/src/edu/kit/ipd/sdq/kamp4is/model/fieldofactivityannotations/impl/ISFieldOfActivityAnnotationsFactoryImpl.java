@@ -93,6 +93,8 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 			case ISFieldOfActivityAnnotationsPackage.IS_TECHNOLOGY_SPECIFICATION: return createISTechnologySpecification();
 			case ISFieldOfActivityAnnotationsPackage.IS_TECHNOLOGICAL_CORRESPONDENCE: return createISTechnologicalCorrespondence();
 			case ISFieldOfActivityAnnotationsPackage.IS_CONFIGURATION_FILE: return createISConfigurationFile();
+			case ISFieldOfActivityAnnotationsPackage.IS_ECU_DEPLOYMENT: return createISEcuDeployment();
+			case ISFieldOfActivityAnnotationsPackage.IS_BUS_DEPLOYMENT: return createISBusDeployment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -522,6 +524,28 @@ public class ISFieldOfActivityAnnotationsFactoryImpl extends EFactoryImpl implem
 	public ISConfigurationFile createISConfigurationFile() {
 		ISConfigurationFileImpl isConfigurationFile = new ISConfigurationFileImpl();
 		return isConfigurationFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ISEcuDeployment createISEcuDeployment() {
+		ISEcuDeploymentImpl isEcuDeployment = new ISEcuDeploymentImpl();
+		return isEcuDeployment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ISBusDeployment createISBusDeployment() {
+		ISBusDeploymentImpl isBusDeployment = new ISBusDeploymentImpl();
+		return isBusDeployment;
 	}
 
 	/**

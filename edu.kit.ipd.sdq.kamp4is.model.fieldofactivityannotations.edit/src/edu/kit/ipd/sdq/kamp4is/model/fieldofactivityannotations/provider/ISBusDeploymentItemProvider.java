@@ -3,8 +3,7 @@
 package edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.provider;
 
 
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification;
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsFactory;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsPackage;
 
 import java.util.Collection;
@@ -15,8 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -24,16 +22,17 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification} object.
+ * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ISDeploymentSpecificationItemProvider 
+public class ISBusDeploymentItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +47,7 @@ public class ISDeploymentSpecificationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ISDeploymentSpecificationItemProvider(AdapterFactory adapterFactory) {
+	public ISBusDeploymentItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,52 +62,88 @@ public class ISDeploymentSpecificationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSignaturesPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Signatures feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ISFieldOfActivityAnnotationsPackage.Literals.IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCES);
-			childrenFeatures.add(ISFieldOfActivityAnnotationsPackage.Literals.IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCE_AGGREGATIONS);
-			childrenFeatures.add(ISFieldOfActivityAnnotationsPackage.Literals.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS);
-			childrenFeatures.add(ISFieldOfActivityAnnotationsPackage.Literals.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS);
-		}
-		return childrenFeatures;
+	protected void addSignaturesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ISBusDeployment_signatures_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ISBusDeployment_signatures_feature", "_UI_ISBusDeployment_type"),
+				 ISFieldOfActivityAnnotationsPackage.Literals.IS_BUS_DEPLOYMENT__SIGNATURES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ISBusDeployment_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ISBusDeployment_name_feature", "_UI_ISBusDeployment_type"),
+				 ISFieldOfActivityAnnotationsPackage.Literals.IS_BUS_DEPLOYMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns ISDeploymentSpecification.gif.
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ISBusDeployment_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ISBusDeployment_description_feature", "_UI_ISBusDeployment_type"),
+				 ISFieldOfActivityAnnotationsPackage.Literals.IS_BUS_DEPLOYMENT__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns ISBusDeployment.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ISDeploymentSpecification"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ISBusDeployment"));
 	}
 
 	/**
@@ -134,9 +169,11 @@ public class ISDeploymentSpecificationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ISDeploymentSpecification_type");
+		String label = ((ISBusDeployment)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ISBusDeployment_type") :
+			getString("_UI_ISBusDeployment_type") + " " + label;
 	}
-	
 
 	/**
 	 * This returns <code>getText(object)</code> for the column index <code>0</code> or <code>super.getText(object)</code> otherwise.
@@ -153,6 +190,7 @@ public class ISDeploymentSpecificationItemProvider
 		return columnIndex == 0 ? getText(object) : super.getText(object);
 	}
 
+
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
@@ -164,12 +202,10 @@ public class ISDeploymentSpecificationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ISDeploymentSpecification.class)) {
-			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCES:
-			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCE_AGGREGATIONS:
-			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS:
-			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+		switch (notification.getFeatureID(ISBusDeployment.class)) {
+			case ISFieldOfActivityAnnotationsPackage.IS_BUS_DEPLOYMENT__NAME:
+			case ISFieldOfActivityAnnotationsPackage.IS_BUS_DEPLOYMENT__DESCRIPTION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -185,26 +221,6 @@ public class ISDeploymentSpecificationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ISFieldOfActivityAnnotationsPackage.Literals.IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCES,
-				 ISFieldOfActivityAnnotationsFactory.eINSTANCE.createISRuntimeInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ISFieldOfActivityAnnotationsPackage.Literals.IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCE_AGGREGATIONS,
-				 ISFieldOfActivityAnnotationsFactory.eINSTANCE.createISRuntimeInstanceAggregation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ISFieldOfActivityAnnotationsPackage.Literals.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS,
-				 ISFieldOfActivityAnnotationsFactory.eINSTANCE.createISEcuDeployment()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ISFieldOfActivityAnnotationsPackage.Literals.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS,
-				 ISFieldOfActivityAnnotationsFactory.eINSTANCE.createISBusDeployment()));
 	}
 
 	/**

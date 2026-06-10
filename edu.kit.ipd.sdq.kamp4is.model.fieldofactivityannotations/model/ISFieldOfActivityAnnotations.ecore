@@ -112,6 +112,10 @@
         eOpposite="#//ISRuntimeInstanceAggregation/parent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
         eType="#//ISFieldOfActivityAnnotationsRepository" eOpposite="#//ISFieldOfActivityAnnotationsRepository/deploymentSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ecuDeployments" upperBound="-1"
+        eType="#//ISEcuDeployment" containment="true" eOpposite="#//ISEcuDeployment/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="busDeployments" upperBound="-1"
+        eType="#//ISBusDeployment" containment="true" eOpposite="#//ISBusDeployment/parent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ISRuntimeInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
@@ -255,5 +259,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="ISConfigurationFile" eSuperTypes="#//ISSourceFile">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependentConfigurations"
         upperBound="-1" eType="#//ISConfigurationFile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ISEcuDeployment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//ISDeploymentSpecification" eOpposite="#//ISDeploymentSpecification/ecuDeployments"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/RepositoryComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ISBusDeployment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//ISDeploymentSpecification" eOpposite="#//ISDeploymentSpecification/busDeployments"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//repository/OperationSignature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

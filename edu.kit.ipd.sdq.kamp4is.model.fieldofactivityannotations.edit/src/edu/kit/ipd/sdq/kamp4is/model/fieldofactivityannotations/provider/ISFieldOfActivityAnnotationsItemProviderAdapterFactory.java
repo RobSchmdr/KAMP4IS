@@ -902,6 +902,52 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ISEcuDeploymentItemProvider isEcuDeploymentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createISEcuDeploymentAdapter() {
+		if (isEcuDeploymentItemProvider == null) {
+			isEcuDeploymentItemProvider = new ISEcuDeploymentItemProvider(this);
+		}
+
+		return isEcuDeploymentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ISBusDeploymentItemProvider isBusDeploymentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createISBusDeploymentAdapter() {
+		if (isBusDeploymentItemProvider == null) {
+			isBusDeploymentItemProvider = new ISBusDeploymentItemProvider(this);
+		}
+
+		return isBusDeploymentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1042,6 +1088,8 @@ public class ISFieldOfActivityAnnotationsItemProviderAdapterFactory extends ISFi
 		if (isTechnologySpecificationItemProvider != null) isTechnologySpecificationItemProvider.dispose();
 		if (isTechnologicalCorrespondenceItemProvider != null) isTechnologicalCorrespondenceItemProvider.dispose();
 		if (isConfigurationFileItemProvider != null) isConfigurationFileItemProvider.dispose();
+		if (isEcuDeploymentItemProvider != null) isEcuDeploymentItemProvider.dispose();
+		if (isBusDeploymentItemProvider != null) isBusDeploymentItemProvider.dispose();
 	}
 
 }

@@ -2,7 +2,9 @@
  */
 package edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl;
 
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsPackage;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsRepository;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISRuntimeInstance;
@@ -20,7 +22,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,6 +37,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISDeploymentSpecificationImpl#getRuntimeInstances <em>Runtime Instances</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISDeploymentSpecificationImpl#getRuntimeInstanceAggregations <em>Runtime Instance Aggregations</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISDeploymentSpecificationImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISDeploymentSpecificationImpl#getEcuDeployments <em>Ecu Deployments</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISDeploymentSpecificationImpl#getBusDeployments <em>Bus Deployments</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,6 +63,26 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 	 * @ordered
 	 */
 	protected EList<ISRuntimeInstanceAggregation> runtimeInstanceAggregations;
+
+	/**
+	 * The cached value of the '{@link #getEcuDeployments() <em>Ecu Deployments</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEcuDeployments()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ISEcuDeployment> ecuDeployments;
+
+	/**
+	 * The cached value of the '{@link #getBusDeployments() <em>Bus Deployments</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBusDeployments()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ISBusDeployment> busDeployments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,6 +177,32 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<ISEcuDeployment> getEcuDeployments() {
+		if (ecuDeployments == null) {
+			ecuDeployments = new EObjectContainmentWithInverseEList<ISEcuDeployment>(ISEcuDeployment.class, this, ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS, ISFieldOfActivityAnnotationsPackage.IS_ECU_DEPLOYMENT__PARENT);
+		}
+		return ecuDeployments;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ISBusDeployment> getBusDeployments() {
+		if (busDeployments == null) {
+			busDeployments = new EObjectContainmentWithInverseEList<ISBusDeployment>(ISBusDeployment.class, this, ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS, ISFieldOfActivityAnnotationsPackage.IS_BUS_DEPLOYMENT__PARENT);
+		}
+		return busDeployments;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -166,6 +215,10 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParent((ISFieldOfActivityAnnotationsRepository)otherEnd, msgs);
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEcuDeployments()).basicAdd(otherEnd, msgs);
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBusDeployments()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -184,6 +237,10 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 				return ((InternalEList<?>)getRuntimeInstanceAggregations()).basicRemove(otherEnd, msgs);
 			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__PARENT:
 				return basicSetParent(null, msgs);
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS:
+				return ((InternalEList<?>)getEcuDeployments()).basicRemove(otherEnd, msgs);
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS:
+				return ((InternalEList<?>)getBusDeployments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -216,6 +273,10 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 				return getRuntimeInstanceAggregations();
 			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__PARENT:
 				return getParent();
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS:
+				return getEcuDeployments();
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS:
+				return getBusDeployments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -240,6 +301,14 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__PARENT:
 				setParent((ISFieldOfActivityAnnotationsRepository)newValue);
 				return;
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS:
+				getEcuDeployments().clear();
+				getEcuDeployments().addAll((Collection<? extends ISEcuDeployment>)newValue);
+				return;
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS:
+				getBusDeployments().clear();
+				getBusDeployments().addAll((Collection<? extends ISBusDeployment>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -261,6 +330,12 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__PARENT:
 				setParent((ISFieldOfActivityAnnotationsRepository)null);
 				return;
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS:
+				getEcuDeployments().clear();
+				return;
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS:
+				getBusDeployments().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -279,6 +354,10 @@ public class ISDeploymentSpecificationImpl extends EObjectImpl implements ISDepl
 				return runtimeInstanceAggregations != null && !runtimeInstanceAggregations.isEmpty();
 			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__PARENT:
 				return getParent() != null;
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS:
+				return ecuDeployments != null && !ecuDeployments.isEmpty();
+			case ISFieldOfActivityAnnotationsPackage.IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS:
+				return busDeployments != null && !busDeployments.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

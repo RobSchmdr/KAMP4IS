@@ -1,21 +1,17 @@
 package edu.kit.ipd.sdq.kamp4is.core.derivation;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.pcm.core.entity.InterfaceRequiringEntity;
+import org.palladiosimulator.pcm.repository.OperationSignature;
 import org.palladiosimulator.pcm.repository.ProvidedRole;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.palladiosimulator.pcm.repository.RequiredRole;
 
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfiguration;
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISMetadataFile;
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISMetadataFileAggregation;
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISSourceFile;
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISSourceFileAggregation;
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISUnitTestCase;
-import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISUnitTestCaseAggregation;
 import edu.kit.ipd.sdq.kamp.workplan.AbstractEnrichedWorkplanDerivation;
 import edu.kit.ipd.sdq.kamp.workplan.Activity;
 import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
@@ -23,6 +19,16 @@ import edu.kit.ipd.sdq.kamp4is.core.ISActivityElementType;
 import edu.kit.ipd.sdq.kamp4is.core.ISActivityType;
 import edu.kit.ipd.sdq.kamp4is.core.ISArchitectureAnnotationLookup;
 import edu.kit.ipd.sdq.kamp4is.core.ISArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfiguration;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISMetadataFile;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISMetadataFileAggregation;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISSourceFile;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISSourceFileAggregation;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISUnitTestCase;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISUnitTestCaseAggregation;
 
 public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitectureVersion> 
 		implements AbstractEnrichedWorkplanDerivation<T> {
@@ -44,6 +50,7 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 //		deriveReleaseConfigurationActivities(calculateFlattenendActivityList(result));		
 		deriveReleaseExecutionActivities(subVersion, result);		
 //		deriveDeploymentConfigurationActivities(calculateFlattenendActivityList(result));		
+		deriveDeploymentConstraintCheckActivities(subVersion, result);
 		deriveDeploymentExecutionActivities(subVersion, result);		
 		//TODO staff
 		//TODO technology specification
@@ -51,6 +58,9 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 
 		return result;
 	}
+
+
+
 
 
 
@@ -401,6 +411,95 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 //			} 
 //		}
 //	}
+	
+
+	private static void deriveDeploymentConstraintCheckActivities(ISArchitectureVersion subVersion, List<Activity> result) {
+		List<ISEcuDeployment> ecuDeployments = subVersion.getFieldOfActivityRepository().getDeploymentSpecification().getEcuDeployments();
+		for (ISEcuDeployment ecuDeployment : ecuDeployments) {
+			List<RepositoryComponent> components = ecuDeployment.getComponents();
+			for (Activity activity : result) {
+				EObject element = activity.getElement();
+				if (!(element instanceof RepositoryComponent)) {
+					continue;
+				}
+				RepositoryComponent component = (RepositoryComponent) element;
+				if (components.contains(component)) {
+					Collection<String> causingElements = new HashSet<String>();
+					causingElements.add(component.eClass().getName() + " \"" 
+							+ component.getEntityName() + "\"");
+					activity.addFollowupActivity(
+						new Activity(ISActivityType.DEPLOYMENTCONSTRAINTCHECK, 
+						ISActivityElementType.DEPLOYMENTCONFIGURATION,
+						activity.getElement(),
+						ecuDeployment.getName(),
+						causingElements,
+						BasicActivity.EXECUTE, 
+						"Check ressource constraints of "+ ecuDeployment.getName() +"."));
+				}
+			}
+		}
+		
+		List<ISBusDeployment> busDeployments = subVersion.getFieldOfActivityRepository().getDeploymentSpecification().getBusDeployments();
+		for (ISBusDeployment busDeployment : busDeployments) {
+			List<OperationSignature> signatures = busDeployment.getSignatures();
+			for (Activity activity : result) {
+				
+				addBusDeploymentActivities(activity, signatures, busDeployment);
+			}
+		}
+	}
+
+	private static void addBusDeploymentActivities(Activity activity, List<OperationSignature> signatures,
+			ISBusDeployment busDeployment) {
+	
+		EObject element = activity.getElement();
+	
+	    if (element instanceof OperationSignature  
+	    		&& activity.getType() == ISActivityType.INTERNALMODIFICATIONMARK
+	    		&& activity.getElementType() != ISActivityElementType.OPERATION_TIMING) {
+	        OperationSignature signature = (OperationSignature) element;
+	        if (signatures.contains(signature)) {
+	        	Collection<String> causingElements = new HashSet<String>();
+	        	causingElements.add(signature.eClass().getName() + " \"" 
+						+ signature.getEntityName() + "\"");
+	        	
+
+	        	for (Activity subActivity : activity.getSubActivities()) {
+
+                if (subActivity.getElementType() == ISActivityElementType.OPERATION_TIMING
+                        && subActivity.getElement() == signature) {
+
+                    causingElements.add(
+                            "ISModifyOperationTiming"
+                                    + " \"" + signature.getEntityName() + "\"");
+
+                    break;
+                }
+            }
+
+	        	
+	            activity.addFollowupActivity(
+	                new Activity(
+	                    ISActivityType.DEPLOYMENTCONSTRAINTCHECK,
+	                    ISActivityElementType.DEPLOYMENTCONFIGURATION,
+	                    activity.getElement(),
+	                    busDeployment.getName(),
+	                    causingElements,
+	                    BasicActivity.EXECUTE,
+	                    "Check ressource constraints of "
+	                            + busDeployment.getName() + "."));
+	        }
+	    }
+	
+	    for (Activity subActivity : activity.getSubActivities()) {
+	    	addBusDeploymentActivities(subActivity, signatures, busDeployment);
+	    }	
+	}
+
+
+
+
+
 
 	private static void deriveDeploymentExecutionActivities(
 			ISArchitectureVersion target, List<Activity> baseActivityList) {

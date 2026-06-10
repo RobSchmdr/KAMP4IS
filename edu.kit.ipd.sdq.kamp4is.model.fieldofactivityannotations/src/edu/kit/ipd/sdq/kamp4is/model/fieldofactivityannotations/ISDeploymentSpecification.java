@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getRuntimeInstances <em>Runtime Instances</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getRuntimeInstanceAggregations <em>Runtime Instance Aggregations</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getParent <em>Parent</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getEcuDeployments <em>Ecu Deployments</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getBusDeployments <em>Bus Deployments</em>}</li>
  * </ul>
  *
  * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsPackage#getISDeploymentSpecification()
@@ -88,5 +90,33 @@ public interface ISDeploymentSpecification extends EObject {
 	 * @generated
 	 */
 	void setParent(ISFieldOfActivityAnnotationsRepository value);
+
+	/**
+	 * Returns the value of the '<em><b>Ecu Deployments</b></em>' containment reference list.
+	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment}.
+	 * It is bidirectional and its opposite is '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ecu Deployments</em>' containment reference list.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsPackage#getISDeploymentSpecification_EcuDeployments()
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getParent
+	 * @model opposite="parent" containment="true"
+	 * @generated
+	 */
+	EList<ISEcuDeployment> getEcuDeployments();
+
+	/**
+	 * Returns the value of the '<em><b>Bus Deployments</b></em>' containment reference list.
+	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment}.
+	 * It is bidirectional and its opposite is '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bus Deployments</em>' containment reference list.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsPackage#getISDeploymentSpecification_BusDeployments()
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getParent
+	 * @model opposite="parent" containment="true"
+	 * @generated
+	 */
+	EList<ISBusDeployment> getBusDeployments();
 
 } // ISDeploymentSpecification

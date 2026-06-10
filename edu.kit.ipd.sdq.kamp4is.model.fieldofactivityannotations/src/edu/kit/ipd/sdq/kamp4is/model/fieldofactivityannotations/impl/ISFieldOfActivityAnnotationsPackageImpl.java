@@ -12,6 +12,7 @@ import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISAcceptanceTest
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfiguration;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildConfigurator;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBuildSpecification;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISConfigurationFile;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeployer;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification;
@@ -19,6 +20,7 @@ import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDesignPatternR
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDesignPatternSpecification;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeveloper;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDevelopmentArtefactSpecification;
+import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsFactory;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsPackage;
 import edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISFieldOfActivityAnnotationsRepository;
@@ -360,6 +362,20 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	private EClass isConfigurationFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass isEcuDeploymentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass isBusDeploymentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1005,6 +1021,26 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	@Override
 	public EReference getISDeploymentSpecification_Parent() {
 		return (EReference)isDeploymentSpecificationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getISDeploymentSpecification_EcuDeployments() {
+		return (EReference)isDeploymentSpecificationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getISDeploymentSpecification_BusDeployments() {
+		return (EReference)isDeploymentSpecificationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1813,6 +1849,106 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 	 * @generated
 	 */
 	@Override
+	public EClass getISEcuDeployment() {
+		return isEcuDeploymentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getISEcuDeployment_Parent() {
+		return (EReference)isEcuDeploymentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getISEcuDeployment_Components() {
+		return (EReference)isEcuDeploymentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getISEcuDeployment_Name() {
+		return (EAttribute)isEcuDeploymentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getISEcuDeployment_Description() {
+		return (EAttribute)isEcuDeploymentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getISBusDeployment() {
+		return isBusDeploymentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getISBusDeployment_Parent() {
+		return (EReference)isBusDeploymentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getISBusDeployment_Signatures() {
+		return (EReference)isBusDeploymentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getISBusDeployment_Name() {
+		return (EAttribute)isBusDeploymentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getISBusDeployment_Description() {
+		return (EAttribute)isBusDeploymentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getISTechnologicalCorrespondenceTypes() {
 		return isTechnologicalCorrespondenceTypesEEnum;
 	}
@@ -1915,6 +2051,8 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		createEReference(isDeploymentSpecificationEClass, IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCES);
 		createEReference(isDeploymentSpecificationEClass, IS_DEPLOYMENT_SPECIFICATION__RUNTIME_INSTANCE_AGGREGATIONS);
 		createEReference(isDeploymentSpecificationEClass, IS_DEPLOYMENT_SPECIFICATION__PARENT);
+		createEReference(isDeploymentSpecificationEClass, IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS);
+		createEReference(isDeploymentSpecificationEClass, IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS);
 
 		isRuntimeInstanceEClass = createEClass(IS_RUNTIME_INSTANCE);
 		createEReference(isRuntimeInstanceEClass, IS_RUNTIME_INSTANCE__PARENT);
@@ -2024,6 +2162,18 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		isConfigurationFileEClass = createEClass(IS_CONFIGURATION_FILE);
 		createEReference(isConfigurationFileEClass, IS_CONFIGURATION_FILE__DEPENDENT_CONFIGURATIONS);
 
+		isEcuDeploymentEClass = createEClass(IS_ECU_DEPLOYMENT);
+		createEReference(isEcuDeploymentEClass, IS_ECU_DEPLOYMENT__PARENT);
+		createEReference(isEcuDeploymentEClass, IS_ECU_DEPLOYMENT__COMPONENTS);
+		createEAttribute(isEcuDeploymentEClass, IS_ECU_DEPLOYMENT__NAME);
+		createEAttribute(isEcuDeploymentEClass, IS_ECU_DEPLOYMENT__DESCRIPTION);
+
+		isBusDeploymentEClass = createEClass(IS_BUS_DEPLOYMENT);
+		createEReference(isBusDeploymentEClass, IS_BUS_DEPLOYMENT__PARENT);
+		createEReference(isBusDeploymentEClass, IS_BUS_DEPLOYMENT__SIGNATURES);
+		createEAttribute(isBusDeploymentEClass, IS_BUS_DEPLOYMENT__NAME);
+		createEAttribute(isBusDeploymentEClass, IS_BUS_DEPLOYMENT__DESCRIPTION);
+
 		// Create enums
 		isTechnologicalCorrespondenceTypesEEnum = createEEnum(IS_TECHNOLOGICAL_CORRESPONDENCE_TYPES);
 	}
@@ -2055,6 +2205,7 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		RepositoryPackage theRepositoryPackage = (RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
 		CompositionPackage theCompositionPackage = (CompositionPackage)EPackage.Registry.INSTANCE.getEPackage(CompositionPackage.eNS_URI);
 		IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -2153,6 +2304,8 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 		initEReference(getISDeploymentSpecification_RuntimeInstances(), this.getISRuntimeInstance(), this.getISRuntimeInstance_Parent(), "runtimeInstances", null, 0, -1, ISDeploymentSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getISDeploymentSpecification_RuntimeInstanceAggregations(), this.getISRuntimeInstanceAggregation(), this.getISRuntimeInstanceAggregation_Parent(), "runtimeInstanceAggregations", null, 0, -1, ISDeploymentSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getISDeploymentSpecification_Parent(), this.getISFieldOfActivityAnnotationsRepository(), this.getISFieldOfActivityAnnotationsRepository_DeploymentSpecification(), "parent", null, 1, 1, ISDeploymentSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getISDeploymentSpecification_EcuDeployments(), this.getISEcuDeployment(), this.getISEcuDeployment_Parent(), "ecuDeployments", null, 0, -1, ISDeploymentSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getISDeploymentSpecification_BusDeployments(), this.getISBusDeployment(), this.getISBusDeployment_Parent(), "busDeployments", null, 0, -1, ISDeploymentSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(isRuntimeInstanceEClass, ISRuntimeInstance.class, "ISRuntimeInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getISRuntimeInstance_Parent(), this.getISDeploymentSpecification(), this.getISDeploymentSpecification_RuntimeInstances(), "parent", null, 1, 1, ISRuntimeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2261,6 +2414,18 @@ public class ISFieldOfActivityAnnotationsPackageImpl extends EPackageImpl implem
 
 		initEClass(isConfigurationFileEClass, ISConfigurationFile.class, "ISConfigurationFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getISConfigurationFile_DependentConfigurations(), this.getISConfigurationFile(), null, "dependentConfigurations", null, 0, -1, ISConfigurationFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(isEcuDeploymentEClass, ISEcuDeployment.class, "ISEcuDeployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getISEcuDeployment_Parent(), this.getISDeploymentSpecification(), this.getISDeploymentSpecification_EcuDeployments(), "parent", null, 1, 1, ISEcuDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getISEcuDeployment_Components(), theRepositoryPackage.getRepositoryComponent(), null, "components", null, 0, -1, ISEcuDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getISEcuDeployment_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ISEcuDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getISEcuDeployment_Description(), theEcorePackage.getEString(), "description", null, 0, 1, ISEcuDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(isBusDeploymentEClass, ISBusDeployment.class, "ISBusDeployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getISBusDeployment_Parent(), this.getISDeploymentSpecification(), this.getISDeploymentSpecification_BusDeployments(), "parent", null, 1, 1, ISBusDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getISBusDeployment_Signatures(), theRepositoryPackage.getOperationSignature(), null, "signatures", null, 0, -1, ISBusDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getISBusDeployment_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ISBusDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getISBusDeployment_Description(), theEcorePackage.getEString(), "description", null, 0, 1, ISBusDeployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(isTechnologicalCorrespondenceTypesEEnum, ISTechnologicalCorrespondenceTypes.class, "ISTechnologicalCorrespondenceTypes");

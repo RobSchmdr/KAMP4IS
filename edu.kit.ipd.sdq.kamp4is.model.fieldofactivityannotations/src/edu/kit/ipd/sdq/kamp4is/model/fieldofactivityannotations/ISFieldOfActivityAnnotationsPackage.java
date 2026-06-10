@@ -875,13 +875,31 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 	int IS_DEPLOYMENT_SPECIFICATION__PARENT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Ecu Deployments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Bus Deployments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS = 4;
+
+	/**
 	 * The number of structural features of the '<em>IS Deployment Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IS_DEPLOYMENT_SPECIFICATION_FEATURE_COUNT = 3;
+	int IS_DEPLOYMENT_SPECIFICATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISRuntimeInstanceImpl <em>IS Runtime Instance</em>}' class.
@@ -2161,6 +2179,116 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 	int IS_CONFIGURATION_FILE_FEATURE_COUNT = IS_SOURCE_FILE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISEcuDeploymentImpl <em>IS Ecu Deployment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISEcuDeploymentImpl
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISFieldOfActivityAnnotationsPackageImpl#getISEcuDeployment()
+	 * @generated
+	 */
+	int IS_ECU_DEPLOYMENT = 41;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_ECU_DEPLOYMENT__PARENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Components</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_ECU_DEPLOYMENT__COMPONENTS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_ECU_DEPLOYMENT__NAME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_ECU_DEPLOYMENT__DESCRIPTION = 3;
+
+	/**
+	 * The number of structural features of the '<em>IS Ecu Deployment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_ECU_DEPLOYMENT_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISBusDeploymentImpl <em>IS Bus Deployment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISBusDeploymentImpl
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISFieldOfActivityAnnotationsPackageImpl#getISBusDeployment()
+	 * @generated
+	 */
+	int IS_BUS_DEPLOYMENT = 42;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_BUS_DEPLOYMENT__PARENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Signatures</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_BUS_DEPLOYMENT__SIGNATURES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_BUS_DEPLOYMENT__NAME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_BUS_DEPLOYMENT__DESCRIPTION = 3;
+
+	/**
+	 * The number of structural features of the '<em>IS Bus Deployment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_BUS_DEPLOYMENT_FEATURE_COUNT = 4;
+
+	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISTechnologicalCorrespondenceTypes <em>IS Technological Correspondence Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2168,7 +2296,7 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISFieldOfActivityAnnotationsPackageImpl#getISTechnologicalCorrespondenceTypes()
 	 * @generated
 	 */
-	int IS_TECHNOLOGICAL_CORRESPONDENCE_TYPES = 41;
+	int IS_TECHNOLOGICAL_CORRESPONDENCE_TYPES = 43;
 
 
 	/**
@@ -2784,6 +2912,28 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getISDeploymentSpecification_Parent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getEcuDeployments <em>Ecu Deployments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ecu Deployments</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getEcuDeployments()
+	 * @see #getISDeploymentSpecification()
+	 * @generated
+	 */
+	EReference getISDeploymentSpecification_EcuDeployments();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getBusDeployments <em>Bus Deployments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Bus Deployments</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISDeploymentSpecification#getBusDeployments()
+	 * @see #getISDeploymentSpecification()
+	 * @generated
+	 */
+	EReference getISDeploymentSpecification_BusDeployments();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISRuntimeInstance <em>IS Runtime Instance</em>}'.
@@ -3638,6 +3788,114 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 	EReference getISConfigurationFile_DependentConfigurations();
 
 	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment <em>IS Ecu Deployment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IS Ecu Deployment</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment
+	 * @generated
+	 */
+	EClass getISEcuDeployment();
+
+	/**
+	 * Returns the meta object for the container reference '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getParent()
+	 * @see #getISEcuDeployment()
+	 * @generated
+	 */
+	EReference getISEcuDeployment_Parent();
+
+	/**
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getComponents <em>Components</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Components</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getComponents()
+	 * @see #getISEcuDeployment()
+	 * @generated
+	 */
+	EReference getISEcuDeployment_Components();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getName()
+	 * @see #getISEcuDeployment()
+	 * @generated
+	 */
+	EAttribute getISEcuDeployment_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISEcuDeployment#getDescription()
+	 * @see #getISEcuDeployment()
+	 * @generated
+	 */
+	EAttribute getISEcuDeployment_Description();
+
+	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment <em>IS Bus Deployment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IS Bus Deployment</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment
+	 * @generated
+	 */
+	EClass getISBusDeployment();
+
+	/**
+	 * Returns the meta object for the container reference '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getParent()
+	 * @see #getISBusDeployment()
+	 * @generated
+	 */
+	EReference getISBusDeployment_Parent();
+
+	/**
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getSignatures <em>Signatures</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Signatures</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getSignatures()
+	 * @see #getISBusDeployment()
+	 * @generated
+	 */
+	EReference getISBusDeployment_Signatures();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getName()
+	 * @see #getISBusDeployment()
+	 * @generated
+	 */
+	EAttribute getISBusDeployment_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISBusDeployment#getDescription()
+	 * @see #getISBusDeployment()
+	 * @generated
+	 */
+	EAttribute getISBusDeployment_Description();
+
+	/**
 	 * Returns the meta object for enum '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISTechnologicalCorrespondenceTypes <em>IS Technological Correspondence Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4150,6 +4408,22 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IS_DEPLOYMENT_SPECIFICATION__PARENT = eINSTANCE.getISDeploymentSpecification_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecu Deployments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_DEPLOYMENT_SPECIFICATION__ECU_DEPLOYMENTS = eINSTANCE.getISDeploymentSpecification_EcuDeployments();
+
+		/**
+		 * The meta object literal for the '<em><b>Bus Deployments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_DEPLOYMENT_SPECIFICATION__BUS_DEPLOYMENTS = eINSTANCE.getISDeploymentSpecification_BusDeployments();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISRuntimeInstanceImpl <em>IS Runtime Instance</em>}' class.
@@ -4846,6 +5120,90 @@ public interface ISFieldOfActivityAnnotationsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IS_CONFIGURATION_FILE__DEPENDENT_CONFIGURATIONS = eINSTANCE.getISConfigurationFile_DependentConfigurations();
+
+		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISEcuDeploymentImpl <em>IS Ecu Deployment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISEcuDeploymentImpl
+		 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISFieldOfActivityAnnotationsPackageImpl#getISEcuDeployment()
+		 * @generated
+		 */
+		EClass IS_ECU_DEPLOYMENT = eINSTANCE.getISEcuDeployment();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_ECU_DEPLOYMENT__PARENT = eINSTANCE.getISEcuDeployment_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Components</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_ECU_DEPLOYMENT__COMPONENTS = eINSTANCE.getISEcuDeployment_Components();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IS_ECU_DEPLOYMENT__NAME = eINSTANCE.getISEcuDeployment_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IS_ECU_DEPLOYMENT__DESCRIPTION = eINSTANCE.getISEcuDeployment_Description();
+
+		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISBusDeploymentImpl <em>IS Bus Deployment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISBusDeploymentImpl
+		 * @see edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.impl.ISFieldOfActivityAnnotationsPackageImpl#getISBusDeployment()
+		 * @generated
+		 */
+		EClass IS_BUS_DEPLOYMENT = eINSTANCE.getISBusDeployment();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_BUS_DEPLOYMENT__PARENT = eINSTANCE.getISBusDeployment_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Signatures</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IS_BUS_DEPLOYMENT__SIGNATURES = eINSTANCE.getISBusDeployment_Signatures();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IS_BUS_DEPLOYMENT__NAME = eINSTANCE.getISBusDeployment_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IS_BUS_DEPLOYMENT__DESCRIPTION = eINSTANCE.getISBusDeployment_Description();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4is.model.fieldofactivityannotations.ISTechnologicalCorrespondenceTypes <em>IS Technological Correspondence Types</em>}' enum.

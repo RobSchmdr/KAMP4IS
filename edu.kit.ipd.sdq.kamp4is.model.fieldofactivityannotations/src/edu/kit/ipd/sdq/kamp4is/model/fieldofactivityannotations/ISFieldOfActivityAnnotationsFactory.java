@@ -346,6 +346,24 @@ public interface ISFieldOfActivityAnnotationsFactory extends EFactory {
 	ISConfigurationFile createISConfigurationFile();
 
 	/**
+	 * Returns a new object of class '<em>IS Ecu Deployment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IS Ecu Deployment</em>'.
+	 * @generated
+	 */
+	ISEcuDeployment createISEcuDeployment();
+
+	/**
+	 * Returns a new object of class '<em>IS Bus Deployment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IS Bus Deployment</em>'.
+	 * @generated
+	 */
+	ISBusDeployment createISBusDeployment();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

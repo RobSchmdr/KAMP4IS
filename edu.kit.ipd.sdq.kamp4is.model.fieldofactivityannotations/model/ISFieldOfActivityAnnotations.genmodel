@@ -88,6 +88,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISDeploymentSpecification/runtimeInstances"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISDeploymentSpecification/runtimeInstanceAggregations"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISDeploymentSpecification/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISDeploymentSpecification/ecuDeployments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISDeploymentSpecification/busDeployments"/>
     </genClasses>
     <genClasses ecoreClass="ISFieldOfActivityAnnotations.ecore#//ISRuntimeInstance">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISRuntimeInstance/parent"/>
@@ -190,6 +192,18 @@
     </genClasses>
     <genClasses ecoreClass="ISFieldOfActivityAnnotations.ecore#//ISConfigurationFile">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISConfigurationFile/dependentConfigurations"/>
+    </genClasses>
+    <genClasses ecoreClass="ISFieldOfActivityAnnotations.ecore#//ISEcuDeployment">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISEcuDeployment/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISEcuDeployment/components"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ISFieldOfActivityAnnotations.ecore#//ISEcuDeployment/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ISFieldOfActivityAnnotations.ecore#//ISEcuDeployment/description"/>
+    </genClasses>
+    <genClasses ecoreClass="ISFieldOfActivityAnnotations.ecore#//ISBusDeployment">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISBusDeployment/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ISFieldOfActivityAnnotations.ecore#//ISBusDeployment/signatures"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ISFieldOfActivityAnnotations.ecore#//ISBusDeployment/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ISFieldOfActivityAnnotations.ecore#//ISBusDeployment/description"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
