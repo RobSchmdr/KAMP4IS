@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.pcm.core.entity.InterfaceRequiringEntity;
@@ -12,6 +13,7 @@ import org.palladiosimulator.pcm.repository.ProvidedRole;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.palladiosimulator.pcm.repository.RequiredRole;
 
+import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp.workplan.AbstractEnrichedWorkplanDerivation;
 import edu.kit.ipd.sdq.kamp.workplan.Activity;
 import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
@@ -42,16 +44,16 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 		deriveConfigurationActivities(baseArchitectureVersion, subVersion, result);
 		deriveMetadataActivities(baseArchitectureVersion, subVersion, result);
 		deriveBuildConfigurationActivities(baseArchitectureVersion, subVersion, result);
-		deriveBuildExecutionActivities(subVersion, result);		
+//		deriveBuildExecutionActivities(subVersion, result);		
 		deriveTestDevelopmentActivities(baseArchitectureVersion, subVersion, result);
 		deriveTestExecutionActivities(subVersion, result);
 		//TODO integration tests
 		//TODO acceptance tests
 //		deriveReleaseConfigurationActivities(calculateFlattenendActivityList(result));		
-		deriveReleaseExecutionActivities(subVersion, result);		
+//		deriveReleaseExecutionActivities(subVersion, result);		
 //		deriveDeploymentConfigurationActivities(calculateFlattenendActivityList(result));		
 		deriveDeploymentConstraintCheckActivities(subVersion, result);
-		deriveDeploymentExecutionActivities(subVersion, result);		
+//		deriveDeploymentExecutionActivities(subVersion, result);		
 		//TODO staff
 		//TODO technology specification
 		//TODO design patterns
@@ -153,6 +155,9 @@ public abstract class AbstractISEnrichedWorkplanDerivation<T extends ISArchitect
 			RepositoryComponent component = (RepositoryComponent)activity.getElement();
 			List<ISConfigurationFile> configurationFiles = ISArchitectureAnnotationLookup.
 					lookUpISConfigurationFilesForComponent(version, component);
+			
+			Set<ISConfigurationFile> modifiedConfigurationFiles = ArchitectureModelLookup.lookUpMarkedObjectsOfAType(version, ISConfigurationFile.class);
+			configurationFiles.retainAll(modifiedConfigurationFiles);
 			numberOfISConfigurationFiles += configurationFiles.size();
 //			ISSourceFileAggregation sourceFileAggregation = ISArchitectureAnnotationLookup.
 //					lookUpSourceFileAggregationForComponent(version, component);
