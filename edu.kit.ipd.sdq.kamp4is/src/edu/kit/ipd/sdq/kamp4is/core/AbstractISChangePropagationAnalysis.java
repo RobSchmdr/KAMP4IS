@@ -66,6 +66,7 @@ public abstract class AbstractISChangePropagationAnalysis<
 	private V changePropagationDueToConfigurationDependencies;
 	private Map<ProvidedRole, Set<Signature>> visitedProvidedRoles = 
 			new HashMap<ProvidedRole, Set<Signature>>();
+	private boolean newOperationTiming = false;
 	
 	/**
 	 * Calculates the DataType -> Signature -> Interface propagation both for
@@ -601,9 +602,11 @@ public abstract class AbstractISChangePropagationAnalysis<
 				
 				boolean newSignatureMarked = this.calculateOperationToOperationDependencies(r2rDependency, 
 						markedSignatures, modifyProvidedRole, timingBySignature);
-				if (newRoleMarked && (newSignatureMarked || !this.getVisitedProvidedRoles().containsKey(
-						r2rDependency.getProvidedRole()))) {
+				if ((newRoleMarked
+						&& (newSignatureMarked || !this.getVisitedProvidedRoles().containsKey(r2rDependency.getProvidedRole()))) 
+						|| this.getNewOperationTiming() == true) {
 					modifyComponent.getProvidedRoleModifications().add(modifyProvidedRole);
+					this.setNewOperationTiming(false);
 				}
 				if (newSignatureMarked) {
 					//Role might be visited again, but new signature dependencies utilized
@@ -652,7 +655,6 @@ public abstract class AbstractISChangePropagationAnalysis<
 			}		
 		}
 	}
-	
 	/**
 	 * Checks the OperationToOperationDependencies of the <code>r2rDependency</code>. If at least 
 	 * one signature on the required side of an OperationToOperationDependency is marked, all the
@@ -701,6 +703,7 @@ public abstract class AbstractISChangePropagationAnalysis<
 								operationTimingModification.setAffectedElement(modifyProvidedSignature.getAffectedElement());
 								operationTimingModification.getCausingElements().add(timingBySignature.get(requiredSignature));
 								modifyProvidedSignature.setOperationTimingModification(operationTimingModification);
+								this.setNewOperationTiming(true);
 							}
 						}
 					}
@@ -796,5 +799,14 @@ public abstract class AbstractISChangePropagationAnalysis<
 	protected void setVisitedProvidedRoles(Map<ProvidedRole, Set<Signature>> visitedProvidedRoles) {
 		this.visitedProvidedRoles = visitedProvidedRoles;
 	}
+		
+	protected boolean getNewOperationTiming() {
+		return newOperationTiming;
+	}
+	
+	protected void setNewOperationTiming(boolean value) {
+		newOperationTiming = value;
+	}
+
 
 }
